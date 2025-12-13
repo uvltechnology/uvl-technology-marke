@@ -33,12 +33,12 @@ export default function Navbar() {
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? 'bg-deep-space/95 backdrop-blur-lg shadow-lg' : 'bg-transparent'
+          isScrolled ? 'bg-deep-space/95 backdrop-blur-lg shadow-lg' : 'bg-deep-space/80 backdrop-blur-sm'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-            <Link to="/" className="flex items-center gap-3 group">
+            <Link to="/" className="flex items-center gap-3 group flex-shrink-0">
               <div className="w-10 h-10 bg-galaxy-gradient rounded-lg flex items-center justify-center shadow-lg">
                 <span className="text-soft-white font-bold text-xl">U</span>
               </div>
@@ -47,12 +47,12 @@ export default function Navbar() {
               </span>
             </Link>
 
-            <div className="hidden lg:flex items-center gap-8">
+            <div className="hidden lg:flex items-center gap-8 flex-1 justify-center">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`text-sm font-medium transition-all relative group ${
+                  className={`text-sm font-medium transition-all relative group py-2 ${
                     location.pathname === link.path
                       ? 'text-electric-purple'
                       : 'text-soft-white hover:text-electric-purple'
@@ -60,7 +60,7 @@ export default function Navbar() {
                 >
                   {link.name}
                   <span
-                    className={`absolute bottom-0 left-0 h-0.5 bg-electric-purple transition-all ${
+                    className={`absolute -bottom-1 left-0 h-0.5 bg-electric-purple transition-all ${
                       location.pathname === link.path ? 'w-full' : 'w-0 group-hover:w-full'
                     }`}
                   />
@@ -68,7 +68,7 @@ export default function Navbar() {
               ))}
             </div>
 
-            <div className="hidden lg:block">
+            <div className="hidden lg:block flex-shrink-0">
               <Link to="/contact">
                 <Button className="bg-galaxy-gradient hover:shadow-lg hover:shadow-galactic-violet/50 hover:scale-105 transition-all">
                   Book Consultation
