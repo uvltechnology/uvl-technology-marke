@@ -1,1 +1,142 @@
-/* This is where custom CSS goes */
+@import 'tailwindcss';
+@import "tw-animate-css";
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+}
+
+:root {
+  --deep-space: oklch(0.15 0.08 250);
+  --galactic-violet: oklch(0.55 0.22 275);
+  --electric-purple: oklch(0.68 0.18 285);
+  --soft-white: oklch(0.98 0.01 90);
+  --neutral-slate: oklch(0.22 0.02 260);
+  
+  --background: var(--soft-white);
+  --foreground: var(--deep-space);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--deep-space);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--deep-space);
+  --primary: var(--galactic-violet);
+  --primary-foreground: var(--soft-white);
+  --secondary: var(--electric-purple);
+  --secondary-foreground: var(--deep-space);
+  --muted: oklch(0.95 0.01 260);
+  --muted-foreground: oklch(0.50 0.02 260);
+  --accent: var(--electric-purple);
+  --accent-foreground: var(--soft-white);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: var(--soft-white);
+  --border: oklch(0.88 0.01 260);
+  --input: oklch(0.88 0.01 260);
+  --ring: var(--galactic-violet);
+  --radius: 0.75rem;
+}
+
+@theme {
+  --color-deep-space: var(--deep-space);
+  --color-galactic-violet: var(--galactic-violet);
+  --color-electric-purple: var(--electric-purple);
+  --color-soft-white: var(--soft-white);
+  --color-neutral-slate: var(--neutral-slate);
+  
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --font-heading: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  --radius-sm: calc(var(--radius) * 0.5);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) * 1.5);
+  --radius-xl: calc(var(--radius) * 2);
+  --radius-2xl: calc(var(--radius) * 3);
+  --radius-full: 9999px;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+  }
+  
+  h1 {
+    @apply text-5xl md:text-6xl tracking-tight leading-tight;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl tracking-tight leading-tight;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl leading-snug;
+  }
+  
+  h4 {
+    @apply text-xl md:text-2xl leading-snug;
+  }
+}
+
+@layer utilities {
+  .bg-galaxy-gradient {
+    background: linear-gradient(135deg, var(--deep-space) 0%, var(--galactic-violet) 50%, var(--electric-purple) 100%);
+  }
+  
+  .bg-galaxy-radial {
+    background: radial-gradient(circle at top right, var(--electric-purple) 0%, var(--galactic-violet) 40%, var(--deep-space) 100%);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, var(--galactic-violet) 0%, var(--electric-purple) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300;
+  }
+  
+  .card-hover:hover {
+    @apply -translate-y-1 shadow-xl;
+  }
+  
+  .pattern-dots {
+    background-image: radial-gradient(circle, var(--galactic-violet) 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.1;
+  }
+  
+  .pattern-grid {
+    background-image: 
+      linear-gradient(var(--galactic-violet) 1px, transparent 1px),
+      linear-gradient(90deg, var(--galactic-violet) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.05;
+  }
+}
