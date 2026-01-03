@@ -17,6 +17,7 @@ import {
 } from '@phosphor-icons/react'
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
+import StarField from '@/components/StarField.jsx'
 
 const fadeInUp = {
 	initial: { opacity: 0, y: 20 },
@@ -163,8 +164,17 @@ export default function Home() {
 	return (
 		<div className="min-h-screen">
 			<section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-deep-space">
-				<div className="absolute inset-0 pattern-grid" />
-				<div className="absolute inset-0 bg-galaxy-radial opacity-40" />
+				{/* Cosmic background layers */}
+				<div className="absolute inset-0 bg-galaxy-radial" />
+				<div className="absolute inset-0 pattern-grid opacity-30" />
+				
+				{/* Animated glow orbs */}
+				<div className="absolute top-1/4 left-1/4 w-96 h-96 bg-galactic-violet/20 rounded-full blur-3xl animate-pulse" />
+				<div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-electric-purple/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+				<div className="absolute top-1/2 right-1/3 w-64 h-64 bg-galactic-violet/10 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '2s' }} />
+				
+				{/* Star particles effect */}
+				<StarField count={80} />
         
 				<motion.div
 					initial={{ opacity: 0, y: 30 }}

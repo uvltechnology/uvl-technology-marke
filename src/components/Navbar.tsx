@@ -39,10 +39,8 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             <Link to="/" className="flex items-center gap-3 group shrink-0">
-              <div className="w-10 h-10 bg-galaxy-gradient rounded-lg flex items-center justify-center shadow-lg">
-                <span className="text-soft-white font-bold text-xl">U</span>
-              </div>
-              <span className="text-soft-white font-heading font-bold text-xl group-hover:text-electric-purple transition-colors">
+              <img src="/src/assets/uvl-logo.svg" alt="UVL Technology" className="w-11 h-11 object-contain" />
+              <span className="text-soft-white font-heading font-bold text-xl tracking-wide group-hover:text-electric-purple transition-colors">
                 UVL Technology
               </span>
             </Link>
