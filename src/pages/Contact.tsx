@@ -287,7 +287,7 @@ export default function Contact() {
               className="space-y-6"
             >
               <motion.div variants={fadeInUp}>
-                <Card className="border-2 border-galactic-violet/20 bg-gradient-to-br from-galactic-violet/5 to-electric-purple/5">
+                <Card className="border-2 border-galactic-violet/20 bg-linear-to-br from-galactic-violet/5 to-electric-purple/5">
                   <CardHeader>
                     <CardTitle className="text-xl">Contact Information</CardTitle>
                   </CardHeader>
@@ -341,25 +341,25 @@ export default function Contact() {
                   </CardHeader>
                   <CardContent className="space-y-3 text-sm text-muted-foreground">
                     <div className="flex gap-3">
-                      <div className="w-6 h-6 bg-galactic-violet rounded-full flex items-center justify-center text-soft-white text-xs font-bold flex-shrink-0">
+                      <div className="w-6 h-6 bg-galactic-violet rounded-full flex items-center justify-center text-soft-white text-xs font-bold shrink-0">
                         1
                       </div>
                       <p>We review your submission and respond within 24 hours</p>
                     </div>
                     <div className="flex gap-3">
-                      <div className="w-6 h-6 bg-galactic-violet rounded-full flex items-center justify-center text-soft-white text-xs font-bold flex-shrink-0">
+                      <div className="w-6 h-6 bg-galactic-violet rounded-full flex items-center justify-center text-soft-white text-xs font-bold shrink-0">
                         2
                       </div>
                       <p>Schedule a 30-minute discovery call to understand your needs</p>
                     </div>
                     <div className="flex gap-3">
-                      <div className="w-6 h-6 bg-galactic-violet rounded-full flex items-center justify-center text-soft-white text-xs font-bold flex-shrink-0">
+                      <div className="w-6 h-6 bg-galactic-violet rounded-full flex items-center justify-center text-soft-white text-xs font-bold shrink-0">
                         3
                       </div>
                       <p>Receive a detailed proposal with timeline and pricing</p>
                     </div>
                     <div className="flex gap-3">
-                      <div className="w-6 h-6 bg-galactic-violet rounded-full flex items-center justify-center text-soft-white text-xs font-bold flex-shrink-0">
+                      <div className="w-6 h-6 bg-galactic-violet rounded-full flex items-center justify-center text-soft-white text-xs font-bold shrink-0">
                         4
                       </div>
                       <p>Start building your custom solution</p>

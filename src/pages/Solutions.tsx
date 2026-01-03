@@ -209,7 +209,7 @@ export default function Solutions() {
                   <Card className="h-full card-hover border-border/50 hover:border-galactic-violet/50">
                     <CardHeader>
                       <div className="flex items-start gap-4 mb-4">
-                        <div className="w-14 h-14 bg-galaxy-gradient rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                        <div className="w-14 h-14 bg-galaxy-gradient rounded-xl flex items-center justify-center shrink-0 shadow-lg">
                           <Icon size={28} weight="bold" className="text-soft-white" />
                         </div>
                         <div className="flex-1">
@@ -226,7 +226,7 @@ export default function Solutions() {
                         <ul className="space-y-2">
                           {solution.benefits.map((benefit, idx) => (
                             <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
-                              <CheckCircle size={18} weight="fill" className="text-galactic-violet mt-0.5 flex-shrink-0" />
+                              <CheckCircle size={18} weight="fill" className="text-galactic-violet mt-0.5 shrink-0" />
                               <span>{benefit}</span>
                             </li>
                           ))}

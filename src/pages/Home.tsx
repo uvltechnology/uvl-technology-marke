@@ -267,7 +267,7 @@ export default function Home() {
                       <ul className="space-y-2">
                         {solution.features.map((feature, idx) => (
                           <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
-                            <CheckCircle size={18} weight="fill" className="text-galactic-violet mt-0.5 flex-shrink-0" />
+                            <CheckCircle size={18} weight="fill" className="text-galactic-violet mt-0.5 shrink-0" />
                             <span>{feature}</span>
                           </li>
                         ))}
@@ -312,7 +312,7 @@ export default function Home() {
                   <Card className="card-hover border-border/50 hover:border-galactic-violet/50">
                     <CardHeader>
                       <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 bg-galaxy-gradient rounded-lg flex items-center justify-center flex-shrink-0">
+                        <div className="w-12 h-12 bg-galaxy-gradient rounded-lg flex items-center justify-center shrink-0">
                           <Icon size={24} weight="bold" className="text-soft-white" />
                         </div>
                         <div>
@@ -437,7 +437,7 @@ export default function Home() {
           >
             {caseStudies.map((study, index) => (
               <motion.div key={index} variants={fadeInUp}>
-                <Card className="h-full card-hover border-2 border-transparent hover:border-galactic-violet/50 bg-gradient-to-br from-card to-muted">
+                <Card className="h-full card-hover border-2 border-transparent hover:border-galactic-violet/50 bg-linear-to-br from-card to-muted">
                   <CardHeader>
                     <div className="inline-block px-3 py-1 bg-galactic-violet/10 border border-galactic-violet/30 rounded-full mb-4">
                       <span className="text-galactic-violet font-semibold text-sm">{study.client}</span>

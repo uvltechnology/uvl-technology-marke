@@ -13,8 +13,8 @@ import {
   Truck,
   Buildings
 } from '@phosphor-icons/react'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Button } from '@/components/ui/button.jsx'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -24,9 +24,7 @@ const fadeInUp = {
 
 const staggerContainer = {
   animate: {
-    transition: {
-      staggerChildren: 0.1
-    }
+    transition: { staggerChildren: 0.1 }
   }
 }
 

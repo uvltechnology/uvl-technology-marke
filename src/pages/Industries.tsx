@@ -212,9 +212,9 @@ export default function Industries() {
               return (
                 <motion.div key={index} variants={fadeInUp}>
                   <Card className="overflow-hidden border-2 border-border/50 hover:border-galactic-violet/50 transition-all">
-                    <div className="bg-gradient-to-r from-galactic-violet/10 to-electric-purple/10 p-8 border-b border-border">
+                    <div className="bg-linear-to-r from-galactic-violet/10 to-electric-purple/10 p-8 border-b border-border">
                       <div className="flex items-center gap-6">
-                        <div className="w-20 h-20 bg-galaxy-gradient rounded-2xl flex items-center justify-center flex-shrink-0 shadow-xl">
+                        <div className="w-20 h-20 bg-galaxy-gradient rounded-2xl flex items-center justify-center shrink-0 shadow-xl">
                           <Icon size={40} weight="bold" className="text-soft-white" />
                         </div>
                         <div>
@@ -255,7 +255,7 @@ export default function Industries() {
                           <ul className="space-y-2">
                             {industry.solutions.map((solution, idx) => (
                               <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
-                                <CheckCircle size={18} weight="fill" className="text-galactic-violet mt-0.5 flex-shrink-0" />
+                                <CheckCircle size={18} weight="fill" className="text-galactic-violet mt-0.5 shrink-0" />
                                 <span>{solution}</span>
                               </li>
                             ))}

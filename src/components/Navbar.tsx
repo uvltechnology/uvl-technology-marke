@@ -38,7 +38,7 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-            <Link to="/" className="flex items-center gap-3 group flex-shrink-0">
+            <Link to="/" className="flex items-center gap-3 group shrink-0">
               <div className="w-10 h-10 bg-galaxy-gradient rounded-lg flex items-center justify-center shadow-lg">
                 <span className="text-soft-white font-bold text-xl">U</span>
               </div>
@@ -68,7 +68,7 @@ export default function Navbar() {
               ))}
             </div>
 
-            <div className="hidden lg:block flex-shrink-0">
+            <div className="hidden lg:block shrink-0">
               <Link to="/contact">
                 <Button className="bg-galaxy-gradient hover:shadow-lg hover:shadow-galactic-violet/50 hover:scale-105 transition-all">
                   Book Consultation

@@ -134,7 +134,7 @@ export default function About() {
             >
               {stats.map((stat, index) => (
                 <motion.div key={index} variants={fadeInUp}>
-                  <Card className="text-center p-8 border-2 border-galactic-violet/20 bg-gradient-to-br from-galactic-violet/5 to-electric-purple/5">
+                  <Card className="text-center p-8 border-2 border-galactic-violet/20 bg-linear-to-br from-galactic-violet/5 to-electric-purple/5">
                     <div className="text-5xl font-heading font-bold text-galactic-violet mb-2">
                       {stat.number}
                     </div>
@@ -253,7 +253,7 @@ export default function About() {
             {teamPrinciples.map((principle, index) => (
               <motion.div key={index} variants={fadeInUp}>
                 <div className="flex items-start gap-3 bg-soft-white/5 p-6 rounded-xl border border-soft-white/10">
-                  <CheckCircle size={24} weight="fill" className="text-electric-purple flex-shrink-0 mt-1" />
+                  <CheckCircle size={24} weight="fill" className="text-electric-purple shrink-0 mt-1" />
                   <p className="text-soft-white/90">{principle}</p>
                 </div>
               </motion.div>
