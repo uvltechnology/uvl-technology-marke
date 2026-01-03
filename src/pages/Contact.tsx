@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { useKV } from '@github/spark/hooks'
 import { motion } from 'framer-motion'
 import {
   EnvelopeSimple,
@@ -59,7 +58,7 @@ interface Submission {
 }
 
 export default function Contact() {
-  const [submissions, setSubmissions] = useKV<Submission[]>('contact-submissions', [])
+  const [submissions, setSubmissions] = useState<Submission[]>([])
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [formData, setFormData] = useState<FormData>({
     name: '',

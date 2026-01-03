@@ -1,23 +1,50 @@
-# ✨ Welcome to Your Spark Template!
-You've just launched your brand-new Spark Template Codespace — everything’s fired up and ready for you to explore, build, and create with Spark!
+# UVL Technology Marketing Website
 
-This template is your blank canvas. It comes with a minimal setup to help you get started quickly with Spark development.
+A modern marketing website built with React, Vite, and Tailwind CSS.
 
-🚀 What's Inside?
-- A clean, minimal Spark environment
-- Pre-configured for local development
-- Ready to scale with your ideas
-  
-🧠 What Can You Do?
+## 🚀 Tech Stack
 
-Right now, this is just a starting point — the perfect place to begin building and testing your Spark applications.
+- **React 19** - UI Framework
+- **Vite** - Build tool and dev server
+- **Tailwind CSS 4** - Utility-first CSS framework
+- **React Router** - Client-side routing
+- **Framer Motion** - Animations
+- **Shadcn/ui** - UI component library
 
-🧹 Just Exploring?
-No problem! If you were just checking things out and don’t need to keep this code:
+## 📦 Getting Started
 
-- Simply delete your Spark.
-- Everything will be cleaned up — no traces left behind.
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
 
-📄 License For Spark Template Resources 
+### Installation
 
-The Spark Template files and resources from GitHub are licensed under the terms of the MIT license, Copyright GitHub, Inc.
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## 📁 Project Structure
+
+```
+src/
+├── components/     # Reusable UI components
+│   └── ui/         # Shadcn/ui components
+├── pages/          # Page components
+├── hooks/          # Custom React hooks
+├── lib/            # Utility functions
+└── styles/         # Global styles
+```
+
+## 📄 License
+
+MIT License - Copyright GitHub, Inc.

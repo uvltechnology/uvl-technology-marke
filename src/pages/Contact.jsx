@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { useKV } from '@github/spark/hooks'
 import { motion } from 'framer-motion'
 import {
 	EnvelopeSimple,
@@ -44,7 +43,7 @@ const staggerContainer = {
 }
 
 export default function Contact() {
-	const [submissions, setSubmissions] = useKV('contact-submissions', [])
+	const [submissions, setSubmissions] = useState([])
 	const [isSubmitting, setIsSubmitting] = useState(false)
 	const [formData, setFormData] = useState({
 		name: '',
@@ -162,7 +161,7 @@ export default function Contact() {
 									<form onSubmit={handleSubmit} className="space-y-6">
 										<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 											<div className="space-y-2">
-												<Label htmlFor="name">Full Name *</nLabel>
+												<Label htmlFor="name">Full Name *</Label>
 												<Input
 													id="name"
 													placeholder="John Smith"
