@@ -5,7 +5,7 @@ export default function Footer() {
   const footerLinks = {
     company: [
       { name: 'About Us', path: '/about' },
-      { name: 'Case Studies', path: '/case-studies' },
+      { name: 'Projects', path: '/projects' },
       { name: 'Contact', path: '/contact' },
     ],
     solutions: [
@@ -32,9 +32,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <img src="/src/assets/uvl-logo.svg" alt="UVL Technology" className="w-11 h-11 object-contain" />
+              <img src="/src/assets/uvl-logo.svg" alt="Logica" className="w-11 h-11 object-contain" />
               <span className="text-soft-white font-heading font-bold text-xl tracking-wide">
-                UVL Technology
+                Logica
               </span>
             </div>
             <p className="text-soft-white/70 mb-6 max-w-sm">
@@ -107,7 +107,7 @@ export default function Footer() {
 
         <div className="border-t border-soft-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-soft-white/50 text-sm">
-            © {new Date().getFullYear()} UVL Technology. All rights reserved.
+            © {new Date().getFullYear()} Logica. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             <a

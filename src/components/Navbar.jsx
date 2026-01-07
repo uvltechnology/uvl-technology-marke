@@ -25,7 +25,7 @@ export default function Navbar() {
 		{ name: 'Home', path: '/' },
 		{ name: 'Solutions', path: '/solutions' },
 		{ name: 'Industries', path: '/industries' },
-		{ name: 'Case Studies', path: '/case-studies' },
+		{ name: 'Projects', path: '/projects' },
 		{ name: 'About', path: '/about' },
 	]
 
@@ -39,9 +39,9 @@ export default function Navbar() {
 				<div className="max-w-7xl mx-auto px-6 lg:px-8">
 					<div className="flex items-center justify-between h-20">
 						<Link to="/" className="flex items-center gap-3 group shrink-0">
-							<img src="/src/assets/uvl-logo.svg" alt="UVL Technology" className="w-11 h-11 object-contain" />
+							<img src="/src/assets/uvl-logo.svg" alt="Logica" className="w-11 h-11 object-contain" />
 							<span className="text-soft-white font-heading font-bold text-xl tracking-wide group-hover:text-electric-purple transition-colors">
-								UVL Technology
+								Logica
 							</span>
 						</Link>
 

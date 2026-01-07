@@ -1,11 +1,11 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { Toaster } from '@/components/ui/sonner.jsx'
 import Navbar from '@/components/Navbar.jsx'
 import Footer from '@/components/Footer.jsx'
 import Home from '@/pages/Home.jsx'
 import Solutions from '@/pages/Solutions.jsx'
 import Industries from '@/pages/Industries.jsx'
-import CaseStudies from '@/pages/CaseStudies.jsx'
+import Projects from '@/pages/Projects.jsx'
 import About from '@/pages/About.jsx'
 import Contact from '@/pages/Contact.jsx'
 
@@ -19,7 +19,9 @@ function App() {
 						<Route path="/" element={<Home />} />
 						<Route path="/solutions" element={<Solutions />} />
 						<Route path="/industries" element={<Industries />} />
-						<Route path="/case-studies" element={<CaseStudies />} />
+						<Route path="/projects" element={<Projects />} />
+						{/* Redirect old /case-studies URL to /projects for backward compatibility */}
+						<Route path="/case-studies" element={<Navigate to="/projects" replace />} />
 						<Route path="/about" element={<About />} />
 						<Route path="/contact" element={<Contact />} />
 					</Routes>

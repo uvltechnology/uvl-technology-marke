@@ -140,7 +140,7 @@ export default function Home() {
 		{ number: '04', title: 'Deployment & Support', description: 'Launching smoothly and staying with you long-term' }
 	]
 
-	const caseStudies = [
+	const projects = [
 		{
 			client: 'Regional Healthcare Network',
 			problem: 'Paper-based patient records causing delays and errors',
@@ -332,7 +332,7 @@ export default function Home() {
 						className="text-center mb-16"
 					>
 						<motion.h2 variants={fadeInUp} className="text-deep-space mb-4">
-							Why Choose UVL Technology?
+							Why Choose Logica?
 						</motion.h2>
 						<motion.p variants={fadeInUp} className="text-xl text-muted-foreground max-w-2xl mx-auto">
 							We combine technical excellence with business understanding
@@ -428,19 +428,19 @@ export default function Home() {
 						variants={staggerContainer}
 						className="grid grid-cols-1 md:grid-cols-3 gap-8"
 					>
-						{caseStudies.map((study, index) => (
+						{projects.map((project, index) => (
 							<motion.div key={index} variants={fadeInUp}>
 								<Card className="h-full card-hover border-2 border-transparent hover:border-galactic-violet/50 bg-linear-to-br from-card to-muted">
 									<CardHeader>
 										<div className="inline-block px-3 py-1 bg-galactic-violet/10 border border-galactic-violet/30 rounded-full mb-4">
-											<span className="text-galactic-violet font-semibold text-sm">{study.client}</span>
+											<span className="text-galactic-violet font-semibold text-sm">{project.client}</span>
 										</div>
 										<CardTitle className="text-lg mb-4">The Challenge</CardTitle>
-										<p className="text-muted-foreground mb-4">{study.problem}</p>
+										<p className="text-muted-foreground mb-4">{project.problem}</p>
 										<CardTitle className="text-lg mb-4">Our Solution</CardTitle>
-										<p className="text-muted-foreground mb-4">{study.solution}</p>
+										<p className="text-muted-foreground mb-4">{project.solution}</p>
 										<CardTitle className="text-lg mb-4">The Impact</CardTitle>
-										<p className="text-galactic-violet font-semibold">{study.result}</p>
+										<p className="text-galactic-violet font-semibold">{project.result}</p>
 									</CardHeader>
 								</Card>
 							</motion.div>
@@ -454,9 +454,9 @@ export default function Home() {
 						variants={fadeInUp}
 						className="text-center mt-12"
 					>
-						<Link to="/case-studies">
+						<Link to="/projects">
 							<Button size="lg" variant="outline" className="border-2 border-galactic-violet text-galactic-violet hover:bg-galactic-violet hover:text-soft-white">
-								View All Case Studies
+								View All Projects
 								<ArrowRight className="ml-2" size={20} weight="bold" />
 							</Button>
 						</Link>

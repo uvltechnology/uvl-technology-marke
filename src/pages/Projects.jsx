@@ -13,9 +13,9 @@ import {
   Truck,
   Buildings
 } from '@phosphor-icons/react'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import StarField from '@/components/StarField'
+import { Button } from '@/components/ui/button.jsx'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
+import StarField from '@/components/StarField.jsx'
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -25,14 +25,12 @@ const fadeInUp = {
 
 const staggerContainer = {
   animate: {
-    transition: {
-      staggerChildren: 0.1
-    }
+    transition: { staggerChildren: 0.1 }
   }
 }
 
-export default function CaseStudies() {
-  const caseStudies = [
+export default function Projects() {
+  const projects = [
     {
       icon: FirstAid,
       industry: 'Healthcare',
@@ -180,8 +178,8 @@ export default function CaseStudies() {
             variants={staggerContainer}
             className="space-y-12"
           >
-            {caseStudies.map((study, index) => {
-              const Icon = study.icon
+            {projects.map((project, index) => {
+              const Icon = project.icon
               return (
                 <motion.div key={index} variants={fadeInUp}>
                   <Card className="overflow-hidden border-2 border-border/50 hover:border-galactic-violet/30 transition-all">
@@ -192,12 +190,12 @@ export default function CaseStudies() {
                         </div>
                         <div className="flex-1">
                           <div className="inline-block px-3 py-1 bg-galactic-violet/10 border border-galactic-violet/30 rounded-full mb-3">
-                            <span className="text-galactic-violet font-semibold text-sm">{study.industry}</span>
+                            <span className="text-galactic-violet font-semibold text-sm">{project.industry}</span>
                           </div>
                           <h2 className="text-3xl font-heading font-bold text-deep-space mb-2">
-                            {study.client}
+                            {project.client}
                           </h2>
-                          <p className="text-muted-foreground">{study.clientType}</p>
+                          <p className="text-muted-foreground">{project.clientType}</p>
                         </div>
                       </div>
                     </div>
@@ -209,7 +207,7 @@ export default function CaseStudies() {
                             <div className="w-8 h-1 bg-destructive/50 rounded-full" />
                             <h3 className="text-xl font-heading font-bold text-deep-space">The Challenge</h3>
                           </div>
-                          <p className="text-muted-foreground leading-relaxed">{study.challenge}</p>
+                          <p className="text-muted-foreground leading-relaxed">{project.challenge}</p>
                         </div>
 
                         <div>
@@ -217,7 +215,7 @@ export default function CaseStudies() {
                             <div className="w-8 h-1 bg-galactic-violet rounded-full" />
                             <h3 className="text-xl font-heading font-bold text-deep-space">Our Solution</h3>
                           </div>
-                          <p className="text-muted-foreground leading-relaxed">{study.solution}</p>
+                          <p className="text-muted-foreground leading-relaxed">{project.solution}</p>
                         </div>
 
                         <div>
@@ -226,7 +224,7 @@ export default function CaseStudies() {
                             <h3 className="text-xl font-heading font-bold text-deep-space">The Results</h3>
                           </div>
                           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                            {study.results.map((result, idx) => (
+                            {project.results.map((result, idx) => (
                               <div key={idx} className="bg-linear-to-br from-galactic-violet/10 to-electric-purple/10 p-4 rounded-xl border border-galactic-violet/20">
                                 <div className="text-3xl font-heading font-bold text-galactic-violet mb-2">
                                   {result.metric}
@@ -241,18 +239,18 @@ export default function CaseStudies() {
                           <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
                             <div className="flex items-center gap-2">
                               <Clock size={18} weight="bold" className="text-galactic-violet" />
-                              <span><strong className="text-deep-space">Timeline:</strong> {study.timeline}</span>
+                              <span><strong className="text-deep-space">Timeline:</strong> {project.timeline}</span>
                             </div>
                             <div className="flex items-center gap-2">
                               <CheckCircle size={18} weight="bold" className="text-galactic-violet" />
-                              <span><strong className="text-deep-space">Tech:</strong> {study.technologies}</span>
+                              <span><strong className="text-deep-space">Tech:</strong> {project.technologies}</span>
                             </div>
                           </div>
                         </div>
 
                         <div className="bg-muted p-6 rounded-xl border-l-4 border-galactic-violet">
-                          <p className="text-deep-space italic">"{study.testimonial}"</p>
-                          <p className="text-sm text-muted-foreground mt-2">— {study.client}</p>
+                          <p className="text-deep-space italic">"{project.testimonial}"</p>
+                          <p className="text-sm text-muted-foreground mt-2">— {project.client}</p>
                         </div>
                       </div>
                     </CardContent>
@@ -277,7 +275,7 @@ export default function CaseStudies() {
             Ready to Write Your Success Story?
           </h2>
           <p className="text-xl text-soft-white/90 mb-10 max-w-2xl mx-auto">
-            Join the growing list of businesses transforming their operations with UVL Technology.
+            Join the growing list of businesses transforming their operations with Logica.
           </p>
           <Link to="/contact">
             <Button size="lg" className="bg-soft-white text-deep-space hover:bg-soft-white/90 hover:scale-105 transition-all text-lg px-10 py-6 shadow-2xl">

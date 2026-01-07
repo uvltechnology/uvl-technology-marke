@@ -89,7 +89,7 @@ export default function About() {
 					className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 text-center"
 				>
 					<div className="inline-block mb-6 px-6 py-2 bg-galactic-violet/20 border border-galactic-violet/50 rounded-full">
-						<span className="text-electric-purple font-semibold text-sm">About UVL Technology</span>
+						<span className="text-electric-purple font-semibold text-sm">About Logica</span>
 					</div>
           
 					<h1 className="text-soft-white mb-6">
@@ -118,7 +118,7 @@ export default function About() {
 							</motion.div>
 							<motion.div variants={fadeInUp} className="space-y-4 text-muted-foreground leading-relaxed">
 								<p>
-									UVL Technology was born from a simple observation: too many businesses are held back by outdated systems, expensive software that doesn't quite fit, or manual processes that waste countless hours.
+											Logica was born from a simple observation: too many businesses are held back by outdated systems, expensive software that doesn't quite fit, or manual processes that waste countless hours.
 								</p>
 								<p>
 									We saw organizations struggling with off-the-shelf solutions that required them to change their workflows rather than adapting to how they actually work. We saw talented teams bogged down by administrative tasks that could be automated. We saw opportunities for growth limited by technical constraints.
