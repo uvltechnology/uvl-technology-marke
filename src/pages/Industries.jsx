@@ -174,13 +174,20 @@ export default function Industries() {
 
 	return (
 		<div className="min-h-screen pt-20">
-			<section className="relative py-24 bg-deep-space text-soft-white overflow-hidden">
-				<div className="absolute inset-0 bg-galaxy-radial" />
-				<div className="absolute inset-0 pattern-dots opacity-30" />
+			<section className="relative py-24 bg-[#030108] text-[#F8FAFC] overflow-hidden">
+				{/* Enhanced cosmic background */}
+				<div className="absolute inset-0" style={{
+					background: `
+						radial-gradient(ellipse 80% 50% at 50% 0%, rgba(139, 92, 246, 0.18) 0%, transparent 60%),
+						radial-gradient(ellipse 60% 40% at 100% 100%, rgba(236, 72, 153, 0.12) 0%, transparent 50%),
+						linear-gradient(180deg, #030108 0%, #0F0A1F 50%, #1A1033 100%)
+					`
+				}} />
+				<div className="absolute inset-0 pattern-grid opacity-40" />
 				
 				{/* Animated glow orbs */}
-				<div className="absolute top-1/4 left-1/4 w-72 h-72 bg-galactic-violet/20 rounded-full blur-3xl animate-pulse" />
-				<div className="absolute bottom-1/4 right-1/4 w-56 h-56 bg-electric-purple/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+				<div className="absolute top-1/4 left-1/4 w-72 h-72 bg-[#8B5CF6]/15 rounded-full blur-[100px] animate-pulse pointer-events-none" />
+				<div className="absolute bottom-1/4 right-1/4 w-56 h-56 bg-[#EC4899]/10 rounded-full blur-[80px] animate-pulse pointer-events-none" style={{ animationDelay: '1s' }} />
 				
 				{/* Star particles effect */}
 				<StarField count={60} />
@@ -191,22 +198,23 @@ export default function Industries() {
 					variants={fadeInUp}
 					className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 text-center"
 				>
-					<div className="inline-block mb-6 px-6 py-2 bg-galactic-violet/20 border border-galactic-violet/50 rounded-full">
-						<span className="text-electric-purple font-semibold text-sm">Industry Expertise</span>
+					<div className="inline-flex items-center gap-2 mb-8 px-5 py-2.5 bg-[#8B5CF6]/15 border border-[#8B5CF6]/30 rounded-full backdrop-blur-sm">
+						<span className="w-2 h-2 bg-[#8B5CF6] rounded-full animate-pulse" />
+						<span className="text-[#A78BFA] font-semibold text-sm tracking-wide">Industry Expertise</span>
 					</div>
           
-					<h1 className="text-soft-white mb-6">
+					<h1 className="text-[#F8FAFC] mb-6 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
 						Trusted Across<br />
-						<span className="text-gradient">Diverse Industries</span>
+						<span className="bg-gradient-to-r from-[#8B5CF6] via-[#EC4899] to-[#22D3EE] bg-clip-text text-transparent">Diverse Industries</span>
 					</h1>
           
-					<p className="text-xl text-soft-white/80 mb-10 max-w-3xl mx-auto">
+					<p className="text-lg md:text-xl text-[#CBD5E1] mb-10 max-w-3xl mx-auto leading-relaxed">
 						We understand the unique challenges each industry faces and build solutions that address your specific needs.
 					</p>
 				</motion.div>
 			</section>
 
-			<section className="py-24 bg-background">
+			<section className="py-24 bg-[#0F0A1F]">
 				<div className="max-w-7xl mx-auto px-6 lg:px-8">
 					<motion.div
 						initial="initial"
@@ -219,17 +227,17 @@ export default function Industries() {
 							const Icon = industry.icon
 							return (
 								<motion.div key={index} variants={fadeInUp}>
-									<Card className="overflow-hidden border-2 border-border/50 hover:border-galactic-violet/50 transition-all">
-										<div className="bg-linear-to-r from-galactic-violet/10 to-electric-purple/10 p-8 border-b border-border">
+									<Card className="overflow-hidden border border-[#8B5CF6]/20 bg-[#1A1033]/60 backdrop-blur-sm hover:border-[#8B5CF6]/50 transition-all">
+										<div className="bg-gradient-to-r from-[#8B5CF6]/10 to-[#EC4899]/10 p-8 border-b border-[#8B5CF6]/20">
 											<div className="flex items-center gap-6">
-												<div className="w-20 h-20 bg-galaxy-gradient rounded-2xl flex items-center justify-center shrink-0 shadow-xl">
-													<Icon size={40} weight="bold" className="text-soft-white" />
+												<div className="w-20 h-20 bg-gradient-to-br from-[#8B5CF6] to-[#EC4899] rounded-2xl flex items-center justify-center shrink-0 shadow-xl shadow-[#8B5CF6]/25">
+													<Icon size={40} weight="bold" className="text-white" />
 												</div>
 												<div>
-													<h2 className="text-3xl font-heading font-bold text-deep-space mb-2">
+													<h2 className="text-3xl font-heading font-bold text-[#F8FAFC] mb-2">
 														{industry.name}
 													</h2>
-													<p className="text-lg text-muted-foreground">{industry.description}</p>
+													<p className="text-lg text-[#CBD5E1]">{industry.description}</p>
 												</div>
 											</div>
 										</div>
@@ -238,15 +246,15 @@ export default function Industries() {
 											<div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 												<div>
 													<div className="flex items-center gap-2 mb-4">
-														<Warning size={24} weight="fill" className="text-destructive" />
-														<h3 className="text-xl font-heading font-bold text-deep-space">
+														<Warning size={24} weight="fill" className="text-[#F87171]" />
+														<h3 className="text-xl font-heading font-bold text-[#F8FAFC]">
 															Common Pain Points
 														</h3>
 													</div>
 													<ul className="space-y-2">
 														{industry.painPoints.map((pain, idx) => (
-															<li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
-																<span className="text-destructive mt-1">•</span>
+															<li key={idx} className="flex items-start gap-2 text-sm text-[#CBD5E1]">
+																<span className="text-[#F87171] mt-1">•</span>
 																<span>{pain}</span>
 															</li>
 														))}
@@ -255,15 +263,15 @@ export default function Industries() {
 
 												<div>
 													<div className="flex items-center gap-2 mb-4">
-														<Lightbulb size={24} weight={"fill"} className="text-galactic-violet" />
-														<h3 className="text-xl font-heading font-bold text-deep-space">
-															How UVL Helps
+														<Lightbulb size={24} weight={"fill"} className="text-[#8B5CF6]" />
+														<h3 className="text-xl font-heading font-bold text-[#F8FAFC]">
+															How NEW_WEBSITE_NAME Helps
 														</h3>
 													</div>
 													<ul className="space-y-2">
 														{industry.solutions.map((solution, idx) => (
-															<li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
-																<CheckCircle size={18} weight="fill" className="text-galactic-violet mt-0.5 shrink-0" />
+															<li key={idx} className="flex items-start gap-2 text-sm text-[#CBD5E1]">
+																<CheckCircle size={18} weight="fill" className="text-[#A78BFA] mt-0.5 shrink-0" />
 																<span>{solution}</span>
 															</li>
 														))}
@@ -272,16 +280,16 @@ export default function Industries() {
 
 												<div>
 													<div className="flex items-center gap-2 mb-4">
-														<CheckCircle size={24} weight="fill" className="text-electric-purple" />
-														<h3 className="text-xl font-heading font-bold text-deep-space">
+														<CheckCircle size={24} weight="fill" className="text-[#EC4899]" />
+														<h3 className="text-xl font-heading font-bold text-[#F8FAFC]">
 															Example Modules
 														</h3>
 													</div>
 													<ul className="space-y-2">
 														{industry.exampleModules.map((module, idx) => (
 															<li key={idx} className="flex items-start gap-2 text-sm">
-																<span className="text-electric-purple font-bold mt-0.5">→</span>
-																<span className="text-deep-space font-medium">{module}</span>
+																<span className="text-[#EC4899] font-bold mt-0.5">→</span>
+																<span className="text-[#F8FAFC] font-medium">{module}</span>
 															</li>
 														))}
 													</ul>
@@ -296,8 +304,10 @@ export default function Industries() {
 				</div>
 			</section>
 
-			<section className="py-24 bg-galaxy-gradient text-soft-white relative overflow-hidden">
+			<section className="py-24 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #7C3AED 0%, #8B5CF6 50%, #EC4899 100%)' }}>
 				<div className="absolute inset-0 pattern-grid opacity-20" />
+				<div className="absolute top-0 left-1/4 w-64 h-64 bg-white/10 rounded-full blur-[100px] pointer-events-none" />
+				<div className="absolute bottom-0 right-1/4 w-48 h-48 bg-[#22D3EE]/20 rounded-full blur-[80px] pointer-events-none" />
 				<motion.div
 					initial="initial"
 					whileInView="animate"
@@ -305,14 +315,14 @@ export default function Industries() {
 					variants={fadeInUp}
 					className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center"
 				>
-					<h2 className="text-soft-white mb-6">
+					<h2 className="text-white text-3xl md:text-4xl font-bold mb-6">
 						Don't See Your Industry?
 					</h2>
-					<p className="text-xl text-soft-white/90 mb-10 max-w-2xl mx-auto">
+					<p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
 						We've worked with businesses across countless sectors. Whatever your industry, we can build the perfect system for your needs.
 					</p>
 					<Link to="/contact">
-						<Button size="lg" className="bg-soft-white text-deep-space hover:bg-soft-white/90 hover:scale-105 transition-all text-lg px-10 py-6 shadow-2xl">
+						<Button size="lg" className="bg-white text-[#7C3AED] hover:bg-white/90 hover:scale-105 transition-all text-lg px-10 py-6 shadow-2xl font-semibold">
 							Let's Discuss Your Industry
 							<ArrowRight className="ml-2" size={20} weight="bold" />
 						</Button>

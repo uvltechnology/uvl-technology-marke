@@ -71,13 +71,20 @@ export default function About() {
 
 	return (
 		<div className="min-h-screen pt-20">
-			<section className="relative py-24 bg-deep-space text-soft-white overflow-hidden">
-				<div className="absolute inset-0 bg-galaxy-radial" />
-				<div className="absolute inset-0 pattern-dots opacity-30" />
+			<section className="relative py-24 bg-[#030108] text-[#F8FAFC] overflow-hidden">
+				{/* Enhanced cosmic background */}
+				<div className="absolute inset-0" style={{
+					background: `
+						radial-gradient(ellipse 80% 50% at 50% 0%, rgba(139, 92, 246, 0.18) 0%, transparent 60%),
+						radial-gradient(ellipse 60% 40% at 100% 100%, rgba(236, 72, 153, 0.12) 0%, transparent 50%),
+						linear-gradient(180deg, #030108 0%, #0F0A1F 50%, #1A1033 100%)
+					`
+				}} />
+				<div className="absolute inset-0 pattern-grid opacity-40" />
 				
 				{/* Animated glow orbs */}
-				<div className="absolute top-1/4 left-1/4 w-72 h-72 bg-galactic-violet/20 rounded-full blur-3xl animate-pulse" />
-				<div className="absolute bottom-1/4 right-1/4 w-56 h-56 bg-electric-purple/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+				<div className="absolute top-1/4 left-1/4 w-72 h-72 bg-[#8B5CF6]/15 rounded-full blur-[100px] animate-pulse pointer-events-none" />
+				<div className="absolute bottom-1/4 right-1/4 w-56 h-56 bg-[#EC4899]/10 rounded-full blur-[80px] animate-pulse pointer-events-none" style={{ animationDelay: '1s' }} />
 				
 				{/* Star particles effect */}
 				<StarField count={60} />
@@ -88,22 +95,23 @@ export default function About() {
 					variants={fadeInUp}
 					className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 text-center"
 				>
-					<div className="inline-block mb-6 px-6 py-2 bg-galactic-violet/20 border border-galactic-violet/50 rounded-full">
-						<span className="text-electric-purple font-semibold text-sm">About Logica</span>
+					<div className="inline-flex items-center gap-2 mb-8 px-5 py-2.5 bg-[#8B5CF6]/15 border border-[#8B5CF6]/30 rounded-full backdrop-blur-sm">
+						<span className="w-2 h-2 bg-[#8B5CF6] rounded-full animate-pulse" />
+						<span className="text-[#A78BFA] font-semibold text-sm tracking-wide">About NEW_WEBSITE_NAME</span>
 					</div>
           
-					<h1 className="text-soft-white mb-6">
+					<h1 className="text-[#F8FAFC] mb-6 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
 						Building the Systems<br />
-						<span className="text-gradient">That Power Growth</span>
+						<span className="bg-gradient-to-r from-[#8B5CF6] via-[#EC4899] to-[#22D3EE] bg-clip-text text-transparent">That Power Growth</span>
 					</h1>
           
-					<p className="text-xl text-soft-white/80 mb-10 max-w-3xl mx-auto leading-relaxed">
+					<p className="text-lg md:text-xl text-[#CBD5E1] mb-10 max-w-3xl mx-auto leading-relaxed">
 						We're a team of engineers, designers, and problem-solvers dedicated to one mission: making your business run smoother through custom technology.
 					</p>
 				</motion.div>
 			</section>
 
-			<section className="py-24 bg-background">
+			<section className="py-24 bg-[#0F0A1F]">
 				<div className="max-w-7xl mx-auto px-6 lg:px-8">
 					<div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 						<motion.div
@@ -113,12 +121,12 @@ export default function About() {
 							variants={staggerContainer}
 						>
 							<motion.div variants={fadeInUp} className="flex items-center gap-3 mb-6">
-								<Target size={32} weight="bold" className="text-galactic-violet" />
-								<h2 className="text-deep-space">Our Story</h2>
+								<Target size={32} weight="bold" className="text-[#8B5CF6]" />
+								<h2 className="text-[#F8FAFC] text-3xl font-bold">Our Story</h2>
 							</motion.div>
-							<motion.div variants={fadeInUp} className="space-y-4 text-muted-foreground leading-relaxed">
+							<motion.div variants={fadeInUp} className="space-y-4 text-[#CBD5E1] leading-relaxed">
 								<p>
-											Logica was born from a simple observation: too many businesses are held back by outdated systems, expensive software that doesn't quite fit, or manual processes that waste countless hours.
+											NEW_WEBSITE_NAME was born from a simple observation: too many businesses are held back by outdated systems, expensive software that doesn't quite fit, or manual processes that waste countless hours.
 								</p>
 								<p>
 									We saw organizations struggling with off-the-shelf solutions that required them to change their workflows rather than adapting to how they actually work. We saw talented teams bogged down by administrative tasks that could be automated. We saw opportunities for growth limited by technical constraints.
@@ -141,11 +149,11 @@ export default function About() {
 						>
 							{stats.map((stat, index) => (
 								<motion.div key={index} variants={fadeInUp}>
-									<Card className="text-center p-8 border-2 border-galactic-violet/20 bg-linear-to-br from-galactic-violet/5 to-electric-purple/5">
-										<div className="text-5xl font-heading font-bold text-galactic-violet mb-2">
+									<Card className="text-center p-8 border border-[#8B5CF6]/30 bg-[#1A1033]/80 backdrop-blur-sm">
+										<div className="text-5xl font-heading font-bold bg-gradient-to-r from-[#8B5CF6] to-[#EC4899] bg-clip-text text-transparent mb-2">
 											{stat.number}
 										</div>
-										<div className="text-sm text-muted-foreground font-medium">{stat.label}</div>
+										<div className="text-sm text-[#CBD5E1] font-medium">{stat.label}</div>
 									</Card>
 								</motion.div>
 							))}
@@ -154,7 +162,7 @@ export default function About() {
 				</div>
 			</section>
 
-			<section className="py-24 bg-muted">
+			<section className="py-24 bg-[#030108]">
 				<div className="max-w-7xl mx-auto px-6 lg:px-8">
 					<motion.div
 						initial="initial"
@@ -165,20 +173,20 @@ export default function About() {
 					>
 						<div>
 							<motion.div variants={fadeInUp} className="flex items-center gap-3 mb-6">
-								<Target size={32} weight="bold" className="text-galactic-violet" />
-								<h2 className="text-deep-space">Our Mission</h2>
+								<Target size={32} weight="bold" className="text-[#8B5CF6]" />
+								<h2 className="text-[#F8FAFC] text-3xl font-bold">Our Mission</h2>
 							</motion.div>
-							<motion.p variants={fadeInUp} className="text-lg text-muted-foreground leading-relaxed">
+							<motion.p variants={fadeInUp} className="text-lg text-[#CBD5E1] leading-relaxed">
 								To empower every organization with custom technology solutions that eliminate operational friction, automate repetitive tasks, and unlock new growth opportunities—making powerful systems accessible regardless of size or budget.
 							</motion.p>
 						</div>
 
 						<div>
 							<motion.div variants={fadeInUp} className="flex items-center gap-3 mb-6">
-								<Eye size={32} weight="bold" className="text-electric-purple" />
-								<h2 className="text-deep-space">Our Vision</h2>
+								<Eye size={32} weight="bold" className="text-[#EC4899]" />
+								<h2 className="text-[#F8FAFC] text-3xl font-bold">Our Vision</h2>
 							</motion.div>
-							<motion.p variants={fadeInUp} className="text-lg text-muted-foreground leading-relaxed">
+							<motion.p variants={fadeInUp} className="text-lg text-[#CBD5E1] leading-relaxed">
 								To become the universal solution provider for any organization needing systems for operations, HR, inventory, finance, CRM, analytics, workflow automation, dashboards, or fully custom platforms—a trusted partner for digital transformation across all industries.
 							</motion.p>
 						</div>
@@ -186,8 +194,10 @@ export default function About() {
 				</div>
 			</section>
 
-			<section className="py-24 bg-background">
-				<div className="max-w-7xl mx-auto px-6 lg:px-8">
+			<section className="py-24 bg-[#0F0A1F] relative overflow-hidden">
+				{/* Subtle glow effect */}
+				<div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#8B5CF6]/10 rounded-full blur-[120px] pointer-events-none" />
+				<div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
 					<motion.div
 						initial="initial"
 						whileInView="animate"
@@ -195,10 +205,10 @@ export default function About() {
 						variants={staggerContainer}
 						className="text-center mb-16"
 					>
-						<motion.h2 variants={fadeInUp} className="text-deep-space mb-4">
+						<motion.h2 variants={fadeInUp} className="text-[#F8FAFC] text-3xl md:text-4xl font-bold mb-4">
 							Our Core Values
 						</motion.h2>
-						<motion.p variants={fadeInUp} className="text-xl text-muted-foreground max-w-2xl mx-auto">
+						<motion.p variants={fadeInUp} className="text-xl text-[#CBD5E1] max-w-2xl mx-auto">
 							The principles that guide every decision we make
 						</motion.p>
 					</motion.div>
@@ -214,15 +224,15 @@ export default function About() {
 							const Icon = value.icon
 							return (
 								<motion.div key={index} variants={fadeInUp}>
-									<Card className="h-full text-center card-hover border-border/50 hover:border-galactic-violet/50">
+									<Card className="h-full text-center bg-[#1A1033]/60 border border-[#8B5CF6]/20 backdrop-blur-sm hover:border-[#8B5CF6]/50 transition-all duration-300">
 										<CardHeader>
-											<div className="w-16 h-16 bg-galaxy-gradient rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-												<Icon size={32} weight="bold" className="text-soft-white" />
+											<div className="w-16 h-16 bg-gradient-to-br from-[#8B5CF6] to-[#EC4899] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-[#8B5CF6]/25">
+												<Icon size={32} weight="bold" className="text-white" />
 											</div>
-											<CardTitle className="text-xl">{value.title}</CardTitle>
+											<CardTitle className="text-xl text-[#F8FAFC]">{value.title}</CardTitle>
 										</CardHeader>
 										<CardContent>
-											<CardDescription className="text-base">{value.description}</CardDescription>
+											<CardDescription className="text-base text-[#CBD5E1]">{value.description}</CardDescription>
 										</CardContent>
 									</Card>
 								</motion.div>
@@ -232,8 +242,9 @@ export default function About() {
 				</div>
 			</section>
 
-			<section className="py-24 bg-deep-space text-soft-white relative overflow-hidden">
-				<div className="absolute inset-0 pattern-grid opacity-10" />
+			<section className="py-24 bg-[#030108] text-[#F8FAFC] relative overflow-hidden">
+				<div className="absolute inset-0 pattern-grid opacity-20" />
+				<div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#EC4899]/8 rounded-full blur-[150px] pointer-events-none" />
 				<div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
 					<motion.div
 						initial="initial"
@@ -242,10 +253,10 @@ export default function About() {
 						variants={staggerContainer}
 						className="text-center mb-16"
 					>
-						<motion.h2 variants={fadeInUp} className="text-soft-white mb-4">
+						<motion.h2 variants={fadeInUp} className="text-[#F8FAFC] text-3xl md:text-4xl font-bold mb-4">
 							What Makes Us Different
 						</motion.h2>
-						<motion.p variants={fadeInUp} className="text-xl text-soft-white/80 max-w-2xl mx-auto">
+						<motion.p variants={fadeInUp} className="text-xl text-[#CBD5E1] max-w-2xl mx-auto">
 							Our approach to building systems that actually work
 						</motion.p>
 					</motion.div>
@@ -259,9 +270,9 @@ export default function About() {
 					>
 						{teamPrinciples.map((principle, index) => (
 							<motion.div key={index} variants={fadeInUp}>
-								<div className="flex items-start gap-3 bg-soft-white/5 p-6 rounded-xl border border-soft-white/10">
-									<CheckCircle size={24} weight="fill" className="text-electric-purple shrink-0 mt-1" />
-									<p className="text-soft-white/90">{principle}</p>
+								<div className="flex items-start gap-3 bg-[#8B5CF6]/5 p-6 rounded-xl border border-[#8B5CF6]/20 backdrop-blur-sm hover:border-[#8B5CF6]/40 transition-colors">
+									<CheckCircle size={24} weight="fill" className="text-[#A78BFA] shrink-0 mt-1" />
+									<p className="text-[#CBD5E1]">{principle}</p>
 								</div>
 							</motion.div>
 						))}
@@ -269,8 +280,10 @@ export default function About() {
 				</div>
 			</section>
 
-			<section className="py-24 bg-galaxy-gradient text-soft-white relative overflow-hidden">
-				<div className="absolute inset-0 pattern-dots opacity-20" />
+			<section className="py-24 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #7C3AED 0%, #8B5CF6 50%, #EC4899 100%)' }}>
+				<div className="absolute inset-0 pattern-grid opacity-20" />
+				<div className="absolute top-0 left-1/4 w-64 h-64 bg-white/10 rounded-full blur-[100px] pointer-events-none" />
+				<div className="absolute bottom-0 right-1/4 w-48 h-48 bg-[#22D3EE]/20 rounded-full blur-[80px] pointer-events-none" />
 				<motion.div
 					initial="initial"
 					whileInView="animate"
@@ -278,15 +291,15 @@ export default function About() {
 					variants={fadeInUp}
 					className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center"
 				>
-					<Rocket size={64} weight="bold" className="text-soft-white mx-auto mb-6" />
-					<h2 className="text-soft-white mb-6">
+					<Rocket size={64} weight="bold" className="text-white mx-auto mb-6" />
+					<h2 className="text-white text-3xl md:text-4xl font-bold mb-6">
 						Let's Build Something Amazing Together
 					</h2>
-					<p className="text-xl text-soft-white/90 mb-10 max-w-2xl mx-auto">
+					<p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
 						Whether you need a complete business system or a simple automation tool, we're ready to help you transform your operations.
 					</p>
 					<Link to="/contact">
-						<Button size="lg" className="bg-soft-white text-deep-space hover:bg-soft-white/90 hover:scale-105 transition-all text-lg px-10 py-6 shadow-2xl">
+						<Button size="lg" className="bg-white text-[#7C3AED] hover:bg-white/90 hover:scale-105 transition-all text-lg px-10 py-6 shadow-2xl font-semibold">
 							Start the Conversation
 							<ArrowRight className="ml-2" size={20} weight="bold" />
 						</Button>

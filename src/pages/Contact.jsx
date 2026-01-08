@@ -115,9 +115,20 @@ export default function Contact() {
 
 	return (
 		<div className="min-h-screen pt-20">
-			<section className="relative py-24 bg-deep-space text-soft-white overflow-hidden">
-				<div className="absolute inset-0 pattern-grid" />
-				<div className="absolute inset-0 bg-galaxy-radial opacity-30" />
+			<section className="relative py-24 bg-[#030108] text-[#F8FAFC] overflow-hidden">
+				{/* Enhanced cosmic background */}
+				<div className="absolute inset-0" style={{
+					background: `
+						radial-gradient(ellipse 80% 50% at 50% 0%, rgba(139, 92, 246, 0.18) 0%, transparent 60%),
+						radial-gradient(ellipse 60% 40% at 100% 100%, rgba(236, 72, 153, 0.12) 0%, transparent 50%),
+						linear-gradient(180deg, #030108 0%, #0F0A1F 50%, #1A1033 100%)
+					`
+				}} />
+				<div className="absolute inset-0 pattern-grid opacity-40" />
+				
+				{/* Animated glow orbs */}
+				<div className="absolute top-1/4 left-1/4 w-72 h-72 bg-[#8B5CF6]/15 rounded-full blur-[100px] animate-pulse pointer-events-none" />
+				<div className="absolute bottom-1/4 right-1/4 w-56 h-56 bg-[#EC4899]/10 rounded-full blur-[80px] animate-pulse pointer-events-none" style={{ animationDelay: '1s' }} />
         
 				<motion.div
 					initial="initial"
@@ -125,22 +136,23 @@ export default function Contact() {
 					variants={fadeInUp}
 					className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 text-center"
 				>
-					<div className="inline-block mb-6 px-6 py-2 bg-galactic-violet/20 border border-galactic-violet/50 rounded-full">
-						<span className="text-electric-purple font-semibold text-sm">Get in Touch</span>
+					<div className="inline-flex items-center gap-2 mb-8 px-5 py-2.5 bg-[#8B5CF6]/15 border border-[#8B5CF6]/30 rounded-full backdrop-blur-sm">
+						<span className="w-2 h-2 bg-[#8B5CF6] rounded-full animate-pulse" />
+						<span className="text-[#A78BFA] font-semibold text-sm tracking-wide">Get in Touch</span>
 					</div>
           
-					<h1 className="text-soft-white mb-6">
+					<h1 className="text-[#F8FAFC] mb-6 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
 						Let's Build Your<br />
-						<span className="text-gradient">Perfect System</span>
+						<span className="bg-gradient-to-r from-[#8B5CF6] via-[#EC4899] to-[#22D3EE] bg-clip-text text-transparent">Perfect System</span>
 					</h1>
           
-					<p className="text-xl text-soft-white/80 mb-10 max-w-3xl mx-auto">
+					<p className="text-lg md:text-xl text-[#CBD5E1] mb-10 max-w-3xl mx-auto leading-relaxed">
 						Book a free consultation to discuss your needs. No obligations, just honest advice on the best path forward.
 					</p>
 				</motion.div>
 			</section>
 
-			<section className="py-24 bg-background">
+			<section className="py-24 bg-[#0F0A1F]">
 				<div className="max-w-7xl mx-auto px-6 lg:px-8">
 					<div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
 						<motion.div
@@ -150,10 +162,10 @@ export default function Contact() {
 							variants={staggerContainer}
 							className="lg:col-span-2"
 						>
-							<Card className="border-2 border-border">
+							<Card className="border border-[#8B5CF6]/30 bg-[#1A1033]/80 backdrop-blur-sm">
 								<CardHeader>
-									<CardTitle className="text-2xl">Book a Free Consultation</CardTitle>
-									<CardDescription className="text-base">
+									<CardTitle className="text-2xl text-[#F8FAFC]">Book a Free Consultation</CardTitle>
+									<CardDescription className="text-base text-[#CBD5E1]">
 										Tell us about your project and we'll schedule a call to discuss how we can help
 									</CardDescription>
 								</CardHeader>
@@ -271,44 +283,44 @@ export default function Contact() {
 							className="space-y-6"
 						>
 							<motion.div variants={fadeInUp}>
-								<Card className="border-2 border-galactic-violet/20 bg-linear-to-br from-galactic-violet/5 to-electric-purple/5">
+								<Card className="border border-[#8B5CF6]/30 bg-[#1A1033]/80 backdrop-blur-sm">
 									<CardHeader>
-										<CardTitle className="text-xl">Contact Information</CardTitle>
+										<CardTitle className="text-xl text-[#F8FAFC]">Contact Information</CardTitle>
 									</CardHeader>
 									<CardContent className="space-y-4">
 										<a
-											href="mailto:hello@uvltechnology.com"
-											className="flex items-center gap-3 text-muted-foreground hover:text-galactic-violet transition-colors group"
+											href="mailto:hello@newwebsitename.com"
+											className="flex items-center gap-3 text-[#CBD5E1] hover:text-[#A78BFA] transition-colors group"
 										>
-											<div className="w-10 h-10 bg-galactic-violet/10 group-hover:bg-galactic-violet group-hover:text-soft-white rounded-lg flex items-center justify-center transition-colors">
-												<EnvelopeSimple size={20} weight="bold" />
+											<div className="w-10 h-10 bg-[#8B5CF6]/20 group-hover:bg-[#8B5CF6] rounded-lg flex items-center justify-center transition-colors">
+												<EnvelopeSimple size={20} weight="bold" className="text-[#A78BFA] group-hover:text-white" />
 											</div>
 											<div>
-												<div className="text-xs text-muted-foreground">Email</div>
-												<div className="font-medium text-deep-space">hello@uvltechnology.com</div>
+												<div className="text-xs text-[#64748B]">Email</div>
+												<div className="font-medium text-[#F8FAFC]">hello@newwebsitename.com</div>
 											</div>
 										</a>
 
 										<a
 											href="tel:+1234567890"
-											className="flex items-center gap-3 text-muted-foreground hover:text-galactic-violet transition-colors group"
+											className="flex items-center gap-3 text-[#CBD5E1] hover:text-[#A78BFA] transition-colors group"
 										>
-											<div className="w-10 h-10 bg-galactic-violet/10 group-hover:bg-galactic-violet group-hover:text-soft-white rounded-lg flex items-center justify-center transition-colors">
-												<Phone size={20} weight="bold" />
+											<div className="w-10 h-10 bg-[#8B5CF6]/20 group-hover:bg-[#8B5CF6] rounded-lg flex items-center justify-center transition-colors">
+												<Phone size={20} weight="bold" className="text-[#A78BFA] group-hover:text-white" />
 											</div>
 											<div>
-												<div className="text-xs text-muted-foreground">Phone</div>
-												<div className="font-medium text-deep-space">+1 (234) 567-890</div>
+												<div className="text-xs text-[#64748B]">Phone</div>
+												<div className="font-medium text-[#F8FAFC]">+1 (234) 567-890</div>
 											</div>
 										</a>
 
-										<div className="flex items-center gap-3 text-muted-foreground">
-											<div className="w-10 h-10 bg-galactic-violet/10 rounded-lg flex items-center justify-center">
-												<MapPin size={20} weight="bold" />
+										<div className="flex items-center gap-3 text-[#CBD5E1]">
+											<div className="w-10 h-10 bg-[#8B5CF6]/20 rounded-lg flex items-center justify-center">
+												<MapPin size={20} weight="bold" className="text-[#A78BFA]" />
 											</div>
 											<div>
-												<div className="text-xs text-muted-foreground">Location</div>
-												<div className="font-medium text-deep-space">Global Remote Operations</div>
+												<div className="text-xs text-[#64748B]">Location</div>
+												<div className="font-medium text-[#F8FAFC]">Global Remote Operations</div>
 											</div>
 										</div>
 									</CardContent>
@@ -316,34 +328,34 @@ export default function Contact() {
 							</motion.div>
 
 							<motion.div variants={fadeInUp}>
-								<Card className="border-2 border-electric-purple/20">
+								<Card className="border border-[#EC4899]/30 bg-[#1A1033]/80 backdrop-blur-sm">
 									<CardHeader>
-										<CardTitle className="text-xl flex items-center gap-2">
-											<CheckCircle size={24} weight="bold" className="text-electric-purple" />
+										<CardTitle className="text-xl flex items-center gap-2 text-[#F8FAFC]">
+											<CheckCircle size={24} weight="bold" className="text-[#EC4899]" />
 											What Happens Next?
 										</CardTitle>
 									</CardHeader>
-									<CardContent className="space-y-3 text-sm text-muted-foreground">
+									<CardContent className="space-y-3 text-sm text-[#CBD5E1]">
 										<div className="flex gap-3">
-											<div className="w-6 h-6 bg-galactic-violet rounded-full flex items-center justify-center text-soft-white text-xs font-bold shrink-0">
+											<div className="w-6 h-6 bg-gradient-to-br from-[#8B5CF6] to-[#EC4899] rounded-full flex items-center justify-center text-white text-xs font-bold shrink-0">
 												1
 											</div>
 											<p>We review your submission and respond within 24 hours</p>
 										</div>
 										<div className="flex gap-3">
-											<div className="w-6 h-6 bg-galactic-violet rounded-full flex items-center justify-center text-soft-white text-xs font-bold shrink-0">
+											<div className="w-6 h-6 bg-gradient-to-br from-[#8B5CF6] to-[#EC4899] rounded-full flex items-center justify-center text-white text-xs font-bold shrink-0">
 												2
 											</div>
 											<p>Schedule a 30-minute discovery call to understand your needs</p>
 										</div>
 										<div className="flex gap-3">
-											<div className="w-6 h-6 bg-galactic-violet rounded-full flex items-center justify-center text-soft-white text-xs font-bold shrink-0">
+											<div className="w-6 h-6 bg-gradient-to-br from-[#8B5CF6] to-[#EC4899] rounded-full flex items-center justify-center text-white text-xs font-bold shrink-0">
 												3
 											</div>
 											<p>Receive a detailed proposal with timeline and pricing</p>
 										</div>
 										<div className="flex gap-3">
-											<div className="w-6 h-6 bg-galactic-violet rounded-full flex items-center justify-center text-soft-white text-xs font-bold shrink-0">
+											<div className="w-6 h-6 bg-gradient-to-br from-[#8B5CF6] to-[#EC4899] rounded-full flex items-center justify-center text-white text-xs font-bold shrink-0">
 												4
 											</div>
 											<p>Start building your custom solution</p>
@@ -356,7 +368,7 @@ export default function Contact() {
 				</div>
 			</section>
 
-			<section className="py-24 bg-muted">
+			<section className="py-24 bg-[#030108]">
 				<div className="max-w-4xl mx-auto px-6 lg:px-8">
 					<motion.div
 						initial="initial"
@@ -366,10 +378,10 @@ export default function Contact() {
 						className="text-center mb-12"
 					>
 						<motion.div variants={fadeInUp} className="flex items-center justify-center gap-3 mb-4">
-							<Question size={32} weight="bold" className="text-galactic-violet" />
-							<h2 className="text-deep-space">Frequently Asked Questions</h2>
+							<Question size={32} weight="bold" className="text-[#8B5CF6]" />
+							<h2 className="text-[#F8FAFC] text-3xl md:text-4xl font-bold">Frequently Asked Questions</h2>
 						</motion.div>
-						<motion.p variants={fadeInUp} className="text-xl text-muted-foreground">
+						<motion.p variants={fadeInUp} className="text-xl text-[#CBD5E1]">
 							Quick answers to common questions
 						</motion.p>
 					</motion.div>
@@ -385,12 +397,12 @@ export default function Contact() {
 								<AccordionItem
 									key={index}
 									value={`item-${index}`}
-									className="bg-card border-2 border-border rounded-lg px-6"
+									className="bg-[#1A1033]/60 border border-[#8B5CF6]/20 rounded-lg px-6 backdrop-blur-sm"
 								>
-									<AccordionTrigger className="text-left font-heading font-bold text-deep-space hover:text-galactic-violet">
+									<AccordionTrigger className="text-left font-heading font-bold text-[#F8FAFC] hover:text-[#A78BFA]">
 										{faq.question}
 									</AccordionTrigger>
-									<AccordionContent className="text-muted-foreground leading-relaxed">
+									<AccordionContent className="text-[#CBD5E1] leading-relaxed">
 										{faq.answer}
 									</AccordionContent>
 								</AccordionItem>
