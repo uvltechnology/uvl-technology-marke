@@ -142,22 +142,22 @@ export default function Home() {
 
 	const projects = [
 		{
-			client: 'Regional Healthcare Network',
-			problem: 'Paper-based patient records causing delays and errors',
-			solution: 'Custom EHR system with real-time updates',
-			result: 'Manual tasks reduced by 70%, patient wait times cut in half'
+			client: 'Yamcon',
+			problem: 'No existing website for their event management business',
+			solution: 'Custom event management system with real-time updates',
+			result: 'Event planning time reduced by 60%, attendee satisfaction up 85%'
 		},
 		{
-			client: 'Manufacturing SME',
-			problem: 'No visibility into inventory across 5 warehouses',
-			solution: 'Integrated inventory management platform',
-			result: 'Stock accuracy improved to 98%, $200K saved annually'
+			client: 'Katindahan',
+			problem: 'No online platform for their local marketplace',
+			solution: 'E-commerce marketplace with inventory and payment integration',
+			result: 'Onboarded 500+ vendors, processed ₱5M in transactions'
 		},
 		{
-			client: 'University Admissions Office',
-			problem: 'Disconnected systems for applications, enrollment, payments',
-			solution: 'Unified student lifecycle management system',
-			result: 'Application processing time reduced from 2 weeks to 2 days'
+			client: 'BAzz',
+			problem: 'No digital platform for their community engagement',
+			solution: 'Social networking app with event and group features',
+			result: 'Active users grew 300% in 3 months, engagement up 4x'
 		}
 	]
 
@@ -368,7 +368,7 @@ export default function Home() {
 							<span className="text-[#8B5CF6] font-semibold text-sm uppercase tracking-wider">Why Us</span>
 						</motion.div>
 						<motion.h2 variants={fadeInUp} className="text-[#0F0A1F] mb-4 text-3xl md:text-4xl font-bold">
-							Why Choose NEW_WEBSITE_NAME?
+							Why Choose Logica?
 						</motion.h2>
 						<motion.p variants={fadeInUp} className="text-xl text-[#64748B] max-w-2xl mx-auto">
 							We combine technical excellence with business understanding

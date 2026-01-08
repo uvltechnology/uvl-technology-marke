@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { EnvelopeSimple, Phone, MapPin, LinkedinLogo, TwitterLogo, GithubLogo } from '@phosphor-icons/react'
+import { EnvelopeSimple, Phone, MapPin, LinkedinLogo, TwitterLogo, GithubLogo, FacebookLogo } from '@phosphor-icons/react'
 
 export default function Footer() {
   const footerLinks = {
@@ -34,10 +34,10 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-11 h-11 rounded-xl bg-galaxy-gradient flex items-center justify-center shadow-[0_0_20px_rgba(139,92,246,0.3)]">
-                <span className="text-white font-bold text-lg">N</span>
+                <span className="text-white font-bold text-lg">L</span>
               </div>
               <span className="text-[#F8FAFC] font-heading font-bold text-xl tracking-wide">
-                NEW_WEBSITE_NAME
+                Logica
               </span>
             </div>
             <p className="text-[#94A3B8] mb-6 max-w-sm leading-relaxed">
@@ -81,21 +81,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
-            <h4 className="font-heading font-semibold mb-5 text-[#F8FAFC] text-sm uppercase tracking-wider">Solutions</h4>
-            <ul className="space-y-3">
-              {footerLinks.solutions.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.path}
-                    className="text-[#94A3B8] hover:text-[#A78BFA] transition-colors duration-200 text-sm"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Solutions section hidden for now */}
 
           <div>
             <h4 className="font-heading font-semibold mb-5 text-[#F8FAFC] text-sm uppercase tracking-wider">Industries</h4>
@@ -116,7 +102,7 @@ export default function Footer() {
 
         <div className="border-t border-[#8B5CF6]/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-[#64748B] text-sm">
-            © {new Date().getFullYear()} NEW_WEBSITE_NAME. All rights reserved.
+            © {new Date().getFullYear()} Logica. All rights reserved.
           </p>
           <div className="flex items-center gap-3">
             <a
@@ -145,6 +131,15 @@ export default function Footer() {
               aria-label="GitHub"
             >
               <GithubLogo size={20} weight="fill" />
+            </a>
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-lg bg-[#8B5CF6]/10 flex items-center justify-center text-[#64748B] hover:text-[#A78BFA] hover:bg-[#8B5CF6]/20 transition-all duration-200"
+              aria-label="Facebook"
+            >
+              <FacebookLogo size={20} weight="fill" />
             </a>
           </div>
         </div>
