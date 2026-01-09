@@ -5,8 +5,7 @@ import {
 	Phone,
 	MapPin,
 	PaperPlaneTilt,
-	CheckCircle,
-	Question
+	CheckCircle
 } from '@phosphor-icons/react'
 import { Button } from '@/components/ui/button.jsx'
 import { Input } from '@/components/ui/input.jsx'
@@ -20,12 +19,7 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from '@/components/ui/select.jsx'
-import {
-	Accordion,
-	AccordionContent,
-	AccordionItem,
-	AccordionTrigger,
-} from '@/components/ui/accordion.jsx'
+// Accordion imports removed as FAQ section is hidden
 import { toast } from 'sonner'
 
 const fadeInUp = {
@@ -86,32 +80,7 @@ export default function Contact() {
 		setFormData(prev => ({ ...prev, [field]: value }))
 	}
 
-	const faqs = [
-		{
-			question: 'How long does it take to build a custom system?',
-			answer: 'Timeline varies based on complexity, but most projects range from 6-16 weeks. Simple tools can be delivered in 4-6 weeks, while comprehensive enterprise systems may take 3-6 months. We provide a detailed timeline after our initial discovery phase.'
-		},
-		{
-			question: 'What does a custom system cost?',
-			answer: 'Pricing depends on scope, features, and complexity. Projects typically range from $15,000 for simple automation tools to $100,000+ for enterprise-wide systems. We provide transparent, fixed-price quotes after understanding your requirements.'
-		},
-		{
-			question: 'Do you provide ongoing support after launch?',
-			answer: 'Absolutely. We offer flexible support packages including bug fixes, feature updates, hosting management, and technical assistance. Most clients opt for monthly retainer agreements for peace of mind.'
-		},
-		{
-			question: 'Can you integrate with our existing systems?',
-			answer: 'Yes! We specialize in building systems that play well with others. Whether it\'s your accounting software, CRM, payment processor, or legacy database, we can integrate it seamlessly.'
-		},
-		{
-			question: 'What if we need changes after the system is built?',
-			answer: 'We build with flexibility in mind. You own all the code, and we\'re always available for enhancements, new features, or adjustments as your business evolves. Most clients continue working with us long-term.'
-		},
-		{
-			question: 'Do you work with startups or only established companies?',
-			answer: 'We work with organizations of all sizes! From solo founders to enterprise teams, we tailor our approach and pricing to fit your stage and budget.'
-		}
-	]
+	// FAQ data removed as the section is hidden
 
 	return (
 		<div className="min-h-screen pt-20">
@@ -162,103 +131,100 @@ export default function Contact() {
 							variants={staggerContainer}
 							className="lg:col-span-2"
 						>
-							<Card className="border border-[#8B5CF6]/30 bg-[#1A1033]/80 backdrop-blur-sm">
-								<CardHeader>
-									<CardTitle className="text-2xl text-[#F8FAFC]">Book a Free Consultation</CardTitle>
-									<CardDescription className="text-base text-[#CBD5E1]">
+							<Card className="relative overflow-hidden border border-[#8B5CF6]/40 bg-gradient-to-br from-[#1A1033]/95 via-[#0F0A1F]/90 to-[#1A1033]/95 backdrop-blur-xl shadow-2xl shadow-[#8B5CF6]/20">
+								{/* Decorative corner glow */}
+								<div className="absolute top-0 right-0 w-72 h-72 bg-gradient-to-br from-[#8B5CF6]/20 to-transparent rounded-full blur-3xl -z-10" />
+								<div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-[#EC4899]/15 to-transparent rounded-full blur-3xl -z-10" />
+								
+								<CardHeader className="border-b border-[#8B5CF6]/20 pb-8">
+									<CardTitle className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#F8FAFC] to-[#CBD5E1] bg-clip-text text-transparent">Book a Free Consultation</CardTitle>
+									<CardDescription className="text-base text-[#94A3B8] mt-3">
 										Tell us about your project and we'll schedule a call to discuss how we can help
 									</CardDescription>
 								</CardHeader>
-								<CardContent>
-									<form onSubmit={handleSubmit} className="space-y-6">
+								<CardContent className="pt-8">
+									<form onSubmit={handleSubmit} className="space-y-8">
+										{/* Name & Company Row */}
 										<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-											<div className="space-y-2">
-												<Label htmlFor="name">Full Name *</Label>
+											<div className="space-y-3">
+												<Label htmlFor="name" className="text-[#F8FAFC] font-semibold">Full Name *</Label>
 												<Input
 													id="name"
 													placeholder="John Smith"
 													value={formData.name}
 													onChange={(e) => handleChange('name', e.target.value)}
+													className="bg-[#0F0A1F]/50 border border-[#8B5CF6]/30 rounded-lg px-4 py-3 text-[#F8FAFC] placeholder-[#64748B] focus:border-[#8B5CF6] focus:ring-2 focus:ring-[#8B5CF6]/30 transition-all"
 													required
 												/>
 											</div>
 
-											<div className="space-y-2">
-												<Label htmlFor="company">Company Name *</Label>
+											<div className="space-y-3">
+												<Label htmlFor="company" className="text-[#F8FAFC] font-semibold">Company Name</Label>
 												<Input
 													id="company"
 													placeholder="Acme Corporation"
 													value={formData.company}
 													onChange={(e) => handleChange('company', e.target.value)}
-													required
+													className="bg-[#0F0A1F]/50 border border-[#8B5CF6]/30 rounded-lg px-4 py-3 text-[#F8FAFC] placeholder-[#64748B] focus:border-[#8B5CF6] focus:ring-2 focus:ring-[#8B5CF6]/30 transition-all"
 												/>
 											</div>
 										</div>
 
+										{/* Email & Phone Row */}
 										<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-											<div className="space-y-2">
-												<Label htmlFor="email">Email Address *</Label>
+											<div className="space-y-3">
+												<Label htmlFor="email" className="text-[#F8FAFC] font-semibold">Email Address *</Label>
 												<Input
 													id="email"
 													type="email"
 													placeholder="john@acme.com"
 													value={formData.email}
 													onChange={(e) => handleChange('email', e.target.value)}
+													className="bg-[#0F0A1F]/50 border border-[#8B5CF6]/30 rounded-lg px-4 py-3 text-[#F8FAFC] placeholder-[#64748B] focus:border-[#8B5CF6] focus:ring-2 focus:ring-[#8B5CF6]/30 transition-all"
 													required
 												/>
 											</div>
 
-											<div className="space-y-2">
-												<Label htmlFor="phone">Phone Number</Label>
+											<div className="space-y-3">
+												<Label htmlFor="phone" className="text-[#F8FAFC] font-semibold">Phone Number</Label>
 												<Input
 													id="phone"
 													type="tel"
 													placeholder="+1 (555) 123-4567"
 													value={formData.phone}
 													onChange={(e) => handleChange('phone', e.target.value)}
+													className="bg-[#0F0A1F]/50 border border-[#8B5CF6]/30 rounded-lg px-4 py-3 text-[#F8FAFC] placeholder-[#64748B] focus:border-[#8B5CF6] focus:ring-2 focus:ring-[#8B5CF6]/30 transition-all"
 												/>
 											</div>
 										</div>
 
-										<div className="space-y-2">
-											<Label htmlFor="systemNeeds">What system do you need? *</Label>
+										{/* System Needs */}
+										<div className="space-y-3">
+											<Label htmlFor="systemNeeds" className="text-[#F8FAFC] font-semibold">What system do you need? *</Label>
 											<Textarea
 												id="systemNeeds"
 												placeholder="Describe your current challenges and what you're looking to build. The more detail, the better we can help!"
 												value={formData.systemNeeds}
 												onChange={(e) => handleChange('systemNeeds', e.target.value)}
 												rows={5}
+												className="bg-[#0F0A1F]/50 border border-[#8B5CF6]/30 rounded-lg px-4 py-3 text-[#F8FAFC] placeholder-[#64748B] focus:border-[#8B5CF6] focus:ring-2 focus:ring-[#8B5CF6]/30 transition-all resize-none"
 												required
 											/>
 										</div>
 
-										<div className="space-y-2">
-											<Label htmlFor="timeline">Desired Timeline *</Label>
-											<Select
-												value={formData.timeline}
-												onValueChange={(value) => handleChange('timeline', value)}
-												required
-											>
-												<SelectTrigger id="timeline">
-													<SelectValue placeholder="Select a timeline" />
-												</SelectTrigger>
-												<SelectContent>
-													<SelectItem value="asap">ASAP (1-2 months)</SelectItem>
-													<SelectItem value="3-6-months">3-6 months</SelectItem>
-													<SelectItem value="6-12-months">6-12 months</SelectItem>
-													<SelectItem value="exploring">Just exploring options</SelectItem>
-												</SelectContent>
-											</Select>
-										</div>
+										{/* Timeline section removed */}
 
+										{/* Submit Button */}
 										<Button
 											type="submit"
-											size="lg"
 											disabled={isSubmitting}
-											className="w-full bg-galaxy-gradient hover:shadow-xl hover:shadow-galactic-violet/50 hover:scale-[1.02] transition-all text-lg"
+											className="w-full bg-gradient-to-r from-[#8B5CF6] via-[#A78BFA] to-[#EC4899] hover:shadow-2xl hover:shadow-[#8B5CF6]/40 hover:scale-[1.01] transition-all duration-300 text-white font-bold text-lg py-6 rounded-lg border-0"
 										>
 											{isSubmitting ? (
-												'Sending...'
+												<span className="flex items-center justify-center gap-2">
+													<span className="inline-block animate-spin">⏳</span>
+													Sending...
+												</span>
 											) : (
 												<>
 													Send Consultation Request
@@ -267,9 +233,13 @@ export default function Contact() {
 											)}
 										</Button>
 
-										<p className="text-sm text-muted-foreground text-center">
-											We typically respond within 24 hours. Your information is kept confidential.
-										</p>
+										{/* Disclaimer */}
+										<div className="flex items-start gap-3 p-4 bg-[#8B5CF6]/5 border border-[#8B5CF6]/20 rounded-lg">
+											<div className="w-1 h-1 bg-[#8B5CF6] rounded-full mt-2 shrink-0" />
+											<p className="text-sm text-[#94A3B8] leading-relaxed">
+												We typically respond within 24 hours. Your information is kept confidential and secure.
+											</p>
+										</div>
 									</form>
 								</CardContent>
 							</Card>
@@ -368,49 +338,7 @@ export default function Contact() {
 				</div>
 			</section>
 
-			<section className="py-24 bg-[#030108]">
-				<div className="max-w-4xl mx-auto px-6 lg:px-8">
-					<motion.div
-						initial="initial"
-						whileInView="animate"
-						viewport={{ once: true }}
-						variants={staggerContainer}
-						className="text-center mb-12"
-					>
-						<motion.div variants={fadeInUp} className="flex items-center justify-center gap-3 mb-4">
-							<Question size={32} weight="bold" className="text-[#8B5CF6]" />
-							<h2 className="text-[#F8FAFC] text-3xl md:text-4xl font-bold">Frequently Asked Questions</h2>
-						</motion.div>
-						<motion.p variants={fadeInUp} className="text-xl text-[#CBD5E1]">
-							Quick answers to common questions
-						</motion.p>
-					</motion.div>
-
-					<motion.div
-						initial="initial"
-						whileInView="animate"
-						viewport={{ once: true }}
-						variants={fadeInUp}
-					>
-						<Accordion type="single" collapsible className="space-y-4">
-							{faqs.map((faq, index) => (
-								<AccordionItem
-									key={index}
-									value={`item-${index}`}
-									className="bg-[#1A1033]/60 border border-[#8B5CF6]/20 rounded-lg px-6 backdrop-blur-sm"
-								>
-									<AccordionTrigger className="text-left font-heading font-bold text-[#F8FAFC] hover:text-[#A78BFA]">
-										{faq.question}
-									</AccordionTrigger>
-									<AccordionContent className="text-[#CBD5E1] leading-relaxed">
-										{faq.answer}
-									</AccordionContent>
-								</AccordionItem>
-							))}
-						</Accordion>
-					</motion.div>
-				</div>
-			</section>
+			{/* FAQ section hidden */}
 		</div>
 	)
 }

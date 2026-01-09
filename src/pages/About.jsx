@@ -97,7 +97,7 @@ export default function About() {
 				>
 					<div className="inline-flex items-center gap-2 mb-8 px-5 py-2.5 bg-[#8B5CF6]/15 border border-[#8B5CF6]/30 rounded-full backdrop-blur-sm">
 						<span className="w-2 h-2 bg-[#8B5CF6] rounded-full animate-pulse" />
-						<span className="text-[#A78BFA] font-semibold text-sm tracking-wide">About NEW_WEBSITE_NAME</span>
+						<span className="text-[#A78BFA] font-semibold text-sm tracking-wide">About Logica</span>
 					</div>
           
 					<h1 className="text-[#F8FAFC] mb-6 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
@@ -126,7 +126,7 @@ export default function About() {
 							</motion.div>
 							<motion.div variants={fadeInUp} className="space-y-4 text-[#CBD5E1] leading-relaxed">
 								<p>
-											NEW_WEBSITE_NAME was born from a simple observation: too many businesses are held back by outdated systems, expensive software that doesn't quite fit, or manual processes that waste countless hours.
+											Logica was born from a simple observation: too many businesses are held back by outdated systems, expensive software that doesn't quite fit, or manual processes that waste countless hours.
 								</p>
 								<p>
 									We saw organizations struggling with off-the-shelf solutions that required them to change their workflows rather than adapting to how they actually work. We saw talented teams bogged down by administrative tasks that could be automated. We saw opportunities for growth limited by technical constraints.
@@ -145,15 +145,15 @@ export default function About() {
 							whileInView="animate"
 							viewport={{ once: true }}
 							variants={staggerContainer}
-							className="grid grid-cols-2 gap-6"
+							className="grid grid-cols-2 gap-4 md:gap-6"
 						>
 							{stats.map((stat, index) => (
 								<motion.div key={index} variants={fadeInUp}>
-									<Card className="text-center p-8 border border-[#8B5CF6]/30 bg-[#1A1033]/80 backdrop-blur-sm">
-										<div className="text-5xl font-heading font-bold bg-gradient-to-r from-[#8B5CF6] to-[#EC4899] bg-clip-text text-transparent mb-2">
+									<Card className="text-center p-4 md:p-8 border border-[#8B5CF6]/30 bg-[#1A1033]/80 backdrop-blur-sm">
+										<div className="text-3xl md:text-5xl font-heading font-bold bg-gradient-to-r from-[#8B5CF6] to-[#EC4899] bg-clip-text text-transparent mb-2">
 											{stat.number}
 										</div>
-										<div className="text-sm text-[#CBD5E1] font-medium">{stat.label}</div>
+										<div className="text-xs md:text-sm text-[#CBD5E1] font-medium">{stat.label}</div>
 									</Card>
 								</motion.div>
 							))}
@@ -280,7 +280,7 @@ export default function About() {
 				</div>
 			</section>
 
-			<section className="py-24 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #7C3AED 0%, #8B5CF6 50%, #EC4899 100%)' }}>
+			<section className="py-16 md:py-24 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #7C3AED 0%, #8B5CF6 50%, #EC4899 100%)' }}>
 				<div className="absolute inset-0 pattern-grid opacity-20" />
 				<div className="absolute top-0 left-1/4 w-64 h-64 bg-white/10 rounded-full blur-[100px] pointer-events-none" />
 				<div className="absolute bottom-0 right-1/4 w-48 h-48 bg-[#22D3EE]/20 rounded-full blur-[80px] pointer-events-none" />
@@ -289,17 +289,17 @@ export default function About() {
 					whileInView="animate"
 					viewport={{ once: true }}
 					variants={fadeInUp}
-					className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center"
+					className="relative z-10 max-w-4xl mx-auto px-4 md:px-6 lg:px-8 text-center"
 				>
-					<Rocket size={64} weight="bold" className="text-white mx-auto mb-6" />
-					<h2 className="text-white text-3xl md:text-4xl font-bold mb-6">
+					<Rocket size={48} weight="bold" className="text-white mx-auto mb-4 md:mb-6 md:w-16 md:h-16" />
+					<h2 className="text-white text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">
 						Let's Build Something Amazing Together
 					</h2>
-					<p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
+					<p className="text-base md:text-xl text-white/90 mb-8 md:mb-10 max-w-2xl mx-auto">
 						Whether you need a complete business system or a simple automation tool, we're ready to help you transform your operations.
 					</p>
 					<Link to="/contact">
-						<Button size="lg" className="bg-white text-[#7C3AED] hover:bg-white/90 hover:scale-105 transition-all text-lg px-10 py-6 shadow-2xl font-semibold">
+						<Button size="lg" className="bg-white text-[#7C3AED] hover:bg-white/90 hover:scale-105 transition-all text-base md:text-lg px-8 md:px-10 py-5 md:py-6 shadow-2xl font-semibold w-full sm:w-auto">
 							Start the Conversation
 							<ArrowRight className="ml-2" size={20} weight="bold" />
 						</Button>

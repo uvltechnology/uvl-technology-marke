@@ -142,22 +142,22 @@ export default function Home() {
 
 	const projects = [
 		{
-			client: 'Regional Healthcare Network',
-			problem: 'Paper-based patient records causing delays and errors',
-			solution: 'Custom EHR system with real-time updates',
-			result: 'Manual tasks reduced by 70%, patient wait times cut in half'
+			client: 'Yamcon',
+			problem: 'No existing website for their event management business',
+			solution: 'Custom event management system with real-time updates',
+			result: 'Event planning time reduced by 60%, attendee satisfaction up 85%'
 		},
 		{
-			client: 'Manufacturing SME',
-			problem: 'No visibility into inventory across 5 warehouses',
-			solution: 'Integrated inventory management platform',
-			result: 'Stock accuracy improved to 98%, $200K saved annually'
+			client: 'Katindahan',
+			problem: 'No online platform for their local marketplace',
+			solution: 'E-commerce marketplace with inventory and payment integration',
+			result: 'Onboarded 500+ vendors, processed ₱5M in transactions'
 		},
 		{
-			client: 'University Admissions Office',
-			problem: 'Disconnected systems for applications, enrollment, payments',
-			solution: 'Unified student lifecycle management system',
-			result: 'Application processing time reduced from 2 weeks to 2 days'
+			client: 'BAzz',
+			problem: 'No digital platform for their community engagement',
+			solution: 'Social networking app with event and group features',
+			result: 'Active users grew 300% in 3 months, engagement up 4x'
 		}
 	]
 
@@ -218,15 +218,15 @@ export default function Home() {
 						Your universal partner for custom business systems, workflow automation, and digital transformation. We build the exact solution you need.
 					</p>
           
-					<div className="hero-cta flex flex-col sm:flex-row gap-4 justify-center">
-						<Link to="/contact">
-							<Button size="lg" className="bg-galaxy-gradient hover:shadow-[0_0_40px_rgba(139,92,246,0.5)] hover:scale-105 transition-all duration-300 text-lg px-8 py-6 font-semibold">
+					<div className="hero-cta flex flex-col sm:flex-row gap-4 justify-center px-4">
+						<Link to="/contact" className="w-full sm:w-auto">
+							<Button size="lg" className="w-full sm:w-auto bg-galaxy-gradient hover:shadow-[0_0_40px_rgba(139,92,246,0.5)] hover:scale-105 transition-all duration-300 text-base md:text-lg px-6 md:px-8 py-5 md:py-6 font-semibold">
 								Book a Free Consultation
 								<ArrowRight className="ml-2" size={20} weight="bold" />
 							</Button>
 						</Link>
-						<Link to="/solutions">
-							<Button size="lg" variant="outline" className="border-2 border-[#8B5CF6] text-[#A78BFA] hover:bg-[#8B5CF6]/10 hover:border-[#A78BFA] hover:shadow-[0_0_30px_rgba(139,92,246,0.3)] transition-all duration-300 text-lg px-8 py-6 font-semibold">
+						<Link to="/solutions" className="w-full sm:w-auto">
+							<Button size="lg" variant="outline" className="w-full sm:w-auto border-2 border-[#8B5CF6] text-[#A78BFA] hover:bg-[#8B5CF6]/10 hover:border-[#A78BFA] hover:shadow-[0_0_30px_rgba(139,92,246,0.3)] transition-all duration-300 text-base md:text-lg px-6 md:px-8 py-5 md:py-6 font-semibold">
 								See Our Solutions
 							</Button>
 						</Link>
@@ -368,7 +368,7 @@ export default function Home() {
 							<span className="text-[#8B5CF6] font-semibold text-sm uppercase tracking-wider">Why Us</span>
 						</motion.div>
 						<motion.h2 variants={fadeInUp} className="text-[#0F0A1F] mb-4 text-3xl md:text-4xl font-bold">
-							Why Choose NEW_WEBSITE_NAME?
+							Why Choose Logica?
 						</motion.h2>
 						<motion.p variants={fadeInUp} className="text-xl text-[#64748B] max-w-2xl mx-auto">
 							We combine technical excellence with business understanding
@@ -508,10 +508,10 @@ export default function Home() {
 						whileInView="animate"
 						viewport={{ once: true }}
 						variants={fadeInUp}
-						className="text-center mt-12"
+						className="text-center mt-10 md:mt-12 px-4"
 					>
 						<Link to="/projects">
-							<Button size="lg" variant="outline" className="border-2 border-[#8B5CF6] text-[#8B5CF6] hover:bg-[#8B5CF6] hover:text-white hover:shadow-[0_0_30px_rgba(139,92,246,0.4)] transition-all duration-300 font-semibold">
+							<Button size="lg" variant="outline" className="w-full sm:w-auto border-2 border-[#8B5CF6] text-[#8B5CF6] hover:bg-[#8B5CF6] hover:text-white hover:shadow-[0_0_30px_rgba(139,92,246,0.4)] transition-all duration-300 font-semibold">
 								View All Projects
 								<ArrowRight className="ml-2" size={20} weight="bold" />
 							</Button>
@@ -520,7 +520,7 @@ export default function Home() {
 				</div>
 			</section>
 
-			<section className="py-24 relative overflow-hidden" style={{
+			<section className="py-16 md:py-24 relative overflow-hidden" style={{
 				background: 'linear-gradient(135deg, #8B5CF6 0%, #7C3AED 50%, #EC4899 100%)'
 			}}>
 				{/* Overlay pattern */}
@@ -537,16 +537,16 @@ export default function Home() {
 					whileInView="animate"
 					viewport={{ once: true }}
 					variants={fadeInUp}
-					className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center"
+					className="relative z-10 max-w-4xl mx-auto px-4 md:px-6 lg:px-8 text-center"
 				>
-					<h2 className="text-[#F8FAFC] mb-6 text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-						Tell us what system you need,<br />and we'll build it.
+					<h2 className="text-[#F8FAFC] mb-4 md:mb-6 text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight">
+						Tell us what system you need,<br className="hidden sm:block" /><span className="sm:hidden"> </span>and we'll build it.
 					</h2>
-					<p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
+					<p className="text-base md:text-xl text-white/90 mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed">
 						Whether it's HR, CRM, inventory, finance, or something completely custom—we've got you covered.
 					</p>
 					<Link to="/contact">
-						<Button size="lg" className="bg-white text-[#8B5CF6] hover:bg-white/95 hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] transition-all duration-300 text-lg px-10 py-6 font-bold shadow-2xl">
+						<Button size="lg" className="bg-white text-[#8B5CF6] hover:bg-white/95 hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] transition-all duration-300 text-base md:text-lg px-8 md:px-10 py-5 md:py-6 font-bold shadow-2xl w-full sm:w-auto">
 							Start Your Project Today
 							<ArrowRight className="ml-2" size={20} weight="bold" />
 						</Button>

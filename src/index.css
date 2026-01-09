@@ -196,3 +196,214 @@
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
+/* ===========================================
+   GLOBAL RESPONSIVE IMPROVEMENTS
+   =========================================== */
+
+/* ===== MOBILE BASE TYPOGRAPHY ===== */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  h3 {
+    font-size: 1.25rem !important;
+  }
+}
+
+/* ===== HERO SECTION RESPONSIVE ===== */
+@media (max-width: 640px) {
+  #galaxy-hero .hero-content {
+    padding: 60px 16px !important;
+  }
+  
+  #galaxy-hero .hero-title {
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  #galaxy-hero .hero-subtitle {
+    font-size: 1rem !important;
+    padding: 0 8px;
+  }
+  
+  #galaxy-hero .hero-badge {
+    padding: 8px 16px !important;
+  }
+  
+  #galaxy-hero .hero-badge span {
+    font-size: 0.7rem !important;
+  }
+  
+  #galaxy-hero .hero-cta {
+    padding: 0 16px;
+  }
+  
+  #galaxy-hero .hero-cta button,
+  #galaxy-hero .hero-cta a button {
+    width: 100%;
+    padding: 16px 24px !important;
+    font-size: 0.95rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #galaxy-hero .hero-title {
+    font-size: 1.75rem !important;
+  }
+  
+  #galaxy-hero .hero-subtitle {
+    font-size: 0.9rem !important;
+  }
+}
+
+/* ===== PAGE SECTIONS RESPONSIVE ===== */
+@media (max-width: 768px) {
+  section {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+  
+  .max-w-7xl {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+}
+
+/* ===== CARD GRIDS RESPONSIVE ===== */
+@media (max-width: 640px) {
+  .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-4,
+  .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3 {
+    gap: 16px !important;
+  }
+}
+
+/* ===== FOOTER RESPONSIVE ===== */
+@media (max-width: 768px) {
+  #galaxy-footer .grid {
+    gap: 32px !important;
+  }
+  
+  #galaxy-footer h4 {
+    margin-bottom: 12px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #galaxy-footer {
+    padding: 48px 16px !important;
+  }
+  
+  #galaxy-footer .border-t {
+    flex-direction: column !important;
+    gap: 16px !important;
+    text-align: center;
+  }
+}
+
+/* ===== CONTACT PAGE RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .grid.grid-cols-1.lg\:grid-cols-3 {
+    gap: 32px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid.grid-cols-1.md\:grid-cols-2 {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+}
+
+/* ===== ABOUT PAGE STATS RESPONSIVE ===== */
+@media (max-width: 480px) {
+  .grid.grid-cols-2 {
+    gap: 12px !important;
+  }
+  
+  .grid.grid-cols-2 .text-5xl {
+    font-size: 2.5rem !important;
+  }
+}
+
+/* ===== INDUSTRIES PAGE CARDS RESPONSIVE ===== */
+@media (max-width: 640px) {
+  .grid.grid-cols-1.lg\:grid-cols-2 > div {
+    margin-bottom: 24px;
+  }
+}
+
+/* ===== MISSION/VISION SECTION RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .grid.grid-cols-1.lg\:grid-cols-2.gap-16 {
+    gap: 32px !important;
+  }
+}
+
+/* ===== SUCCESS STORIES CARDS RESPONSIVE ===== */
+@media (max-width: 640px) {
+  .grid.grid-cols-1.md\:grid-cols-3 {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+}
+
+/* ===== PROCESS STEPS RESPONSIVE ===== */
+@media (max-width: 640px) {
+  .text-7xl {
+    font-size: 3.5rem !important;
+  }
+}
+
+/* ===== CTA SECTIONS RESPONSIVE ===== */
+@media (max-width: 640px) {
+  section[style*="gradient"] h2 {
+    font-size: 1.5rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  section[style*="gradient"] p {
+    font-size: 0.95rem !important;
+  }
+  
+  section[style*="gradient"] button {
+    padding: 14px 28px !important;
+    font-size: 0.95rem !important;
+  }
+}
+
+/* ===== NAVBAR MOBILE IMPROVEMENTS ===== */
+@media (max-width: 1024px) {
+  #galaxy-navbar .max-w-7xl {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #galaxy-navbar .h-20 {
+    height: 64px !important;
+  }
+  
+  #galaxy-navbar .w-11 {
+    width: 36px !important;
+    height: 36px !important;
+  }
+  
+  #galaxy-navbar .text-xl {
+    font-size: 1rem !important;
+  }
+}

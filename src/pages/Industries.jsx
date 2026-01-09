@@ -228,22 +228,23 @@ export default function Industries() {
 							return (
 								<motion.div key={index} variants={fadeInUp}>
 									<Card className="overflow-hidden border border-[#8B5CF6]/20 bg-[#1A1033]/60 backdrop-blur-sm hover:border-[#8B5CF6]/50 transition-all">
-										<div className="bg-gradient-to-r from-[#8B5CF6]/10 to-[#EC4899]/10 p-8 border-b border-[#8B5CF6]/20">
-											<div className="flex items-center gap-6">
-												<div className="w-20 h-20 bg-gradient-to-br from-[#8B5CF6] to-[#EC4899] rounded-2xl flex items-center justify-center shrink-0 shadow-xl shadow-[#8B5CF6]/25">
-													<Icon size={40} weight="bold" className="text-white" />
+										<div className="bg-gradient-to-r from-[#8B5CF6]/10 to-[#EC4899]/10 p-6 md:p-8 border-b border-[#8B5CF6]/20">
+											<div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
+												<div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-[#8B5CF6] to-[#EC4899] rounded-2xl flex items-center justify-center shrink-0 shadow-xl shadow-[#8B5CF6]/25">
+													<Icon size={32} weight="bold" className="text-white md:hidden" />
+													<Icon size={40} weight="bold" className="text-white hidden md:block" />
 												</div>
 												<div>
-													<h2 className="text-3xl font-heading font-bold text-[#F8FAFC] mb-2">
+													<h2 className="text-2xl md:text-3xl font-heading font-bold text-[#F8FAFC] mb-2">
 														{industry.name}
 													</h2>
-													<p className="text-lg text-[#CBD5E1]">{industry.description}</p>
+													<p className="text-base md:text-lg text-[#CBD5E1]">{industry.description}</p>
 												</div>
 											</div>
 										</div>
 
-										<CardContent className="p-8">
-											<div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+										<CardContent className="p-6 md:p-8">
+											<div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
 												<div>
 													<div className="flex items-center gap-2 mb-4">
 														<Warning size={24} weight="fill" className="text-[#F87171]" />
@@ -265,7 +266,7 @@ export default function Industries() {
 													<div className="flex items-center gap-2 mb-4">
 														<Lightbulb size={24} weight={"fill"} className="text-[#8B5CF6]" />
 														<h3 className="text-xl font-heading font-bold text-[#F8FAFC]">
-															How NEW_WEBSITE_NAME Helps
+															How Logica Helps
 														</h3>
 													</div>
 													<ul className="space-y-2">
@@ -304,7 +305,7 @@ export default function Industries() {
 				</div>
 			</section>
 
-			<section className="py-24 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #7C3AED 0%, #8B5CF6 50%, #EC4899 100%)' }}>
+			<section className="py-16 md:py-24 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #7C3AED 0%, #8B5CF6 50%, #EC4899 100%)' }}>
 				<div className="absolute inset-0 pattern-grid opacity-20" />
 				<div className="absolute top-0 left-1/4 w-64 h-64 bg-white/10 rounded-full blur-[100px] pointer-events-none" />
 				<div className="absolute bottom-0 right-1/4 w-48 h-48 bg-[#22D3EE]/20 rounded-full blur-[80px] pointer-events-none" />
@@ -313,16 +314,16 @@ export default function Industries() {
 					whileInView="animate"
 					viewport={{ once: true }}
 					variants={fadeInUp}
-					className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center"
+					className="relative z-10 max-w-4xl mx-auto px-4 md:px-6 lg:px-8 text-center"
 				>
-					<h2 className="text-white text-3xl md:text-4xl font-bold mb-6">
+					<h2 className="text-white text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">
 						Don't See Your Industry?
 					</h2>
-					<p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
+					<p className="text-base md:text-xl text-white/90 mb-8 md:mb-10 max-w-2xl mx-auto">
 						We've worked with businesses across countless sectors. Whatever your industry, we can build the perfect system for your needs.
 					</p>
 					<Link to="/contact">
-						<Button size="lg" className="bg-white text-[#7C3AED] hover:bg-white/90 hover:scale-105 transition-all text-lg px-10 py-6 shadow-2xl font-semibold">
+						<Button size="lg" className="bg-white text-[#7C3AED] hover:bg-white/90 hover:scale-105 transition-all text-base md:text-lg px-8 md:px-10 py-5 md:py-6 shadow-2xl font-semibold w-full sm:w-auto">
 							Let's Discuss Your Industry
 							<ArrowRight className="ml-2" size={20} weight="bold" />
 						</Button>

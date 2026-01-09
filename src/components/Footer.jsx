@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import { EnvelopeSimple, Phone, MapPin, LinkedinLogo, TwitterLogo, GithubLogo } from '@phosphor-icons/react'
 import logo from '@/assets/logica1.jpg'
+import { EnvelopeSimple, Phone, MapPin, LinkedinLogo, TwitterLogo, GithubLogo, FacebookLogo } from '@phosphor-icons/react'
 
 export default function Footer() {
   const footerLinks = {
@@ -80,21 +80,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
-            <h4 className="font-heading font-semibold mb-5 text-[#F8FAFC] text-sm uppercase tracking-wider">Solutions</h4>
-            <ul className="space-y-3">
-              {footerLinks.solutions.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.path}
-                    className="text-[#94A3B8] hover:text-[#A78BFA] transition-colors duration-200 text-sm"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Solutions section hidden for now */}
 
           <div>
             <h4 className="font-heading font-semibold mb-5 text-[#F8FAFC] text-sm uppercase tracking-wider">Industries</h4>
@@ -144,6 +130,15 @@ export default function Footer() {
               aria-label="GitHub"
             >
               <GithubLogo size={20} weight="fill" />
+            </a>
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-lg bg-[#8B5CF6]/10 flex items-center justify-center text-[#64748B] hover:text-[#A78BFA] hover:bg-[#8B5CF6]/20 transition-all duration-200"
+              aria-label="Facebook"
+            >
+              <FacebookLogo size={20} weight="fill" />
             </a>
           </div>
         </div>
