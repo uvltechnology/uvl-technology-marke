@@ -1666,3 +1666,93 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ===========================================
+   COMPREHENSIVE RESPONSIVE STYLES
+   Mobile-first responsive enhancements
+   =========================================== */
+
+/* ===== PROJECTS PAGE MOBILE IMPROVEMENTS ===== */
+@media (max-width: 480px) {
+  #projects-page .page-header {
+    padding: 30px 16px 20px;
+  }
+  
+  #projects-page .header-title {
+    font-size: 2rem;
+  }
+  
+  #projects-page .header-desc {
+    font-size: 0.85rem;
+  }
+  
+  #projects-page .header-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+  }
+  
+  /* Scale down book + phone on smaller screens */
+  #projects-page .book-3d {
+    width: 120px;
+    height: 145px;
+    margin-top: -75px;
+  }
+  
+  #projects-page .book-code {
+    font-size: 2.6rem;
+  }
+  
+  #projects-page .phone-wrapper {
+    width: 120px;
+    height: 240px;
+    margin-top: -25px;
+  }
+  
+  #projects-page .tile-name {
+    font-size: 0.9rem;
+  }
+  
+  #projects-page .status-text {
+    font-size: 0.6rem;
+  }
+  
+  /* CTA section mobile */
+  #projects-page .cta-title {
+    font-size: 1.75rem;
+  }
+  
+  #projects-page .cta-text {
+    font-size: 0.95rem;
+  }
+  
+  #projects-page .cta-button {
+    padding: 14px 28px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+  #projects-page .header-title {
+    font-size: 1.75rem;
+  }
+  
+  #projects-page .book-3d {
+    width: 100px;
+    height: 125px;
+    margin-top: -65px;
+  }
+  
+  #projects-page .book-code {
+    font-size: 2.2rem;
+  }
+  
+  #projects-page .phone-wrapper {
+    width: 100px;
+    height: 200px;
+  }
+  
+  #projects-page .projects-grid {
+    max-width: 220px;
+  }
+}
