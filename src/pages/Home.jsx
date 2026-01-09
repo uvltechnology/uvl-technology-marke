@@ -210,7 +210,7 @@ export default function Home() {
 					</motion.div>
           
 					<h1 className="hero-title text-[#F8FAFC] mb-8 text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] tracking-tight">
-						Skip all the stress.<br />
+						 We Power The System Behind Your Ideas.<br />
 						<span className="gradient-text bg-gradient-to-r from-[#8B5CF6] via-[#EC4899] to-[#22D3EE] bg-clip-text text-transparent">Automate the rest.</span>
 					</h1>
           

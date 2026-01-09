@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { EnvelopeSimple, Phone, MapPin, LinkedinLogo, TwitterLogo, GithubLogo } from '@phosphor-icons/react'
+import logo from '@/assets/logica1.jpg'
 
 export default function Footer() {
   const footerLinks = {
@@ -33,22 +34,20 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-11 h-11 rounded-xl bg-galaxy-gradient flex items-center justify-center shadow-[0_0_20px_rgba(139,92,246,0.3)]">
-                <span className="text-white font-bold text-lg">N</span>
-              </div>
+              <img src={logo} alt="Logica" className="w-11 h-11 rounded-xl object-cover shadow-[0_0_20px_rgba(139,92,246,0.3)]" />
               <span className="text-[#F8FAFC] font-heading font-bold text-xl tracking-wide">
-                NEW_WEBSITE_NAME
+                Logica
               </span>
             </div>
             <p className="text-[#94A3B8] mb-6 max-w-sm leading-relaxed">
               Skip all the stress. Automate the rest. Your universal partner for business systems and digital transformation.
             </p>
             <div className="flex flex-col gap-3 text-sm">
-              <a href="mailto:hello@newwebsitename.com" className="flex items-center gap-3 text-[#94A3B8] hover:text-[#A78BFA] transition-colors duration-200">
+              <a href="mailto:hello@logica.com" className="flex items-center gap-3 text-[#94A3B8] hover:text-[#A78BFA] transition-colors duration-200">
                 <div className="w-8 h-8 rounded-lg bg-[#8B5CF6]/10 flex items-center justify-center">
                   <EnvelopeSimple size={16} weight="bold" className="text-[#8B5CF6]" />
                 </div>
-                hello@newwebsitename.com
+                hello@logica.com
               </a>
               <a href="tel:+1234567890" className="flex items-center gap-3 text-[#94A3B8] hover:text-[#A78BFA] transition-colors duration-200">
                 <div className="w-8 h-8 rounded-lg bg-[#8B5CF6]/10 flex items-center justify-center">
@@ -116,7 +115,7 @@ export default function Footer() {
 
         <div className="border-t border-[#8B5CF6]/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-[#64748B] text-sm">
-            © {new Date().getFullYear()} NEW_WEBSITE_NAME. All rights reserved.
+            © {new Date().getFullYear()} Logica. All rights reserved.
           </p>
           <div className="flex items-center gap-3">
             <a

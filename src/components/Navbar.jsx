@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { List, X } from '@phosphor-icons/react'
 import { Button } from '@/components/ui/button.jsx'
+import logo from '@/assets/logica1.jpg'
 
 export default function Navbar() {
 	const [isScrolled, setIsScrolled] = useState(false)
@@ -42,11 +43,9 @@ export default function Navbar() {
 				<div className="max-w-7xl mx-auto px-6 lg:px-8">
 					<div className="flex items-center justify-between h-20">
 						<Link to="/" className="flex items-center gap-3 group shrink-0">
-							<div className="w-11 h-11 rounded-xl bg-galaxy-gradient flex items-center justify-center shadow-lg group-hover:shadow-[0_0_20px_rgba(139,92,246,0.5)] transition-all duration-300">
-								<span className="text-white font-bold text-lg">N</span>
-							</div>
+							<img src={logo} alt="Logica" className="w-11 h-11 rounded-xl object-cover shadow-lg group-hover:shadow-[0_0_20px_rgba(139,92,246,0.5)] transition-all duration-300" />
 							<span className="text-[#F8FAFC] font-heading font-bold text-xl tracking-wide group-hover:text-[#A78BFA] transition-colors duration-300">
-								NEW_WEBSITE_NAME
+								Logica
 							</span>
 						</Link>
 
