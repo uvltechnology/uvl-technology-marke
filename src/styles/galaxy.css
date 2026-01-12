@@ -1322,7 +1322,7 @@
   display: none;
   position: absolute;
   top: 50%;
-  right: -20px;
+  right: -10px;
   transform: translateY(-50%);
   width: 28px;
   height: 28px;
@@ -1349,7 +1349,7 @@
   }
 
   #projects-page .item-label {
-    bottom: 40px;
+    bottom: -30px;
   }
 }
 

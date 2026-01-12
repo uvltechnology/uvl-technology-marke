@@ -137,12 +137,6 @@ export default function Projects() {
         {/* Layer 4: Vignette overlay */}
         <div className="stage-vignette" />
 
-        {/* Layer 5: Neon horizon platform */}
-        <div className="stage-platform">
-          <div className="platform-glow-line" />
-          <div className="platform-reflection-surface" />
-          <div className="platform-ambient-glow" />
-        </div>
 
         {/* Header */}
         <header className="stage-header">
@@ -189,14 +183,6 @@ export default function Projects() {
                     className="screen-image"
                     loading="lazy"
                   />
-
-
-
-                  {/* Cube floor reflection (Layer 8) */}
-                  <div className="cube-reflection" />
-
-                  {/* Cube glow on floor */}
-                  <div className="cube-floor-glow" />
 
                   {/* Project name label */}
                   <div className="item-label">

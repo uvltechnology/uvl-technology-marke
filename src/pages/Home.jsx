@@ -208,12 +208,12 @@ export default function Home() {
 					</motion.div>
           
 					<h1 className="hero-title text-[#F8FAFC] mb-8 text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] tracking-tight">
-						 We Power The System Behind Your Ideas.<br />
-						<span className="gradient-text bg-gradient-to-r from-[#7C3AED] via-[#9333EA] to-[#C084FC] bg-clip-text text-transparent">Automate the rest.</span>
+						 We Power The System<br />
+						<span className="gradient-text bg-gradient-to-r from-[#7C3AED] via-[#9333EA] to-[#C084FC] bg-clip-text text-transparent">Behind Your Ideas.</span>
 					</h1>
           
 					<p className="hero-subtitle text-lg md:text-xl lg:text-2xl text-[#CBD5E1] mb-12 max-w-3xl mx-auto leading-relaxed">
-						Your universal partner for custom business systems, workflow automation, and digital transformation. We build the exact solution you need.
+						Creativity, We Gonna Make Your Own Powerful Secured Modern Technology
 					</p>
           
 					<div className="hero-cta flex flex-col sm:flex-row gap-4 justify-center">
