@@ -13,7 +13,6 @@ import {
 } from '@phosphor-icons/react'
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
-import StarField from '@/components/StarField.jsx'
 
 const fadeInUp = {
 	initial: { opacity: 0, y: 20 },
@@ -71,23 +70,15 @@ export default function About() {
 
 	return (
 		<div className="min-h-screen pt-20">
-			<section className="relative py-24 bg-[#030108] text-[#F8FAFC] overflow-hidden">
-				{/* Enhanced cosmic background */}
+			<section className="relative py-24 bg-[#0A0612] text-[#F8FAFC] overflow-hidden">
+				{/* Radial gradient overlay */}
 				<div className="absolute inset-0" style={{
 					background: `
-						radial-gradient(ellipse 80% 50% at 50% 0%, rgba(139, 92, 246, 0.18) 0%, transparent 60%),
-						radial-gradient(ellipse 60% 40% at 100% 100%, rgba(236, 72, 153, 0.12) 0%, transparent 50%),
-						linear-gradient(180deg, #030108 0%, #0F0A1F 50%, #1A1033 100%)
+						radial-gradient(ellipse 60% 40% at 20% 20%, rgba(124, 58, 237, 0.18) 0%, transparent 50%),
+						radial-gradient(ellipse 50% 30% at 80% 80%, rgba(147, 51, 234, 0.12) 0%, transparent 50%)
 					`
 				}} />
 				<div className="absolute inset-0 pattern-grid opacity-40" />
-				
-				{/* Animated glow orbs */}
-				<div className="absolute top-1/4 left-1/4 w-72 h-72 bg-[#8B5CF6]/15 rounded-full blur-[100px] animate-pulse pointer-events-none" />
-				<div className="absolute bottom-1/4 right-1/4 w-56 h-56 bg-[#EC4899]/10 rounded-full blur-[80px] animate-pulse pointer-events-none" style={{ animationDelay: '1s' }} />
-				
-				{/* Star particles effect */}
-				<StarField count={60} />
         
 				<motion.div
 					initial="initial"
@@ -111,7 +102,7 @@ export default function About() {
 				</motion.div>
 			</section>
 
-			<section className="py-24 bg-[#0F0A1F]">
+			<section className="py-24 bg-[#0A0612]">
 				<div className="max-w-7xl mx-auto px-6 lg:px-8">
 					<div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 						<motion.div
@@ -162,7 +153,7 @@ export default function About() {
 				</div>
 			</section>
 
-			<section className="py-24 bg-[#030108]">
+			<section className="py-24 bg-[#0A0612]">
 				<div className="max-w-7xl mx-auto px-6 lg:px-8">
 					<motion.div
 						initial="initial"
@@ -194,9 +185,7 @@ export default function About() {
 				</div>
 			</section>
 
-			<section className="py-24 bg-[#0F0A1F] relative overflow-hidden">
-				{/* Subtle glow effect */}
-				<div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#8B5CF6]/10 rounded-full blur-[120px] pointer-events-none" />
+			<section className="py-24 bg-[#0A0612] relative overflow-hidden">
 				<div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
 					<motion.div
 						initial="initial"
@@ -242,9 +231,8 @@ export default function About() {
 				</div>
 			</section>
 
-			<section className="py-24 bg-[#030108] text-[#F8FAFC] relative overflow-hidden">
+			<section className="py-24 bg-[#0A0612] text-[#F8FAFC] relative overflow-hidden">
 				<div className="absolute inset-0 pattern-grid opacity-20" />
-				<div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#EC4899]/8 rounded-full blur-[150px] pointer-events-none" />
 				<div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
 					<motion.div
 						initial="initial"
@@ -280,10 +268,8 @@ export default function About() {
 				</div>
 			</section>
 
-			<section className="py-24 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #7C3AED 0%, #8B5CF6 50%, #EC4899 100%)' }}>
+			<section className="py-24 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, rgba(15, 15, 15, 1) 2%, rgba(140, 82, 255, 1) 100%)' }}>
 				<div className="absolute inset-0 pattern-grid opacity-20" />
-				<div className="absolute top-0 left-1/4 w-64 h-64 bg-white/10 rounded-full blur-[100px] pointer-events-none" />
-				<div className="absolute bottom-0 right-1/4 w-48 h-48 bg-[#22D3EE]/20 rounded-full blur-[80px] pointer-events-none" />
 				<motion.div
 					initial="initial"
 					whileInView="animate"

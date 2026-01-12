@@ -7,6 +7,16 @@
   }
 }
 
+/* Hide scrollbar while allowing scroll */
+html {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
 :root {
   /* Logica Theme - Deep Purple Gradient Palette */
   --deep-space: #0A0612;

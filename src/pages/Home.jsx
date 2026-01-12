@@ -79,34 +79,19 @@ export default function Home() {
 
 	const industries = [
 		{
-			icon: Rocket,
-			name: 'SMEs & Startups',
-			description: 'Scale fast with systems built for growth'
-		},
-		{
-			icon: GraduationCap,
-			name: 'Schools & Universities',
-			description: 'Student management and academic platforms'
-		},
-		{
-			icon: FirstAid,
-			name: 'Healthcare & Clinics',
-			description: 'HIPAA-compliant patient systems'
+			icon: Bank,
+			name: 'Real Estate & Rentals',
+			description: 'Platforms that enable listing, discovery, and booking of short-term and long-term rental properties.'
 		},
 		{
 			icon: Truck,
-			name: 'Logistics & Warehousing',
-			description: 'Supply chain and inventory optimization'
-		},
-		{
-			icon: Bank,
-			name: 'Government & NGOs',
-			description: 'Secure, transparent operational tools'
+			name: 'Tool Rental & Equipment',
+			description: 'Online rental systems for tools and heavy equipment, covering reservations, logistics, and asset maintenance.'
 		},
 		{
 			icon: Storefront,
-			name: 'Retail & E-commerce',
-			description: 'Point of sale and customer management'
+			name: 'Retail & E-commerce Marketplaces',
+			description: 'Multi-vendor marketplaces and e-commerce platforms that connect sellers with customers and handle orders, payments, and logistics.'
 		}
 	]
 
@@ -236,9 +221,15 @@ export default function Home() {
 				</div>
 			</section>
 
-			<section className="py-24 bg-background relative overflow-hidden">
+			<section className="py-24 bg-[#0A0612] relative overflow-hidden">
 				{/* Subtle gradient overlay */}
-				<div className="absolute inset-0 bg-gradient-to-b from-[#160D24]/5 to-transparent pointer-events-none" />
+				<div className="absolute inset-0" style={{
+					background: `
+						radial-gradient(ellipse 60% 40% at 80% 20%, rgba(124, 58, 237, 0.12) 0%, transparent 50%),
+						radial-gradient(ellipse 50% 30% at 20% 80%, rgba(147, 51, 234, 0.08) 0%, transparent 50%)
+					`
+				}} />
+				<div className="absolute inset-0 pattern-grid opacity-30" />
 				
 				<div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
 					<motion.div
@@ -251,10 +242,10 @@ export default function Home() {
 						<motion.div variants={fadeInUp} className="inline-block mb-4 px-4 py-1.5 bg-[#7C3AED]/10 border border-[#7C3AED]/20 rounded-full">
 							<span className="text-[#7C3AED] font-semibold text-sm uppercase tracking-wider">What We Do</span>
 						</motion.div>
-						<motion.h2 variants={fadeInUp} className="text-deep-space mb-4 text-3xl md:text-4xl font-bold">
+						<motion.h2 variants={fadeInUp} className="text-[#F8FAFC] mb-4 text-3xl md:text-4xl font-bold">
 							Solutions Built for Your Needs
 						</motion.h2>
-						<motion.p variants={fadeInUp} className="text-xl text-muted-foreground max-w-2xl mx-auto">
+						<motion.p variants={fadeInUp} className="text-xl text-[#CBD5E1] max-w-2xl mx-auto">
 							From HR systems to analytics platforms, we create custom solutions that fit your exact requirements
 						</motion.p>
 					</motion.div>
@@ -270,18 +261,18 @@ export default function Home() {
 							const Icon = solution.icon
 							return (
 								<motion.div key={index} variants={fadeInUp}>
-									<Card className="h-full card-hover border border-[#7C3AED]/10 hover:border-[#7C3AED]/30 bg-white shadow-sm hover:shadow-[0_20px_40px_rgba(124,58,237,0.12)]">
+									<Card className="h-full card-hover border border-[#8B5CF6]/20 hover:border-[#8B5CF6]/50 bg-[#1A1033]/60 backdrop-blur-sm shadow-sm hover:shadow-[0_20px_40px_rgba(124,58,237,0.2)]">
 										<CardHeader>
 											<div className="w-14 h-14 bg-galaxy-gradient rounded-xl flex items-center justify-center mb-4 shadow-[0_4px_20px_rgba(124,58,237,0.35)]">
 												<Icon size={28} weight="bold" className="text-white" />
 											</div>
-											<CardTitle className="text-xl text-[#0A0612]">{solution.title}</CardTitle>
-											<CardDescription className="text-base text-[#64748B]">{solution.description}</CardDescription>
+											<CardTitle className="text-xl text-[#F8FAFC]">{solution.title}</CardTitle>
+											<CardDescription className="text-base text-[#CBD5E1]">{solution.description}</CardDescription>
 										</CardHeader>
 										<CardContent>
 											<ul className="space-y-2.5">
 												{solution.features.map((feature, idx) => (
-													<li key={idx} className="flex items-start gap-2.5 text-sm text-[#64748B]">
+													<li key={idx} className="flex items-start gap-2.5 text-sm text-[#94A3B8]">
 														<CheckCircle size={18} weight="fill" className="text-[#7C3AED] mt-0.5 shrink-0" />
 														<span>{feature}</span>
 													</li>
@@ -296,8 +287,15 @@ export default function Home() {
 				</div>
 			</section>
 
-			<section className="py-24 bg-[#F8FAFC] relative">
-				<div className="max-w-7xl mx-auto px-6 lg:px-8">
+			<section className="py-24 bg-[#0A0612] relative overflow-hidden">
+				<div className="absolute inset-0" style={{
+					background: `
+						radial-gradient(ellipse 50% 40% at 30% 30%, rgba(124, 58, 237, 0.1) 0%, transparent 50%),
+						radial-gradient(ellipse 60% 30% at 70% 70%, rgba(147, 51, 234, 0.08) 0%, transparent 50%)
+					`
+				}} />
+				<div className="absolute inset-0 pattern-grid opacity-30" />
+				<div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
 					<motion.div
 						initial="initial"
 						whileInView="animate"
@@ -308,10 +306,10 @@ export default function Home() {
 						<motion.div variants={fadeInUp} className="inline-block mb-4 px-4 py-1.5 bg-[#7C3AED]/10 border border-[#7C3AED]/20 rounded-full">
 							<span className="text-[#7C3AED] font-semibold text-sm uppercase tracking-wider">Industries</span>
 						</motion.div>
-						<motion.h2 variants={fadeInUp} className="text-[#0A0612] mb-4 text-3xl md:text-4xl font-bold">
+						<motion.h2 variants={fadeInUp} className="text-[#F8FAFC] mb-4 text-3xl md:text-4xl font-bold">
 							Industries We Serve
 						</motion.h2>
-						<motion.p variants={fadeInUp} className="text-xl text-[#64748B] max-w-2xl mx-auto">
+						<motion.p variants={fadeInUp} className="text-xl text-[#CBD5E1] max-w-2xl mx-auto">
 							Trusted by organizations across diverse sectors
 						</motion.p>
 					</motion.div>
@@ -321,21 +319,21 @@ export default function Home() {
 						whileInView="animate"
 						viewport={{ once: true }}
 						variants={staggerContainer}
-						className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+						className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch"
 					>
 						{industries.map((industry, index) => {
 							const Icon = industry.icon
 							return (
-								<motion.div key={index} variants={fadeInUp}>
-									<Card className="card-hover border border-[#7C3AED]/10 hover:border-[#7C3AED]/30 bg-white shadow-sm hover:shadow-[0_15px_30px_rgba(124,58,237,0.12)]">
-										<CardHeader>
+								<motion.div key={index} variants={fadeInUp} className="h-full">
+									<Card className="h-full card-hover border border-[#8B5CF6]/20 hover:border-[#8B5CF6]/50 bg-[#1A1033]/60 backdrop-blur-sm shadow-sm hover:shadow-[0_15px_30px_rgba(124,58,237,0.2)]">
+										<CardHeader className="h-full flex items-center">
 											<div className="flex items-center gap-4">
 												<div className="w-12 h-12 bg-galaxy-gradient rounded-xl flex items-center justify-center shrink-0 shadow-[0_4px_15px_rgba(124,58,237,0.3)]">
 													<Icon size={24} weight="bold" className="text-white" />
 												</div>
 												<div>
-													<CardTitle className="text-lg text-[#0A0612]">{industry.name}</CardTitle>
-													<CardDescription className="text-[#64748B]">{industry.description}</CardDescription>
+													<CardTitle className="text-lg text-[#F8FAFC]">{industry.name}</CardTitle>
+													<CardDescription className="text-[#CBD5E1]">{industry.description}</CardDescription>
 												</div>
 											</div>
 										</CardHeader>
@@ -347,12 +345,15 @@ export default function Home() {
 				</div>
 			</section>
 
-			<section className="py-24 bg-white relative overflow-hidden">
+			<section className="py-24 bg-[#0A0612] relative overflow-hidden">
 				{/* Subtle background pattern */}
-				<div className="absolute inset-0 opacity-30" style={{
-					backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(124,58,237,0.1) 1px, transparent 0)',
-					backgroundSize: '40px 40px'
+				<div className="absolute inset-0" style={{
+					background: `
+						radial-gradient(ellipse 60% 40% at 50% 20%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
+						radial-gradient(ellipse 50% 30% at 20% 80%, rgba(147, 51, 234, 0.1) 0%, transparent 50%)
+					`
 				}} />
+				<div className="absolute inset-0 pattern-grid opacity-30" />
 				
 				<div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
 					<motion.div
@@ -365,10 +366,10 @@ export default function Home() {
 						<motion.div variants={fadeInUp} className="inline-block mb-4 px-4 py-1.5 bg-[#7C3AED]/10 border border-[#7C3AED]/20 rounded-full">
 							<span className="text-[#7C3AED] font-semibold text-sm uppercase tracking-wider">Why Us</span>
 						</motion.div>
-						<motion.h2 variants={fadeInUp} className="text-[#0A0612] mb-4 text-3xl md:text-4xl font-bold">
+						<motion.h2 variants={fadeInUp} className="text-[#F8FAFC] mb-4 text-3xl md:text-4xl font-bold">
 							Why Choose Logica?
 						</motion.h2>
-						<motion.p variants={fadeInUp} className="text-xl text-[#64748B] max-w-2xl mx-auto">
+						<motion.p variants={fadeInUp} className="text-xl text-[#CBD5E1] max-w-2xl mx-auto">
 							We combine technical excellence with business understanding
 						</motion.p>
 					</motion.div>
@@ -388,8 +389,8 @@ export default function Home() {
 										<div className="w-16 h-16 bg-galaxy-gradient rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-[0_4px_20px_rgba(124,58,237,0.35)] group-hover:shadow-[0_8px_30px_rgba(124,58,237,0.5)] group-hover:scale-105 transition-all duration-300">
 											<Icon size={32} weight="bold" className="text-white" />
 										</div>
-										<h3 className="text-xl font-heading font-bold text-[#0A0612] mb-3">{pillar.title}</h3>
-										<p className="text-[#64748B] leading-relaxed">{pillar.description}</p>
+										<h3 className="text-xl font-heading font-bold text-[#F8FAFC] mb-3">{pillar.title}</h3>
+										<p className="text-[#94A3B8] leading-relaxed">{pillar.description}</p>
 									</div>
 								</motion.div>
 							)
@@ -449,74 +450,7 @@ export default function Home() {
 				</div>
 			</section>
 
-			<section className="py-24 bg-white relative overflow-hidden">
-				<div className="max-w-7xl mx-auto px-6 lg:px-8">
-					<motion.div
-						initial="initial"
-						whileInView="animate"
-						viewport={{ once: true }}
-						variants={staggerContainer}
-						className="text-center mb-16"
-					>
-						<motion.div variants={fadeInUp} className="inline-block mb-4 px-4 py-1.5 bg-[#7C3AED]/10 border border-[#7C3AED]/20 rounded-full">
-							<span className="text-[#7C3AED] font-semibold text-sm uppercase tracking-wider">Projects</span>
-						</motion.div>
-						<motion.h2 variants={fadeInUp} className="text-[#0A0612] mb-4 text-3xl md:text-4xl font-bold">
-							Success Stories
-						</motion.h2>
-						<motion.p variants={fadeInUp} className="text-xl text-[#64748B] max-w-2xl mx-auto">
-							Real results for real businesses
-						</motion.p>
-					</motion.div>
-
-					<motion.div
-						initial="initial"
-						whileInView="animate"
-						viewport={{ once: true }}
-						variants={staggerContainer}
-						className="grid grid-cols-1 md:grid-cols-3 gap-6"
-					>
-						{projects.map((project, index) => (
-							<motion.div key={index} variants={fadeInUp}>
-								<Card className="h-full card-hover border border-[#7C3AED]/10 hover:border-[#7C3AED]/30 bg-gradient-to-br from-white to-[#F8FAFC] shadow-sm hover:shadow-[0_20px_40px_rgba(124,58,237,0.15)]">
-									<CardHeader className="space-y-4">
-										<div className="inline-block px-3 py-1.5 bg-[#7C3AED]/10 border border-[#7C3AED]/20 rounded-full w-fit">
-											<span className="text-[#7C3AED] font-semibold text-sm">{project.client}</span>
-										</div>
-										<div>
-											<CardTitle className="text-base mb-2 text-[#64748B] font-medium">The Challenge</CardTitle>
-											<p className="text-[#0A0612] text-sm leading-relaxed">{project.problem}</p>
-										</div>
-										<div>
-											<CardTitle className="text-base mb-2 text-[#64748B] font-medium">Our Solution</CardTitle>
-											<p className="text-[#0A0612] text-sm leading-relaxed">{project.solution}</p>
-										</div>
-										<div className="pt-2 border-t border-[#7C3AED]/10">
-											<CardTitle className="text-base mb-2 text-[#64748B] font-medium">The Impact</CardTitle>
-											<p className="text-[#7C3AED] font-semibold text-sm">{project.result}</p>
-										</div>
-									</CardHeader>
-								</Card>
-							</motion.div>
-						))}
-					</motion.div>
-
-					<motion.div
-						initial="initial"
-						whileInView="animate"
-						viewport={{ once: true }}
-						variants={fadeInUp}
-						className="text-center mt-12"
-					>
-						<Link to="/projects">
-							<Button size="lg" variant="outline" className="border-2 border-[#7C3AED] text-[#7C3AED] hover:bg-[#7C3AED] hover:text-white hover:shadow-[0_0_30px_rgba(124,58,237,0.5)] transition-all duration-300 font-semibold">
-								View All Projects
-								<ArrowRight className="ml-2" size={20} weight="bold" />
-							</Button>
-						</Link>
-					</motion.div>
-				</div>
-			</section>
+			{/* Success Stories removed per request */}
 
 			<section className="py-24 relative overflow-hidden" style={{
 				background: 'linear-gradient(135deg, #7C3AED 0%, #9333EA 50%, #A855F7 100%)'
