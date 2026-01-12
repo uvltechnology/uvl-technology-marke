@@ -11,8 +11,8 @@ const fadeInUp = {
 
 // Project data - must match Projects.jsx
 const projectsData = {
-  'aladain-jobs': {
-    name: 'Aladain Jobs',
+  'the-vif': {
+    name: 'The VIF',
     description: 'A modern job portal platform connecting employers with talented professionals. Features include advanced job search, applicant tracking, resume builder, and intelligent job matching powered by AI.',
     status: 'In Progress',
     category: 'Web Platform',
@@ -50,17 +50,17 @@ const placeholderImage = 'data:image/svg+xml,' + encodeURIComponent(`
   <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
     <defs>
       <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" style="stop-color:#1A1033"/>
-        <stop offset="50%" style="stop-color:#0F0A1F"/>
-        <stop offset="100%" style="stop-color:#251845"/>
+        <stop offset="0%" style="stop-color:#160D24"/>
+        <stop offset="50%" style="stop-color:#0A0612"/>
+        <stop offset="100%" style="stop-color:#1F1335"/>
       </linearGradient>
       <radialGradient id="glow1" cx="30%" cy="30%" r="50%">
-        <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:0.4"/>
-        <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:0"/>
+        <stop offset="0%" style="stop-color:#7C3AED;stop-opacity:0.4"/>
+        <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:0"/>
       </radialGradient>
       <radialGradient id="glow2" cx="70%" cy="70%" r="40%">
-        <stop offset="0%" style="stop-color:#EC4899;stop-opacity:0.3"/>
-        <stop offset="100%" style="stop-color:#EC4899;stop-opacity:0"/>
+        <stop offset="0%" style="stop-color:#9333EA;stop-opacity:0.3"/>
+        <stop offset="100%" style="stop-color:#9333EA;stop-opacity:0"/>
       </radialGradient>
     </defs>
     <rect width="1200" height="675" fill="url(#bg)"/>
@@ -166,12 +166,12 @@ export default function ProjectDetails() {
                       key={tech}
                       style={{
                         padding: '4px 12px',
-                        background: 'rgba(139, 92, 246, 0.15)',
-                        border: '1px solid rgba(139, 92, 246, 0.3)',
+                        background: 'rgba(124, 58, 237, 0.15)',
+                        border: '1px solid rgba(124, 58, 237, 0.3)',
                         borderRadius: '9999px',
                         fontSize: '0.75rem',
                         fontWeight: '500',
-                        color: '#A78BFA'
+                        color: '#A855F7'
                       }}
                     >
                       {tech}
@@ -191,8 +191,8 @@ export default function ProjectDetails() {
           style={{
             marginTop: '32px',
             padding: '24px',
-            background: 'rgba(139, 92, 246, 0.1)',
-            border: '1px solid rgba(139, 92, 246, 0.2)',
+            background: 'rgba(124, 58, 237, 0.1)',
+            border: '1px solid rgba(124, 58, 237, 0.2)',
             borderRadius: '16px',
             textAlign: 'center'
           }}

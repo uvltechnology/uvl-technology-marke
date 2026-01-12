@@ -3,226 +3,197 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, Eye } from '@phosphor-icons/react'
 
 const fadeInUp = {
-  initial: { opacity: 0, y: 40 },
+  initial: { opacity: 0, y: 30 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }
+  transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }
 }
 
 const staggerContainer = {
   animate: {
-    transition: { staggerChildren: 0.12, delayChildren: 0.2 }
+    transition: { staggerChildren: 0.1, delayChildren: 0.15 }
   }
 }
 
-// Project data - 4 projects with book colors matching Ref A
+// Project data - 4 in-progress projects with Adobe-style cube colors
 const projects = [
   {
-    slug: 'aladain-jobs',
-    name: 'Aladain Jobs',
-    code: 'Aj',
+    slug: 'the-vif',
+    name: 'The VIF',
+    letter: 'Vf',
     description: 'A modern job portal platform connecting employers with talented professionals.',
     status: 'In Progress',
+    category: 'Web Platform',
     image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=900&fit=crop&q=80',
-    // Warm orange like Ref A
-    bookColor: '#F97316',
-    bookColorLight: '#FB923C',
-    bookColorDark: '#C2410C'
+    cubeColor: '#E34F26', // Red-orange
+    cubeGradient: 'linear-gradient(145deg, #FF6B4A 0%, #E34F26 50%, #B8391A 100%)'
   },
   {
     slug: 'yamcon',
     name: 'Yamcon',
-    code: 'Ym',
+    letter: 'Ym',
     description: 'Conference and event management system for seamless organization.',
     status: 'In Progress',
+    category: 'Event Management',
     image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=900&fit=crop&q=80',
-    // Green like Ref B (Accounting Monitoring)
-    bookColor: '#10B981',
-    bookColorLight: '#34D399',
-    bookColorDark: '#047857'
+    cubeColor: '#10B981', // Green
+    cubeGradient: 'linear-gradient(145deg, #34D399 0%, #10B981 50%, #059669 100%)'
   },
   {
     slug: 'katindahan',
     name: 'Katindahan',
-    code: 'Kt',
+    letter: 'Kt',
     description: 'E-commerce marketplace empowering local businesses and entrepreneurs.',
     status: 'In Progress',
+    category: 'E-commerce',
     image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=900&fit=crop&q=80',
-    // Cyan/teal
-    bookColor: '#06B6D4',
-    bookColorLight: '#22D3EE',
-    bookColorDark: '#0891B2'
+    cubeColor: '#06B6D4', // Cyan/teal
+    cubeGradient: 'linear-gradient(145deg, #22D3EE 0%, #06B6D4 50%, #0891B2 100%)'
   },
   {
     slug: 'bazz',
     name: 'BAzz',
-    code: 'Bz',
+    letter: 'Bz',
     description: 'Social networking app for community building and engagement.',
     status: 'In Progress',
+    category: 'Mobile App',
     image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=900&fit=crop&q=80',
-    // Purple/violet
-    bookColor: '#8B5CF6',
-    bookColorLight: '#A78BFA',
-    bookColorDark: '#7C3AED'
+    cubeColor: '#8B5CF6', // Purple
+    cubeGradient: 'linear-gradient(145deg, #A78BFA 0%, #8B5CF6 50%, #7C3AED 100%)'
   }
 ]
 
 export default function Projects() {
   return (
     <div id="projects-page">
-      {/* ===== GALAXY STAGE SECTION ===== */}
-      <section className="galaxy-stage">
-        {/* Background layers */}
-        <div className="bg-base" />
-        <div className="bg-stars" aria-hidden="true">
-          {Array.from({ length: 100 }).map((_, i) => (
+      {/* ===== SHOWCASE STAGE SECTION ===== */}
+      <section className="showcase-stage">
+        {/* Layer 0: Base cosmic background */}
+        <div className="stage-bg-base" />
+        
+        {/* Layer 1: Star particles */}
+        <div className="stage-stars" aria-hidden="true">
+          {Array.from({ length: 80 }).map((_, i) => (
             <span
               key={i}
               className="star"
               style={{
                 left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 80}%`,
-                width: `${Math.random() * 2 + 1}px`,
-                height: `${Math.random() * 2 + 1}px`,
-                animationDelay: `${Math.random() * 6}s`,
-                animationDuration: `${2 + Math.random() * 4}s`
+                top: `${Math.random() * 70}%`,
+                width: `${Math.random() * 2.5 + 0.5}px`,
+                height: `${Math.random() * 2.5 + 0.5}px`,
+                animationDelay: `${Math.random() * 5}s`,
+                animationDuration: `${3 + Math.random() * 3}s`
               }}
             />
           ))}
         </div>
-        <div className="bg-nebula bg-nebula-1" />
-        <div className="bg-nebula bg-nebula-2" />
-        <div className="bg-vignette" />
-        <div className="bg-stage-glow" />
+        
+        {/* Layer 2: Nebula clouds */}
+        <div className="stage-nebula stage-nebula-left" />
+        <div className="stage-nebula stage-nebula-right" />
+        
+        {/* Layer 3: Warm orange flare (left side) */}
+        <div className="stage-warm-flare" />
+        
+        {/* Layer 4: Vignette overlay */}
+        <div className="stage-vignette" />
+        
+        {/* Layer 5: Neon horizon platform */}
+        <div className="stage-platform">
+          <div className="platform-glow-line" />
+          <div className="platform-reflection-surface" />
+          <div className="platform-ambient-glow" />
+        </div>
         
         {/* Header */}
-        <header className="page-header">
+        <header className="stage-header">
           <motion.div
             initial="initial"
             animate="animate"
             variants={fadeInUp}
-            className="header-inner"
+            className="header-content"
           >
-            <span className="header-tag">Our Portfolio</span>
+            <span className="header-eyebrow">Our Portfolio</span>
             <h1 className="header-title">Projects</h1>
-            <p className="header-desc">In Progress Builds</p>
+            <p className="header-subtitle">In Progress Builds</p>
           </motion.div>
         </header>
         
-        {/* ===== BOOK + PHONE GRID ===== */}
-        <div className="projects-grid-wrapper">
+        {/* ===== PHONE + CUBE LINEUP ===== */}
+        <div className="lineup-container">
           <motion.div
             initial="initial"
             whileInView="animate"
-            viewport={{ once: true, margin: '-80px' }}
+            viewport={{ once: true, margin: '-50px' }}
             variants={staggerContainer}
-            className="projects-grid"
+            className="lineup-row"
           >
-            {projects.map((project) => (
+            {projects.map((project, index) => (
               <motion.article
                 key={project.slug}
                 variants={fadeInUp}
-                className="project-tile"
+                className="showcase-item"
                 style={{ 
-                  '--book-main': project.bookColor,
-                  '--book-light': project.bookColorLight,
-                  '--book-dark': project.bookColorDark
+                  '--cube-color': project.cubeColor,
+                  '--cube-gradient': project.cubeGradient,
+                  '--item-index': index
                 }}
               >
                 <Link
                   to={`/projects/${project.slug}`}
-                  className="tile-link"
-                  aria-label={`View ${project.name} project details`}
+                  className="item-link"
+                  aria-label={`View ${project.name} project`}
                 >
-                  {/* ========== PHONE MOCKUP (BACK LAYER) ========== */}
-                  <div className="phone-wrapper">
-                    <div className="phone-device">
-                      {/* Phone frame */}
-                      <div className="phone-bezel">
-                        <div className="phone-notch" />
-                      </div>
-                      {/* Phone screen with Ref C styling */}
+                  {/* Phone mockup (BEHIND - Layer 6) */}
+                  <div className="phone-mockup">
+                    <div className="phone-frame">
+                      <div className="phone-notch" />
                       <div className="phone-screen">
                         <img 
                           src={project.image} 
-                          alt={`${project.name} app interface`}
-                          className="screen-img"
+                          alt={`${project.name} app screen`}
+                          className="screen-image"
                           loading="lazy"
                         />
-                        {/* Dark gradient overlay for text (Ref C style) */}
-                        <div className="screen-overlay" />
-                        {/* Project title on screen (Ref C style) */}
-                        <div className="screen-text">
-                          <span className="screen-title">{project.name}</span>
-                        </div>
-                        {/* Screen glare */}
                         <div className="screen-glare" />
                       </div>
                     </div>
-                    {/* Phone shadow */}
-                    <div className="phone-shadow" />
+                    <div className="phone-reflection" />
                   </div>
                   
-                  {/* ========== 3D BOOK (Modern Realistic Design) ========== */}
-                  <div className="book-3d">
-                    {/* Book binding/spine (left side) */}
-                    <div className="book-binding">
-                      <div className="binding-lines" />
+                  {/* 3D Cube block (FRONT - Layer 7) */}
+                  <div className="cube-3d">
+                    {/* Cube faces */}
+                    <div className="cube-front">
+                      <span className="cube-letter">{project.letter}</span>
+                      <div className="cube-shine" />
                     </div>
-                    {/* Book pages edge (right side - paper stack) */}
-                    <div className="book-pages">
-                      <div className="pages-texture" />
-                    </div>
-                    {/* Book front cover */}
-                    <div className="book-cover">
-                      {/* Top label banner */}
-                      <div className="cover-label">
-                        <span className="label-text">{project.name.split(' ')[0].toUpperCase()}</span>
-                      </div>
-                      {/* Main content */}
-                      <div className="cover-content">
-                        <span className="book-code">{project.code}</span>
-                      </div>
-                      {/* Bottom hexagon icon */}
-                      <div className="cover-hex-icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M12 2L21.5 7.5V16.5L12 22L2.5 16.5V7.5L12 2Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
-                          <path d="M12 6L17 9V15L12 18L7 15V9L12 6Z" stroke="currentColor" strokeWidth="1" strokeLinejoin="round"/>
-                        </svg>
-                      </div>
-                      {/* Cover emboss border */}
-                      <div className="cover-border" />
-                      {/* Glossy shine sweep */}
-                      <div className="cover-shine" />
-                      {/* Subtle texture */}
-                      <div className="cover-texture" />
-                    </div>
-                    {/* Book top edge (paper) */}
-                    <div className="book-top-edge" />
-                    {/* Book shadow on floor */}
-                    <div className="book-shadow" />
-                    {/* Ambient glow */}
-                    <div className="book-glow" />
-                  </div>
-                  
-                  {/* ========== TEXT LABELS (UNDER STACK) ========== */}
-                  <div className="tile-info">
-                    <h3 className="tile-name">{project.name}</h3>
-                    <div className="tile-status">
-                      <span className="status-dot" />
-                      <span className="status-text">In Progress</span>
+                    <div className="cube-top" />
+                    <div className="cube-right" />
+                    
+                    {/* Hover overlay */}
+                    <div className="cube-overlay">
+                      <span className="see-more-pill">
+                        <Eye size={16} weight="bold" />
+                        <span>See more</span>
+                      </span>
                     </div>
                   </div>
                   
-                  {/* ========== HOVER OVERLAY ========== */}
-                  <div className="tile-hover-overlay">
-                    <span className="hover-btn">
-                      <Eye size={18} weight="bold" />
-                      <span>See more</span>
-                    </span>
+                  {/* Cube floor reflection (Layer 8) */}
+                  <div className="cube-reflection" />
+                  
+                  {/* Cube glow on floor */}
+                  <div className="cube-floor-glow" />
+                  
+                  {/* Project name label */}
+                  <div className="item-label">
+                    <span className="label-name">{project.name}</span>
+                    <span className="label-status">{project.status}</span>
                   </div>
                   
-                  {/* Mobile indicator */}
-                  <div className="mobile-indicator">
+                  {/* Mobile tap indicator */}
+                  <div className="mobile-tap-hint">
                     <ArrowRight size={14} weight="bold" />
                   </div>
                 </Link>

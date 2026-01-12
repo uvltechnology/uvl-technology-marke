@@ -8,20 +8,20 @@
 }
 
 :root {
-  /* Galaxy Theme - Primary Purple Palette */
-  --deep-space: #0F0A1F;
-  --galactic-violet: #8B5CF6;
-  --electric-purple: #A78BFA;
+  /* Logica Theme - Deep Purple Gradient Palette */
+  --deep-space: #0A0612;
+  --galactic-violet: #7C3AED;
+  --electric-purple: #9333EA;
   --soft-white: #F8FAFC;
-  --neutral-slate: #1A1033;
-  --cosmic-glow: #C4B5FD;
+  --neutral-slate: #160D24;
+  --cosmic-glow: #A855F7;
   
-  /* Extended Galaxy Colors */
-  --galaxy-void: #030108;
-  --galaxy-pink: #EC4899;
-  --galaxy-cyan: #22D3EE;
-  --galaxy-surface: #1A1033;
-  --galaxy-elevated: #251845;
+  /* Extended Logica Colors */
+  --galaxy-void: #050309;
+  --galaxy-pink: #A855F7;
+  --galaxy-cyan: #C084FC;
+  --galaxy-surface: #160D24;
+  --galaxy-elevated: #1F1335;
   
   --background: var(--soft-white);
   --foreground: var(--deep-space);
@@ -113,27 +113,27 @@
 
 @layer utilities {
   .bg-galaxy-gradient {
-    background: linear-gradient(135deg, var(--galactic-violet) 0%, #7C3AED 50%, var(--galaxy-pink) 100%);
+    background: linear-gradient(135deg, #7C3AED 0%, #9333EA 50%, #A855F7 100%);
   }
   
   .bg-galaxy-radial {
     background: 
-      radial-gradient(ellipse 80% 50% at 50% 0%, rgba(139, 92, 246, 0.2) 0%, transparent 60%),
-      radial-gradient(ellipse 60% 40% at 100% 100%, rgba(236, 72, 153, 0.12) 0%, transparent 50%),
-      radial-gradient(ellipse 50% 30% at 0% 80%, rgba(34, 211, 238, 0.1) 0%, transparent 50%),
-      linear-gradient(180deg, var(--galaxy-void) 0%, var(--deep-space) 50%, var(--galaxy-surface) 100%);
+      radial-gradient(ellipse 80% 50% at 50% 0%, rgba(124, 58, 237, 0.25) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 100% 100%, rgba(147, 51, 234, 0.18) 0%, transparent 50%),
+      radial-gradient(ellipse 50% 30% at 0% 80%, rgba(168, 85, 247, 0.12) 0%, transparent 50%),
+      linear-gradient(135deg, var(--galaxy-void) 0%, var(--deep-space) 40%, #1F1335 100%);
   }
   
   .bg-modern-dark {
-    background: linear-gradient(135deg, var(--galaxy-void) 0%, var(--deep-space) 50%, var(--galaxy-surface) 100%);
+    background: linear-gradient(135deg, var(--galaxy-void) 0%, var(--deep-space) 40%, #1F1335 100%);
   }
   
   .glow-purple {
-    box-shadow: 0 0 30px rgba(139, 92, 246, 0.4), 0 0 60px rgba(139, 92, 246, 0.2);
+    box-shadow: 0 0 30px rgba(124, 58, 237, 0.5), 0 0 60px rgba(147, 51, 234, 0.3);
   }
   
   .text-gradient {
-    background: linear-gradient(135deg, var(--galactic-violet) 0%, var(--galaxy-pink) 50%, var(--galaxy-cyan) 100%);
+    background: linear-gradient(135deg, #7C3AED 0%, #9333EA 40%, #C084FC 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -145,7 +145,7 @@
   
   .card-hover:hover {
     @apply -translate-y-2;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(139, 92, 246, 0.15);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(124, 58, 237, 0.2);
   }
   
   .pattern-dots {
@@ -156,23 +156,23 @@
   
   .pattern-grid {
     background-image: 
-      linear-gradient(rgba(139, 92, 246, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(139, 92, 246, 0.04) 1px, transparent 1px);
+      linear-gradient(rgba(124, 58, 237, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(124, 58, 237, 0.05) 1px, transparent 1px);
     background-size: 60px 60px;
   }
   
   .glass-card {
-    background: rgba(15, 10, 31, 0.7);
+    background: rgba(10, 6, 18, 0.8);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(139, 92, 246, 0.15);
+    border: 1px solid rgba(124, 58, 237, 0.15);
   }
   
   .glass-card-light {
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(124, 58, 237, 0.1);
   }
 }
 
@@ -187,8 +187,8 @@
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.3); }
-  50% { box-shadow: 0 0 40px rgba(139, 92, 246, 0.5); }
+  0%, 100% { box-shadow: 0 0 20px rgba(124, 58, 237, 0.35); }
+  50% { box-shadow: 0 0 40px rgba(124, 58, 237, 0.55); }
 }
 
 @keyframes gradient-shift {
