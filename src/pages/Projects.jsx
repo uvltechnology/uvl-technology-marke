@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Eye } from '@phosphor-icons/react'
+import { useState, useEffect } from 'react'
+import '../styles/projects.css'
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -14,6 +16,9 @@ const staggerContainer = {
   }
 }
 
+import theVifMockup from '../assets/Books Template/TheVIF Product Mockup.png'
+import yamconMockup from '../assets/Books Template/Yamcon Product Mockup.png'
+
 // Project data - 4 in-progress projects with Adobe-style cube colors
 const projects = [
   {
@@ -23,7 +28,7 @@ const projects = [
     description: 'A modern job portal platform connecting employers with talented professionals.',
     status: 'In Progress',
     category: 'Web Platform',
-    image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=900&fit=crop&q=80',
+    image: theVifMockup,
     cubeColor: '#E34F26', // Red-orange
     cubeGradient: 'linear-gradient(145deg, #FF6B4A 0%, #E34F26 50%, #B8391A 100%)'
   },
@@ -34,42 +39,76 @@ const projects = [
     description: 'Conference and event management system for seamless organization.',
     status: 'In Progress',
     category: 'Event Management',
-    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=900&fit=crop&q=80',
+    image: yamconMockup,
     cubeColor: '#10B981', // Green
     cubeGradient: 'linear-gradient(145deg, #34D399 0%, #10B981 50%, #059669 100%)'
   },
-  {
-    slug: 'katindahan',
-    name: 'Katindahan',
-    letter: 'Kt',
-    description: 'E-commerce marketplace empowering local businesses and entrepreneurs.',
-    status: 'In Progress',
-    category: 'E-commerce',
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=900&fit=crop&q=80',
-    cubeColor: '#06B6D4', // Cyan/teal
-    cubeGradient: 'linear-gradient(145deg, #22D3EE 0%, #06B6D4 50%, #0891B2 100%)'
-  },
-  {
-    slug: 'bazz',
-    name: 'BAzz',
-    letter: 'Bz',
-    description: 'Social networking app for community building and engagement.',
-    status: 'In Progress',
-    category: 'Mobile App',
-    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=900&fit=crop&q=80',
-    cubeColor: '#8B5CF6', // Purple
-    cubeGradient: 'linear-gradient(145deg, #A78BFA 0%, #8B5CF6 50%, #7C3AED 100%)'
-  }
+  // {
+  //   slug: 'katindahan',
+  //   name: 'Katindahan',
+  //   letter: 'Kt',
+  //   description: 'E-commerce marketplace empowering local businesses and entrepreneurs.',
+  //   status: 'In Progress',
+  //   category: 'E-commerce',
+  //   image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=900&fit=crop&q=80',
+  //   cubeColor: '#06B6D4', // Cyan/teal
+  //   cubeGradient: 'linear-gradient(145deg, #22D3EE 0%, #06B6D4 50%, #0891B2 100%)'
+  // },
+  // {
+  //   slug: 'bazz',
+  //   name: 'BAzz',
+  //   letter: 'Bz',
+  //   description: 'Social networking app for community building and engagement.',
+  //   status: 'In Progress',
+  //   category: 'Mobile App',
+  //   image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=900&fit=crop&q=80',
+  //   cubeColor: '#8B5CF6', // Purple
+  //   cubeGradient: 'linear-gradient(145deg, #A78BFA 0%, #8B5CF6 50%, #7C3AED 100%)'
+  // }
 ]
 
 export default function Projects() {
+  const [selected, setSelected] = useState(projects[0])
+  const [deviceSrc, setDeviceSrc] = useState(null)
+
+  useEffect(() => {
+    let mounted = true
+    async function loadMockup() {
+      // Try the exact filename user provided, then a common fallback name.
+      const candidates = [
+        '../assets/TheVIF mockup 3d devices.png',
+        '../assets/devices-mockup.png'
+      ]
+
+      for (const path of candidates) {
+        try {
+          const mod = await import(/* @vite-ignore */ path)
+          if (mounted) {
+            setDeviceSrc(mod.default || mod)
+            return
+          }
+        } catch (e) {
+          // continue to next candidate
+        }
+      }
+
+      // Final fallback: simple SVG data URL placeholder
+      const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='500' viewBox='0 0 1200 500'><rect fill='#0f172a' width='100%' height='100%'/><g fill='#fff' font-family='sans-serif'><text x='50%' y='45%' font-size='28' text-anchor='middle' fill='#cbd5e1'>Device mockup placeholder</text><text x='50%' y='60%' font-size='18' text-anchor='middle' fill='#94a3b8'>Add TheVIF mockup 3d devices.png to src/assets</text></g></svg>`
+      const url = 'data:image/svg+xml;utf8,' + encodeURIComponent(svg)
+      if (mounted) setDeviceSrc(url)
+    }
+
+    loadMockup()
+    return () => { mounted = false }
+  }, [])
+
   return (
     <div id="projects-page">
       {/* ===== SHOWCASE STAGE SECTION ===== */}
       <section className="showcase-stage">
         {/* Layer 0: Base cosmic background */}
         <div className="stage-bg-base" />
-        
+
         {/* Layer 1: Star particles */}
         <div className="stage-stars" aria-hidden="true">
           {Array.from({ length: 80 }).map((_, i) => (
@@ -87,24 +126,24 @@ export default function Projects() {
             />
           ))}
         </div>
-        
+
         {/* Layer 2: Nebula clouds */}
         <div className="stage-nebula stage-nebula-left" />
         <div className="stage-nebula stage-nebula-right" />
-        
+
         {/* Layer 3: Warm orange flare (left side) */}
         <div className="stage-warm-flare" />
-        
+
         {/* Layer 4: Vignette overlay */}
         <div className="stage-vignette" />
-        
+
         {/* Layer 5: Neon horizon platform */}
         <div className="stage-platform">
           <div className="platform-glow-line" />
           <div className="platform-reflection-surface" />
           <div className="platform-ambient-glow" />
         </div>
-        
+
         {/* Header */}
         <header className="stage-header">
           <motion.div
@@ -115,10 +154,9 @@ export default function Projects() {
           >
             <span className="header-eyebrow">Our Portfolio</span>
             <h1 className="header-title">Projects</h1>
-            <p className="header-subtitle">In Progress Builds</p>
           </motion.div>
         </header>
-        
+
         {/* ===== PHONE + CUBE LINEUP ===== */}
         <div className="lineup-container">
           <motion.div
@@ -133,7 +171,7 @@ export default function Projects() {
                 key={project.slug}
                 variants={fadeInUp}
                 className="showcase-item"
-                style={{ 
+                style={{
                   '--cube-color': project.cubeColor,
                   '--cube-gradient': project.cubeGradient,
                   '--item-index': index
@@ -145,53 +183,27 @@ export default function Projects() {
                   aria-label={`View ${project.name} project`}
                 >
                   {/* Phone mockup (BEHIND - Layer 6) */}
-                  <div className="phone-mockup">
-                    <div className="phone-frame">
-                      <div className="phone-notch" />
-                      <div className="phone-screen">
-                        <img 
-                          src={project.image} 
-                          alt={`${project.name} app screen`}
-                          className="screen-image"
-                          loading="lazy"
-                        />
-                        <div className="screen-glare" />
-                      </div>
-                    </div>
-                    <div className="phone-reflection" />
-                  </div>
-                  
-                  {/* 3D Cube block (FRONT - Layer 7) */}
-                  <div className="cube-3d">
-                    {/* Cube faces */}
-                    <div className="cube-front">
-                      <span className="cube-letter">{project.letter}</span>
-                      <div className="cube-shine" />
-                    </div>
-                    <div className="cube-top" />
-                    <div className="cube-right" />
-                    
-                    {/* Hover overlay */}
-                    <div className="cube-overlay">
-                      <span className="see-more-pill">
-                        <Eye size={16} weight="bold" />
-                        <span>See more</span>
-                      </span>
-                    </div>
-                  </div>
-                  
+                  <img
+                    src={project.image}
+                    alt={`${project.name} app screen`}
+                    className="screen-image"
+                    loading="lazy"
+                  />
+
+
+
                   {/* Cube floor reflection (Layer 8) */}
                   <div className="cube-reflection" />
-                  
+
                   {/* Cube glow on floor */}
                   <div className="cube-floor-glow" />
-                  
+
                   {/* Project name label */}
                   <div className="item-label">
                     <span className="label-name">{project.name}</span>
                     <span className="label-status">{project.status}</span>
                   </div>
-                  
+
                   {/* Mobile tap indicator */}
                   <div className="mobile-tap-hint">
                     <ArrowRight size={14} weight="bold" />
@@ -203,12 +215,40 @@ export default function Projects() {
         </div>
       </section>
 
+      <section className="projects-samples">
+        <div className="content-left">
+          <div className="devices-figure">
+            {deviceSrc ? (
+              <img src={deviceSrc} alt="Device mockups" className="devices-mockup" loading="lazy" />
+            ) : (
+              <div className="devices-placeholder" aria-hidden="true">Loading mockup…</div>
+            )}
+          </div>
+        </div>
+
+        <div className="content-right">
+          <div className="project-detail">
+            <h3 className="project-detail-title">{selected.name}</h3>
+            <p className="project-detail-desc">{selected.description}</p>
+
+            <div className="project-meta">
+              <span className="meta-category">{selected.category}</span>
+              <span className="meta-status">{selected.status}</span>
+            </div>
+
+            <div className="project-actions">
+              <Link to={`/projects/${selected.slug}`} className="detail-link">View Project</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ===== CTA SECTION ===== */}
       <section className="projects-cta">
         <div className="cta-bg" />
         <div className="cta-pattern" />
         <div className="cta-glow" />
-        
+
         <motion.div
           initial="initial"
           whileInView="animate"

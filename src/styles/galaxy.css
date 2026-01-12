@@ -49,37 +49,37 @@
   --galaxy-primary-light: #9333EA;
   --galaxy-primary-dark: #6D28D9;
   --galaxy-primary-glow: rgba(124, 58, 237, 0.5);
-  
+
   /* Secondary/Accent Colors */
   --galaxy-cyan: #C084FC;
   --galaxy-pink: #A855F7;
   --galaxy-blue: #8B5CF6;
-  
+
   /* Background Colors */
   --galaxy-void: #050309;
   --galaxy-deep: #0A0612;
   --galaxy-surface: #160D24;
   --galaxy-elevated: #1F1335;
-  
+
   /* Text Colors */
   --galaxy-text-primary: #F8FAFC;
   --galaxy-text-secondary: #CBD5E1;
   --galaxy-text-muted: #64748B;
-  
+
   /* Border Colors */
   --galaxy-border: rgba(124, 58, 237, 0.2);
   --galaxy-border-hover: rgba(124, 58, 237, 0.4);
-  
+
   /* Glass Effect */
   --galaxy-glass-bg: rgba(10, 6, 18, 0.8);
   --galaxy-glass-border: rgba(124, 58, 237, 0.15);
-  
+
   /* Shadows */
   --galaxy-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
   --galaxy-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
   --galaxy-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.6);
   --galaxy-shadow-glow: 0 0 20px var(--galaxy-primary-glow);
-  
+
   /* Spacing */
   --space-1: 4px;
   --space-2: 8px;
@@ -90,14 +90,14 @@
   --space-12: 48px;
   --space-16: 64px;
   --space-24: 96px;
-  
+
   /* Radius */
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
   --radius-xl: 24px;
   --radius-full: 9999px;
-  
+
   /* Transitions */
   --transition-fast: 150ms ease;
   --transition-base: 250ms ease;
@@ -260,7 +260,7 @@
 #galaxy-hero .hero-bg {
   position: absolute;
   inset: 0;
-  background: 
+  background:
     radial-gradient(ellipse 80% 50% at 50% 0%, rgba(124, 58, 237, 0.2) 0%, transparent 60%),
     radial-gradient(ellipse 60% 40% at 100% 100%, rgba(147, 51, 234, 0.15) 0%, transparent 50%),
     radial-gradient(ellipse 50% 30% at 0% 80%, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
@@ -270,7 +270,7 @@
 #galaxy-hero .hero-grid {
   position: absolute;
   inset: 0;
-  background-image: 
+  background-image:
     linear-gradient(rgba(124, 58, 237, 0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(124, 58, 237, 0.04) 1px, transparent 1px);
   background-size: 60px 60px;
@@ -476,6 +476,7 @@
   0%, 100% {
     transform: translateY(0) scale(1);
   }
+
   50% {
     transform: translateY(-20px) scale(1.05);
   }
@@ -503,6 +504,7 @@
     opacity: 0.3;
     transform: scale(0.8);
   }
+
   50% {
     opacity: 1;
     transform: scale(1.2);
@@ -525,14 +527,14 @@
 }
 
 .galaxy-border-glow {
-  box-shadow: 0 0 0 1px var(--galaxy-border), 
-              inset 0 0 20px rgba(124, 58, 237, 0.05);
+  box-shadow: 0 0 0 1px var(--galaxy-border),
+    inset 0 0 20px rgba(124, 58, 237, 0.05);
 }
 
 .galaxy-border-glow:hover {
-  box-shadow: 0 0 0 1px var(--galaxy-border-hover), 
-              0 0 30px rgba(124, 58, 237, 0.2),
-              inset 0 0 20px rgba(124, 58, 237, 0.1);
+  box-shadow: 0 0 0 1px var(--galaxy-border-hover),
+    0 0 30px rgba(124, 58, 237, 0.2),
+    inset 0 0 20px rgba(124, 58, 237, 0.1);
 }
 
 /* ===========================================
@@ -544,12 +546,12 @@
     --space-16: 48px;
     --space-12: 32px;
   }
-  
+
   #galaxy-hero .hero-cta {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .galaxy-card {
     padding: var(--space-4);
   }
@@ -570,6 +572,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -580,6 +583,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -587,12 +591,29 @@
 }
 
 /* Stagger delays for lists */
-.galaxy-stagger > *:nth-child(1) { animation-delay: 0ms; }
-.galaxy-stagger > *:nth-child(2) { animation-delay: 100ms; }
-.galaxy-stagger > *:nth-child(3) { animation-delay: 200ms; }
-.galaxy-stagger > *:nth-child(4) { animation-delay: 300ms; }
-.galaxy-stagger > *:nth-child(5) { animation-delay: 400ms; }
-.galaxy-stagger > *:nth-child(6) { animation-delay: 500ms; }
+.galaxy-stagger>*:nth-child(1) {
+  animation-delay: 0ms;
+}
+
+.galaxy-stagger>*:nth-child(2) {
+  animation-delay: 100ms;
+}
+
+.galaxy-stagger>*:nth-child(3) {
+  animation-delay: 200ms;
+}
+
+.galaxy-stagger>*:nth-child(4) {
+  animation-delay: 300ms;
+}
+
+.galaxy-stagger>*:nth-child(5) {
+  animation-delay: 400ms;
+}
+
+.galaxy-stagger>*:nth-child(6) {
+  animation-delay: 500ms;
+}
 
 /* ===========================================
    ICON STYLES
@@ -646,11 +667,10 @@
    LOADING STATES
    =========================================== */
 .galaxy-skeleton {
-  background: linear-gradient(90deg, 
-    var(--galaxy-surface) 25%, 
-    var(--galaxy-elevated) 50%, 
-    var(--galaxy-surface) 75%
-  );
+  background: linear-gradient(90deg,
+      var(--galaxy-surface) 25%,
+      var(--galaxy-elevated) 50%,
+      var(--galaxy-surface) 75%);
   background-size: 200% 100%;
   animation: skeleton-shimmer 1.5s infinite;
   border-radius: var(--radius-sm);
@@ -660,6 +680,7 @@
   0% {
     background-position: 200% 0;
   }
+
   100% {
     background-position: -200% 0;
   }
@@ -709,7 +730,7 @@
 #projects-page .stage-bg-base {
   position: absolute;
   inset: 0;
-  background: 
+  background:
     radial-gradient(ellipse 120% 80% at 50% 100%, #1a0a2e 0%, transparent 60%),
     linear-gradient(180deg,
       #000000 0%,
@@ -717,8 +738,7 @@
       #050210 40%,
       #0a0420 60%,
       #0d0628 80%,
-      #120830 100%
-    );
+      #120830 100%);
   z-index: 0;
 }
 
@@ -739,8 +759,15 @@
 }
 
 @keyframes starTwinkleFast {
-  0%, 100% { opacity: 0.15; transform: scale(0.8); }
-  50% { opacity: 0.9; transform: scale(1.1); }
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
 }
 
 /* Layer 2: Nebula clouds */
@@ -785,7 +812,7 @@
 #projects-page .stage-vignette {
   position: absolute;
   inset: 0;
-  background: 
+  background:
     radial-gradient(ellipse 80% 60% at 50% 50%, transparent 20%, rgba(0, 0, 0, 0.6) 80%, rgba(0, 0, 0, 0.95) 100%);
   z-index: 3;
   pointer-events: none;
@@ -810,17 +837,16 @@
   right: 0;
   height: 3px;
   background: linear-gradient(90deg,
-    transparent 0%,
-    rgba(6, 182, 212, 0.3) 10%,
-    rgba(16, 185, 129, 0.7) 25%,
-    rgba(34, 211, 238, 1) 40%,
-    rgba(34, 211, 238, 1) 50%,
-    rgba(34, 211, 238, 1) 60%,
-    rgba(16, 185, 129, 0.7) 75%,
-    rgba(6, 182, 212, 0.3) 90%,
-    transparent 100%
-  );
-  box-shadow: 
+      transparent 0%,
+      rgba(6, 182, 212, 0.3) 10%,
+      rgba(16, 185, 129, 0.7) 25%,
+      rgba(34, 211, 238, 1) 40%,
+      rgba(34, 211, 238, 1) 50%,
+      rgba(34, 211, 238, 1) 60%,
+      rgba(16, 185, 129, 0.7) 75%,
+      rgba(6, 182, 212, 0.3) 90%,
+      transparent 100%);
+  box-shadow:
     0 0 20px rgba(34, 211, 238, 0.8),
     0 0 40px rgba(34, 211, 238, 0.5),
     0 0 80px rgba(34, 211, 238, 0.3);
@@ -834,10 +860,9 @@
   right: 0;
   height: 130px;
   background: linear-gradient(180deg,
-    rgba(34, 211, 238, 0.08) 0%,
-    rgba(6, 182, 212, 0.03) 30%,
-    transparent 100%
-  );
+      rgba(34, 211, 238, 0.08) 0%,
+      rgba(6, 182, 212, 0.03) 30%,
+      transparent 100%);
 }
 
 /* Ambient glow around platform */
@@ -882,7 +907,7 @@
   font-weight: 800;
   line-height: 1;
   margin-bottom: 8px;
-  text-shadow: 
+  text-shadow:
     0 0 60px rgba(124, 58, 237, 0.5),
     0 0 120px rgba(124, 58, 237, 0.25);
 }
@@ -896,7 +921,7 @@
   #projects-page .header-title {
     font-size: 2.5rem;
   }
-  
+
   #projects-page .stage-header {
     padding: 40px 16px 15px;
   }
@@ -930,7 +955,7 @@
     flex-wrap: wrap;
     max-width: 800px;
   }
-  
+
   #projects-page .lineup-container {
     padding-bottom: 150px;
   }
@@ -943,7 +968,7 @@
     align-items: center;
     max-width: 280px;
   }
-  
+
   #projects-page .lineup-container {
     padding: 20px 16px 120px;
     align-items: center;
@@ -1015,7 +1040,7 @@
   background: linear-gradient(160deg, #2a2a3e 0%, #1a1a28 50%, #0f0f18 100%);
   border-radius: 22px;
   padding: 6px;
-  box-shadow: 
+  box-shadow:
     0 25px 60px rgba(0, 0, 0, 0.6),
     0 10px 30px rgba(0, 0, 0, 0.4),
     inset 0 1px 0 rgba(255, 255, 255, 0.1),
@@ -1062,11 +1087,10 @@
 #projects-page .screen-glare {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, 
-    rgba(255, 255, 255, 0.12) 0%,
-    transparent 40%,
-    transparent 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.12) 0%,
+      transparent 40%,
+      transparent 100%);
   pointer-events: none;
 }
 
@@ -1079,13 +1103,12 @@
   width: 110px;
   height: 60px;
   background: linear-gradient(180deg,
-    rgba(255, 255, 255, 0.04) 0%,
-    transparent 100%
-  );
+      rgba(255, 255, 255, 0.04) 0%,
+      transparent 100%);
   filter: blur(8px);
   opacity: 0.5;
-  mask-image: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, transparent 100%);
-  -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, transparent 100%);
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, transparent 100%);
 }
 
 /* ========================================
@@ -1118,7 +1141,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 
+  box-shadow:
     0 20px 50px rgba(0, 0, 0, 0.5),
     inset 0 1px 0 rgba(255, 255, 255, 0.35),
     inset 0 -2px 0 rgba(0, 0, 0, 0.2);
@@ -1131,7 +1154,7 @@
   font-size: 2.8rem;
   font-weight: 900;
   font-family: 'Inter', -apple-system, sans-serif;
-  text-shadow: 
+  text-shadow:
     0 2px 10px rgba(0, 0, 0, 0.3),
     0 0 30px rgba(255, 255, 255, 0.1);
   letter-spacing: -0.02em;
@@ -1143,14 +1166,12 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: linear-gradient(
-    135deg,
-    transparent 30%,
-    rgba(255, 255, 255, 0.2) 45%,
-    rgba(255, 255, 255, 0.3) 50%,
-    rgba(255, 255, 255, 0.2) 55%,
-    transparent 70%
-  );
+  background: linear-gradient(135deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.2) 45%,
+      rgba(255, 255, 255, 0.3) 50%,
+      rgba(255, 255, 255, 0.2) 55%,
+      transparent 70%);
   transform: rotate(25deg);
   pointer-events: none;
   transition: transform 0.6s ease;
@@ -1168,9 +1189,8 @@
   width: calc(100% - 10px);
   height: 30px;
   background: linear-gradient(180deg,
-    color-mix(in srgb, var(--cube-color) 100%, #fff 30%) 0%,
-    var(--cube-color) 100%
-  );
+      color-mix(in srgb, var(--cube-color) 100%, #fff 30%) 0%,
+      var(--cube-color) 100%);
   border-radius: 8px 8px 0 0;
   transform: rotateX(70deg);
   transform-origin: bottom center;
@@ -1184,9 +1204,8 @@
   width: 25px;
   height: calc(100% - 10px);
   background: linear-gradient(90deg,
-    color-mix(in srgb, var(--cube-color) 100%, #000 40%) 0%,
-    color-mix(in srgb, var(--cube-color) 100%, #000 60%) 100%
-  );
+      color-mix(in srgb, var(--cube-color) 100%, #000 40%) 0%,
+      color-mix(in srgb, var(--cube-color) 100%, #000 60%) 100%);
   border-radius: 0 8px 8px 0;
   transform: rotateY(70deg);
   transform-origin: left center;
@@ -1245,8 +1264,8 @@
   opacity: 0.15;
   filter: blur(6px);
   z-index: 2;
-  mask-image: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, transparent 100%);
-  -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, transparent 100%);
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, transparent 100%);
 }
 
 /* Cube glow on floor */
@@ -1271,7 +1290,7 @@
 /* Project name label */
 #projects-page .item-label {
   position: absolute;
-  bottom: 30px;
+  bottom: 0px;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -1320,23 +1339,27 @@
   #projects-page .mobile-tap-hint {
     display: flex;
   }
-  
+
   #projects-page .cube-overlay {
     display: none;
   }
-  
+
   #projects-page .cube-3d {
     bottom: 90px;
   }
-  
+
   #projects-page .item-label {
     bottom: 40px;
   }
 }
 
+
 /* ========================================
    CTA SECTION
    ======================================== */
+
+/* Projects-samples styles moved to src/styles/projects.css */
+
 #projects-page .projects-cta {
   position: relative;
   padding: 100px 24px;
@@ -1353,7 +1376,7 @@
 #projects-page .cta-pattern {
   position: absolute;
   inset: 0;
-  background-image: 
+  background-image:
     linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
   background-size: 45px 45px;
@@ -1419,11 +1442,11 @@
   #projects-page .projects-cta {
     padding: 70px 16px;
   }
-  
+
   #projects-page .cta-title {
     font-size: 2rem;
   }
-  
+
   #projects-page .cta-text {
     font-size: 1.05rem;
   }
@@ -1472,6 +1495,7 @@
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
+  padding: 1.5rem;
 }
 
 #project-details-page .details-image {
@@ -1561,11 +1585,11 @@
   #project-details-page .details-title {
     font-size: 1.75rem;
   }
-  
+
   #project-details-page .details-content {
     padding: var(--space-6);
   }
-  
+
   #project-details-page .details-info-grid {
     grid-template-columns: 1fr;
   }

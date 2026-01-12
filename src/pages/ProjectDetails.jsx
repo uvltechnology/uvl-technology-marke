@@ -2,6 +2,8 @@ import { useParams, Link, Navigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { ArrowLeft, Clock, Code, Folder } from '@phosphor-icons/react'
 import StarField from '@/components/StarField.jsx'
+import theVifMockup from '../assets/TheVIF mockup 3d devices.png'
+import yamconMockup from '../assets/Books Template/Yamcon Product Mockup.png'
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -13,69 +15,42 @@ const fadeInUp = {
 const projectsData = {
   'the-vif': {
     name: 'The VIF',
-    description: 'A modern job portal platform connecting employers with talented professionals. Features include advanced job search, applicant tracking, resume builder, and intelligent job matching powered by AI.',
+    description: 'Charming villas and apartments in La Turbie and Cannes, with breathtaking views of Monaco and the Mediterranean. Features include booking management, property listings, and customer reviews.',
     status: 'In Progress',
-    category: 'Web Platform',
-    technologies: ['React', 'Node.js', 'PostgreSQL', 'AWS'],
-    timeline: 'Q2 2026'
+    category: 'Real Estate',
+    technologies: ['React', 'Node.js', 'Express'],
+    timeline: 'Q2 2026',
+    albumImage: theVifMockup,
+    projectBgColor: '#1E293B'
   },
   'yamcon': {
     name: 'Yamcon',
-    description: 'Conference and event management system for seamless organization. Includes registration management, speaker coordination, schedule planning, virtual event support, and real-time analytics.',
+    description: 'Rent professional tools at affordable rates. Yamcon Tools provides a platform for renting high-quality equipment for construction, home improvement, and DIY projects with easy booking and delivery options.',
     status: 'In Progress',
-    category: 'Event Management',
-    technologies: ['React', 'Express', 'MongoDB', 'Socket.io'],
-    timeline: 'Q2 2026'
+    category: 'Tool Rental',
+    technologies: ['React', 'Node.js', 'Express', 'Socket.io'],
+    timeline: 'Q1 2026',
+    albumImage: yamconMockup,
+    projectBgColor: '#3D3A1F'
   },
-  'katindahan': {
-    name: 'Katindahan',
-    description: 'E-commerce marketplace empowering local businesses and entrepreneurs. Features multi-vendor support, secure payments, inventory management, and delivery tracking integration.',
-    status: 'In Progress',
-    category: 'E-commerce',
-    technologies: ['React', 'Node.js', 'MySQL', 'Stripe'],
-    timeline: 'Q3 2026'
-  },
-  'bazz': {
-    name: 'BAzz',
-    description: 'Social networking app for community building and engagement. Includes group chat, event organization, content sharing, and community moderation tools.',
-    status: 'In Progress',
-    category: 'Mobile App',
-    technologies: ['React Native', 'Firebase', 'Node.js'],
-    timeline: 'Q3 2026'
-  }
+  // 'katindahan': {
+  //   name: 'Katindahan',
+  //   description: 'E-commerce marketplace empowering local businesses and entrepreneurs. Features multi-vendor support, secure payments, inventory management, and delivery tracking integration.',
+  //   status: 'In Progress',
+  //   category: 'E-commerce',
+  //   technologies: ['React', 'Node.js', 'MySQL', 'Stripe'],
+  //   timeline: 'Q3 2026'
+  // },
+  // 'bazz': {
+  //   name: 'BAzz',
+  //   description: 'Social networking app for community building and engagement. Includes group chat, event organization, content sharing, and community moderation tools.',
+  //   status: 'In Progress',
+  //   category: 'Mobile App',
+  //   technologies: ['React Native', 'Firebase', 'Node.js'],
+  //   timeline: 'Q3 2026'
+  // }
 }
 
-// Placeholder image for projects
-const placeholderImage = 'data:image/svg+xml,' + encodeURIComponent(`
-  <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
-    <defs>
-      <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" style="stop-color:#160D24"/>
-        <stop offset="50%" style="stop-color:#0A0612"/>
-        <stop offset="100%" style="stop-color:#1F1335"/>
-      </linearGradient>
-      <radialGradient id="glow1" cx="30%" cy="30%" r="50%">
-        <stop offset="0%" style="stop-color:#7C3AED;stop-opacity:0.4"/>
-        <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:0"/>
-      </radialGradient>
-      <radialGradient id="glow2" cx="70%" cy="70%" r="40%">
-        <stop offset="0%" style="stop-color:#9333EA;stop-opacity:0.3"/>
-        <stop offset="100%" style="stop-color:#9333EA;stop-opacity:0"/>
-      </radialGradient>
-    </defs>
-    <rect width="1200" height="675" fill="url(#bg)"/>
-    <rect width="1200" height="675" fill="url(#glow1)"/>
-    <rect width="1200" height="675" fill="url(#glow2)"/>
-    <circle cx="200" cy="150" r="3" fill="#F8FAFC" opacity="0.6"/>
-    <circle cx="950" cy="100" r="2" fill="#F8FAFC" opacity="0.4"/>
-    <circle cx="600" cy="300" r="2" fill="#F8FAFC" opacity="0.5"/>
-    <circle cx="1000" cy="450" r="3" fill="#F8FAFC" opacity="0.3"/>
-    <circle cx="150" cy="500" r="2" fill="#F8FAFC" opacity="0.5"/>
-    <circle cx="800" cy="200" r="1.5" fill="#F8FAFC" opacity="0.4"/>
-    <circle cx="350" cy="550" r="3" fill="#F8FAFC" opacity="0.3"/>
-    <circle cx="900" cy="600" r="2" fill="#F8FAFC" opacity="0.5"/>
-  </svg>
-`)
 
 export default function ProjectDetails() {
   const { slug } = useParams()
@@ -112,11 +87,12 @@ export default function ProjectDetails() {
           animate="animate"
           variants={fadeInUp}
           className="details-card"
+          style={{ backgroundColor: project.projectBgColor }}
         >
-          {/* Image */}
+          {/* Album Image */}
           <div className="details-image-wrapper">
             <img 
-              src={placeholderImage}
+              src={project.albumImage}
               alt={project.name}
               className="details-image"
             />
