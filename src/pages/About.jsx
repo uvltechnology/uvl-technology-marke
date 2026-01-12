@@ -54,10 +54,10 @@ export default function About() {
 	]
 
 	const stats = [
-		{ number: '100+', label: 'Systems Delivered' },
-		{ number: '50+', label: 'Happy Clients' },
-		{ number: '15+', label: 'Industries Served' },
-		{ number: '99%', label: 'Client Satisfaction' }
+		{ number: '4', label: 'Projects In Progress' },
+		{ number: '6+', label: 'Industries Targeted' },
+		{ number: '100%', label: 'Dedication' },
+		{ number: '24/7', label: 'Support Ready' }
 	]
 
 	const teamPrinciples = [
@@ -97,7 +97,7 @@ export default function About() {
 				>
 					<div className="inline-flex items-center gap-2 mb-8 px-5 py-2.5 bg-[#8B5CF6]/15 border border-[#8B5CF6]/30 rounded-full backdrop-blur-sm">
 						<span className="w-2 h-2 bg-[#8B5CF6] rounded-full animate-pulse" />
-						<span className="text-[#A78BFA] font-semibold text-sm tracking-wide">About NEW_WEBSITE_NAME</span>
+						<span className="text-[#A855F7] font-semibold text-sm tracking-wide">About Logica</span>
 					</div>
           
 					<h1 className="text-[#F8FAFC] mb-6 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
@@ -126,7 +126,7 @@ export default function About() {
 							</motion.div>
 							<motion.div variants={fadeInUp} className="space-y-4 text-[#CBD5E1] leading-relaxed">
 								<p>
-											NEW_WEBSITE_NAME was born from a simple observation: too many businesses are held back by outdated systems, expensive software that doesn't quite fit, or manual processes that waste countless hours.
+											Logica was born from a simple observation: too many businesses are held back by outdated systems, expensive software that doesn't quite fit, or manual processes that waste countless hours.
 								</p>
 								<p>
 									We saw organizations struggling with off-the-shelf solutions that required them to change their workflows rather than adapting to how they actually work. We saw talented teams bogged down by administrative tasks that could be automated. We saw opportunities for growth limited by technical constraints.

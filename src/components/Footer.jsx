@@ -24,17 +24,17 @@ export default function Footer() {
   }
 
   return (
-    <footer id="galaxy-footer" className="bg-[#030108] text-[#F8FAFC] border-t border-[#8B5CF6]/20 relative overflow-hidden">
+    <footer id="galaxy-footer" className="bg-[#050309] text-[#F8FAFC] border-t border-[#7C3AED]/20 relative overflow-hidden">
       {/* Cosmic glow effects */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#8B5CF6]/8 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[#EC4899]/6 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute top-1/2 right-0 w-[300px] h-[300px] bg-[#22D3EE]/5 rounded-full blur-[80px] pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#7C3AED]/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[#9333EA]/8 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/2 right-0 w-[300px] h-[300px] bg-[#A855F7]/6 rounded-full blur-[80px] pointer-events-none" />
       
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <img src={logo} alt="Logica" className="w-11 h-11 rounded-xl object-cover shadow-[0_0_20px_rgba(139,92,246,0.3)]" />
+              <img src={logo} alt="Logica" className="w-11 h-11 rounded-xl object-cover shadow-[0_0_20px_rgba(124,58,237,0.4)]" />
               <span className="text-[#F8FAFC] font-heading font-bold text-xl tracking-wide">
                 Logica
               </span>
@@ -43,21 +43,21 @@ export default function Footer() {
               Skip all the stress. Automate the rest. Your universal partner for business systems and digital transformation.
             </p>
             <div className="flex flex-col gap-3 text-sm">
-              <a href="mailto:hello@logica.com" className="flex items-center gap-3 text-[#94A3B8] hover:text-[#A78BFA] transition-colors duration-200">
-                <div className="w-8 h-8 rounded-lg bg-[#8B5CF6]/10 flex items-center justify-center">
-                  <EnvelopeSimple size={16} weight="bold" className="text-[#8B5CF6]" />
+              <a href="mailto:hello@logica.com" className="flex items-center gap-3 text-[#94A3B8] hover:text-[#A855F7] transition-colors duration-200">
+                <div className="w-8 h-8 rounded-lg bg-[#7C3AED]/10 flex items-center justify-center">
+                  <EnvelopeSimple size={16} weight="bold" className="text-[#7C3AED]" />
                 </div>
                 hello@logica.com
               </a>
-              <a href="tel:+1234567890" className="flex items-center gap-3 text-[#94A3B8] hover:text-[#A78BFA] transition-colors duration-200">
-                <div className="w-8 h-8 rounded-lg bg-[#8B5CF6]/10 flex items-center justify-center">
-                  <Phone size={16} weight="bold" className="text-[#8B5CF6]" />
+              <a href="tel:+1234567890" className="flex items-center gap-3 text-[#94A3B8] hover:text-[#A855F7] transition-colors duration-200">
+                <div className="w-8 h-8 rounded-lg bg-[#7C3AED]/10 flex items-center justify-center">
+                  <Phone size={16} weight="bold" className="text-[#7C3AED]" />
                 </div>
                 +1 (234) 567-890
               </a>
               <span className="flex items-center gap-3 text-[#94A3B8]">
-                <div className="w-8 h-8 rounded-lg bg-[#8B5CF6]/10 flex items-center justify-center">
-                  <MapPin size={16} weight="bold" className="text-[#8B5CF6]" />
+                <div className="w-8 h-8 rounded-lg bg-[#7C3AED]/10 flex items-center justify-center">
+                  <MapPin size={16} weight="bold" className="text-[#7C3AED]" />
                 </div>
                 Global Remote Operations
               </span>
@@ -71,7 +71,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className="text-[#94A3B8] hover:text-[#A78BFA] transition-colors duration-200 text-sm"
+                    className="text-[#94A3B8] hover:text-[#A855F7] transition-colors duration-200 text-sm"
                   >
                     {link.name}
                   </Link>
@@ -87,7 +87,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className="text-[#94A3B8] hover:text-[#A78BFA] transition-colors duration-200 text-sm"
+                    className="text-[#94A3B8] hover:text-[#A855F7] transition-colors duration-200 text-sm"
                   >
                     {link.name}
                   </Link>
@@ -103,7 +103,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className="text-[#94A3B8] hover:text-[#A78BFA] transition-colors duration-200 text-sm"
+                    className="text-[#94A3B8] hover:text-[#A855F7] transition-colors duration-200 text-sm"
                   >
                     {link.name}
                   </Link>
@@ -113,7 +113,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-[#8B5CF6]/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-[#7C3AED]/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-[#64748B] text-sm">
             © {new Date().getFullYear()} Logica. All rights reserved.
           </p>
@@ -122,7 +122,7 @@ export default function Footer() {
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-lg bg-[#8B5CF6]/10 flex items-center justify-center text-[#64748B] hover:text-[#A78BFA] hover:bg-[#8B5CF6]/20 transition-all duration-200"
+              className="w-10 h-10 rounded-lg bg-[#7C3AED]/10 flex items-center justify-center text-[#64748B] hover:text-[#A855F7] hover:bg-[#7C3AED]/20 transition-all duration-200"
               aria-label="LinkedIn"
             >
               <LinkedinLogo size={20} weight="fill" />
@@ -131,7 +131,7 @@ export default function Footer() {
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-lg bg-[#8B5CF6]/10 flex items-center justify-center text-[#64748B] hover:text-[#A78BFA] hover:bg-[#8B5CF6]/20 transition-all duration-200"
+              className="w-10 h-10 rounded-lg bg-[#7C3AED]/10 flex items-center justify-center text-[#64748B] hover:text-[#A855F7] hover:bg-[#7C3AED]/20 transition-all duration-200"
               aria-label="Twitter"
             >
               <TwitterLogo size={20} weight="fill" />
@@ -140,7 +140,7 @@ export default function Footer() {
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-lg bg-[#8B5CF6]/10 flex items-center justify-center text-[#64748B] hover:text-[#A78BFA] hover:bg-[#8B5CF6]/20 transition-all duration-200"
+              className="w-10 h-10 rounded-lg bg-[#7C3AED]/10 flex items-center justify-center text-[#64748B] hover:text-[#A855F7] hover:bg-[#7C3AED]/20 transition-all duration-200"
               aria-label="GitHub"
             >
               <GithubLogo size={20} weight="fill" />

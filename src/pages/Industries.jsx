@@ -265,7 +265,7 @@ export default function Industries() {
 													<div className="flex items-center gap-2 mb-4">
 														<Lightbulb size={24} weight={"fill"} className="text-[#8B5CF6]" />
 														<h3 className="text-xl font-heading font-bold text-[#F8FAFC]">
-															How NEW_WEBSITE_NAME Helps
+															How Logica Helps
 														</h3>
 													</div>
 													<ul className="space-y-2">

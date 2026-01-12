@@ -17,9 +17,9 @@ const staggerContainer = {
 // Project data - 4 in-progress projects with Adobe-style cube colors
 const projects = [
   {
-    slug: 'aladain-jobs',
-    name: 'Aladain Jobs',
-    letter: 'Aj',
+    slug: 'the-vif',
+    name: 'The VIF',
+    letter: 'Vf',
     description: 'A modern job portal platform connecting employers with talented professionals.',
     status: 'In Progress',
     category: 'Web Platform',
@@ -218,7 +218,7 @@ export default function Projects() {
         >
           <h2 className="cta-title">Have a Project in Mind?</h2>
           <p className="cta-text">
-            Let's collaborate and bring your vision to life with NEW_WEBSITE_NAME.
+            Let's collaborate and bring your vision to life with Logica.
           </p>
           <Link to="/contact" className="cta-button">
             <span>Start Your Project</span>
