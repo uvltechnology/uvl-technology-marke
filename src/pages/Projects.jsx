@@ -106,33 +106,14 @@ export default function Projects() {
     <div id="projects-page">
       {/* ===== SHOWCASE STAGE SECTION ===== */}
       <section className="showcase-stage">
-        {/* Layer 0: Base cosmic background */}
+        {/* Layer 0: Base background */}
         <div className="stage-bg-base" />
-
-        {/* Layer 1: Star particles */}
-        <div className="stage-stars" aria-hidden="true">
-          {Array.from({ length: 80 }).map((_, i) => (
-            <span
-              key={i}
-              className="star"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 70}%`,
-                width: `${Math.random() * 2.5 + 0.5}px`,
-                height: `${Math.random() * 2.5 + 0.5}px`,
-                animationDelay: `${Math.random() * 5}s`,
-                animationDuration: `${3 + Math.random() * 3}s`
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Layer 2: Nebula clouds */}
-        <div className="stage-nebula stage-nebula-left" />
-        <div className="stage-nebula stage-nebula-right" />
-
-        {/* Layer 3: Warm orange flare (left side) */}
-        <div className="stage-warm-flare" />
+        
+        {/* Layer 1: Radial gradient overlay */}
+        <div className="stage-bg-gradient" />
+        
+        {/* Layer 2: Pattern grid */}
+        <div className="stage-pattern-grid" />
 
         {/* Layer 4: Vignette overlay */}
         <div className="stage-vignette" />

@@ -726,20 +726,33 @@
   padding-top: 80px;
 }
 
-/* Layer 0: Base cosmic gradient (black → deep purple) */
+/* Layer 0: Base background with radial gradient */
 #projects-page .stage-bg-base {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse 120% 80% at 50% 100%, #1a0a2e 0%, transparent 60%),
-    linear-gradient(180deg,
-      #000000 0%,
-      #030108 20%,
-      #050210 40%,
-      #0a0420 60%,
-      #0d0628 80%,
-      #120830 100%);
+  background: #0A0612;
   z-index: 0;
+}
+
+/* Radial gradient overlay */
+#projects-page .stage-bg-gradient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 40% at 20% 20%, rgba(124, 58, 237, 0.18) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 30% at 80% 80%, rgba(147, 51, 234, 0.12) 0%, transparent 50%);
+  z-index: 1;
+}
+
+/* Pattern grid overlay */
+#projects-page .stage-pattern-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.4;
+  z-index: 2;
+  background-image: linear-gradient(rgba(124, 58, 237, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 58, 237, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
 
 /* Layer 1: Star particles */
@@ -882,13 +895,17 @@
 #projects-page .stage-header {
   position: relative;
   z-index: 10;
-  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 50px 24px 20px;
 }
 
 #projects-page .header-content {
   max-width: 600px;
-  margin: 0 auto;
+  width: 100%;
+  text-align: center;
 }
 
 #projects-page .header-eyebrow {
