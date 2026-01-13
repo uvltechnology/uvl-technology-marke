@@ -75,34 +75,46 @@ export default function About() {
 
 	const timelineEvents = [
 		{
-			year: "2024",
-			title: "The Vision Takes Shape",
-			subtitle: "Foundation & Planning",
-			description: "Logica was conceived with a clear mission: to provide custom technology solutions that truly fit how businesses operate. We began laying the groundwork for our approach to system development."
+			year: "Step 1",
+			title: "The Idea Is Born",
+			subtitle: "Partnership & Vision",
+			description: "Two people partnered with one goal: to build a platform that helps businesses operate better. One brought a strong sales mindset as an IT graduate and businessman, while the other contributed full-stack development expertise to turn the concept into something buildable and real."
 		},
 		{
-			year: "2025 Q1",
+			year: "Step 2",
+			title: "Strengthening the Core Team",
+			subtitle: "Design & Quality",
+			description: "To move from concept to execution, two more skilled and dedicated professionals joined—one focused on UI/UX to create a clean and user-friendly experience, and the other focused on QA to ensure quality, stability, and reliability."
+		},
+		{
+			year: "Step 3",
+			title: "Filling the Gaps to Scale",
+			subtitle: "Team Expansion",
+			description: "As the vision grew, the team expanded to cover what was still missing. Additional specialists were brought in, including a marketing and social media lead to build presence and reach, a data analyst to guide smarter decisions through insights, and another full-stack developer to speed up development and strengthen scalability."
+		},
+		{
+			year: "Step 4",
+			title: "The Vision Takes Shape",
+			subtitle: "Strategic Focus",
+			description: "With the right people in place, the direction became clearer and more focused—building platforms that improve workflows, reduce inefficiencies, and help businesses grow with confidence through practical, real-world solutions."
+		},
+		{
+			year: "Step 5",
 			title: "Building the Foundation",
 			subtitle: "Core Development",
-			description: "Established our core development practices and methodologies. Started building our first custom business solutions and refining our client collaboration process."
+			description: "The team established core development standards and working systems, refining processes, tools, and practices to ensure every output is structured, scalable, and ready for long-term growth."
 		},
 		{
-			year: "2025 Q2",
-			title: "First Client Successes",
-			subtitle: "Market Entry",
-			description: "Successfully delivered our first custom systems to early adopters. Gathered invaluable feedback that shaped our development approach and client experience."
+			year: "Step 6",
+			title: "First Client Milestone",
+			subtitle: "Proof of Capability",
+			description: "The first client project was successfully delivered, proving the team's capability and turning the vision into real business results through an actual working solution."
 		},
 		{
-			year: "2025 Q3",
-			title: "Expanding Capabilities",
-			subtitle: "Growth Phase",
-			description: "Expanded our service offerings to include comprehensive business automation, CRM solutions, and analytics dashboards. Growing our team of dedicated engineers."
-		},
-		{
-			year: "2026",
+			year: "Step 7",
 			title: "Scaling Impact",
 			subtitle: "Current & Beyond",
-			description: "Continuing to transform businesses across multiple industries. Focused on becoming the go-to partner for organizations seeking custom technology solutions."
+			description: "Today, the focus is on expanding impact by improving the platform continuously, supporting more businesses, and growing into bigger opportunities—building stronger solutions now while preparing for what comes next."
 		}
 	]
 
