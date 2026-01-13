@@ -9,10 +9,15 @@ import {
 	Handshake,
 	ArrowRight,
 	CheckCircle,
-	Rocket
+	Rocket,
+	Flag,
+	Code,
+	Users,
+	TrendUp
 } from '@phosphor-icons/react'
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
+import { ScrollTimeline } from '@/components/ui/scroll-timeline.jsx'
 
 const fadeInUp = {
 	initial: { opacity: 0, y: 20 },
@@ -68,6 +73,39 @@ export default function About() {
 		'Long-term partnership beyond initial delivery'
 	]
 
+	const timelineEvents = [
+		{
+			year: "2024",
+			title: "The Vision Takes Shape",
+			subtitle: "Foundation & Planning",
+			description: "Logica was conceived with a clear mission: to provide custom technology solutions that truly fit how businesses operate. We began laying the groundwork for our approach to system development."
+		},
+		{
+			year: "2025 Q1",
+			title: "Building the Foundation",
+			subtitle: "Core Development",
+			description: "Established our core development practices and methodologies. Started building our first custom business solutions and refining our client collaboration process."
+		},
+		{
+			year: "2025 Q2",
+			title: "First Client Successes",
+			subtitle: "Market Entry",
+			description: "Successfully delivered our first custom systems to early adopters. Gathered invaluable feedback that shaped our development approach and client experience."
+		},
+		{
+			year: "2025 Q3",
+			title: "Expanding Capabilities",
+			subtitle: "Growth Phase",
+			description: "Expanded our service offerings to include comprehensive business automation, CRM solutions, and analytics dashboards. Growing our team of dedicated engineers."
+		},
+		{
+			year: "2026",
+			title: "Scaling Impact",
+			subtitle: "Current & Beyond",
+			description: "Continuing to transform businesses across multiple industries. Focused on becoming the go-to partner for organizations seeking custom technology solutions."
+		}
+	]
+
 	return (
 		<div className="min-h-screen">
 			<section className="relative pt-32 pb-24 bg-[#0A0612] text-[#F8FAFC] overflow-hidden">
@@ -95,6 +133,22 @@ export default function About() {
 						We're a team of engineers, designers, and problem-solvers dedicated to one mission: making your business run smoother through custom technology.
 					</p>
 				</motion.div>
+			</section>
+
+			{/* Timeline Section */}
+			<section className="bg-[#0A0612]">
+				<ScrollTimeline
+					events={timelineEvents}
+					title="Our Journey"
+					subtitle="From vision to reality — explore the milestones that define Logica"
+					cardAlignment="alternating"
+					revealAnimation="slide"
+					cardVariant="outlined"
+					cardEffect="glow"
+					progressIndicator={true}
+					progressLineWidth={3}
+					className="bg-[#0A0612] text-[#F8FAFC]"
+				/>
 			</section>
 
 			<section className="py-24 bg-[#0A0612]">
