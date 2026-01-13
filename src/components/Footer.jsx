@@ -39,7 +39,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-[#94A3B8] mb-6 max-w-sm leading-relaxed">
-              Skip all the stress. Automate the rest. Your universal partner for business systems and digital transformation.
+              Your universal partner for business systems and digital transformation.
             </p>
             <div className="flex flex-col gap-3 text-sm">
               <a href="mailto:sales@logicatechnology.com" className="flex items-center gap-3 text-[#94A3B8] hover:text-[#A855F7] transition-colors duration-200">

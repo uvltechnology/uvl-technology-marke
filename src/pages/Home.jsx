@@ -92,11 +92,6 @@ export default function Home() {
 			description: 'From discovery to deployment, we handle everything so you can focus on your business.'
 		},
 		{
-			icon: Lightning,
-			title: 'Scalable Architecture',
-			description: 'Built to grow with you, from 10 to 10,000 users without breaking a sweat.'
-		},
-		{
 			icon: Shield,
 			title: 'Secure & Compliant',
 			description: 'Enterprise-grade security, data encryption, and compliance with industry standards.'
@@ -105,6 +100,12 @@ export default function Home() {
 			icon: Users,
 			title: 'Human-Centered Design',
 			description: 'Beautiful interfaces that your team will actually want to use every day.'
+		}
+		,
+		{
+			icon: ChartBar,
+			title: 'Affordable',
+			description: 'Cost-effective solutions with transparent pricing so you get value without surprises.'
 		}
 	]
 

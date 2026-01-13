@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { List, X } from '@phosphor-icons/react'
+// toggle icon is implemented with CSS/HTML for smooth morph animations
 import { Button } from '@/components/ui/button.jsx'
 import logo from '@/assets/logica1.jpg'
 import './Navbar.css'
@@ -83,29 +83,36 @@ export default function Navbar() {
 						</div>
 
 						<button
-							className="lg:hidden text-[#F8FAFC] p-2 hover:bg-[#7C3AED]/10 rounded-lg transition-colors"
+							id="mobile-menu-toggle"
+							aria-controls="mobile-menu-root"
+							className={`block lg:hidden z-50 menu-toggle p-2 rounded-lg transition-colors ${isMobileMenuOpen ? 'open' : ''}`}
 							onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-							aria-label="Toggle menu"
+							aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+							aria-expanded={isMobileMenuOpen}
 						>
-							{isMobileMenuOpen ? <X size={28} weight="bold" /> : <List size={28} weight="bold" />}
+							<span className="menu-toggle-box" aria-hidden="true">
+								<span className="menu-toggle-line line1" />
+								<span className="menu-toggle-line line2" />
+								<span className="menu-toggle-line line3" />
+							</span>
 						</button>
 					</div>
 				</div>
 			</nav>
 
-			<div className={`mobile-menu-root lg:hidden ${isMobileMenuOpen ? 'open' : ''}`} aria-hidden={!isMobileMenuOpen}>
+			<div className={`mobile-menu-root lg:hidden ${isMobileMenuOpen ? 'open' : ''}`} aria-hidden={!isMobileMenuOpen} style={{ ['--items']: navLinks.length + 1 }}>
 				<div
 					className={`mobile-overlay ${isMobileMenuOpen ? 'open' : ''}`}
 					onClick={() => setIsMobileMenuOpen(false)}
 				/>
 				<div className={`mobile-panel ${isMobileMenuOpen ? 'open' : ''}`}>
 					<div className="mobile-panel-inner p-6 pt-20">
-						<div className="flex flex-col gap-4 max-w-full mx-auto">
+						<div className="flex flex-col gap-4 max-w-full mx-auto" style={{ '--items': navLinks.length + 1 }}>
 							{navLinks.map((link, idx) => (
 								<Link
 									key={link.path}
 									to={link.path}
-									style={{ transitionDelay: `${idx * 70}ms` }}
+									style={{ ['--i']: idx }}
 									className={`mobile-menu-item text-2xl font-medium transition-all duration-200 px-4 py-4 rounded-xl ${
 										location.pathname === link.path
 											? 'text-[#A855F7] bg-[#7C3AED]/15'
@@ -115,7 +122,7 @@ export default function Navbar() {
 									{link.name}
 								</Link>
 							))}
-							<Link to="/contact" className="mt-6 mobile-menu-item" style={{ transitionDelay: `${navLinks.length * 70}ms` }}>
+							<Link to="/contact" className="mt-6 mobile-menu-item" style={{ ['--i']: navLinks.length }}>
 								<Button className="w-full bg-galaxy-gradient hover:shadow-[0_0_30px_rgba(124,58,237,0.6)] font-semibold py-5 text-lg">
 									Book Consultation
 								</Button>

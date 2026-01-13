@@ -22,13 +22,21 @@
   pointer-events: auto;
 }
 
+/* When closing, delay overlay fade-out until after menu items reverse-stagger finishes */
+.mobile-overlay:not(.open) {
+  transition-delay: calc(var(--items, 4) * 80ms + 80ms);
+}
+.mobile-overlay.open {
+  transition-delay: 0s;
+}
+
 
 .mobile-panel {
   position: fixed;
   inset: 0;
-  transform: translateY(-12%) scale(0.98);
+  transform: translateY(-10%) scale(0.99);
   opacity: 0;
-  transition: transform 360ms cubic-bezier(0.16, 1, 0.3, 1), opacity 260ms ease;
+  transition: transform 360ms cubic-bezier(0.16, 1, 0.3, 1), opacity 320ms ease;
   pointer-events: none;
   display: flex;
   align-items: flex-start;
@@ -49,22 +57,92 @@
   border-radius: 0;
   box-shadow: none;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0; /* override pt-20 from JSX to allow perfect centering */
 }
 
 /* Menu item stagger + fade-up */
 .mobile-menu-item {
   opacity: 0;
-  transform: translateY(8px) scale(0.995);
-  transition: opacity 300ms ease, transform 360ms cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(6px) scale(0.997);
+  will-change: opacity, transform;
+  transition: opacity 420ms cubic-bezier(0.16, 1, 0.3, 1), transform 360ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .mobile-panel.open .mobile-menu-item {
   opacity: 1;
   transform: translateY(0) scale(1);
+  transition-delay: calc(var(--i) * 80ms);
+}
+
+/* reverse-stagger on close: items fade in/out with mirrored, shorter delays */
+.mobile-panel:not(.open) .mobile-menu-item {
+  transition-delay: calc((var(--items) - var(--i)) * 80ms);
 }
 
 .mobile-close {
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
+}
+
+/* Animated hamburger -> X toggle */
+.menu-toggle {
+  color: #F8FAFC;
+  background: transparent;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.menu-toggle { z-index: 60; }
+.menu-toggle:hover {
+  background: rgba(124,58,237,0.07);
+}
+.menu-toggle:focus {
+  outline: 2px solid rgba(168,85,247,0.18);
+  outline-offset: 2px;
+}
+.menu-toggle-box {
+  width: 28px;
+  height: 20px;
+  position: relative;
+  display: inline-block;
+}
+.menu-toggle-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform 420ms cubic-bezier(0.16, 1, 0.3, 1), opacity 320ms ease;
+  will-change: transform, opacity;
+}
+.menu-toggle-line.line1 { top: 0; }
+.menu-toggle-line.line2 { top: 50%; transform: translateY(-50%); }
+.menu-toggle-line.line3 { bottom: 0; }
+
+/* Open state: morph lines into an X */
+.menu-toggle.open .menu-toggle-line.line1 {
+  transform: translateY(9px) rotate(45deg);
+}
+.menu-toggle.open .menu-toggle-line.line2 {
+  opacity: 0;
+  transform: scaleX(0.2);
+}
+.menu-toggle.open .menu-toggle-line.line3 {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Slight scale feedback when toggling for better motion feel */
+.menu-toggle.open { transform: scale(0.98); transition: transform 180ms ease; }
+.menu-toggle { transition: background 180ms ease, transform 160ms ease; }
+
+/* Hide the toggle on large screens to respect Tailwind's lg:hidden behavior */
+@media (min-width: 1024px) {
+  .menu-toggle {
+    display: none !important;
+  }
 }
