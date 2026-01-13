@@ -70,6 +70,12 @@ export default function Contact() {
 		if (Object.keys(validationErrors).length) {
 			setErrors(validationErrors)
 			toast.error('Please fix the highlighted fields before submitting.')
+			// focus first invalid field (ids match form keys)
+			const firstKey = Object.keys(validationErrors)[0]
+			if (firstKey) {
+				const el = document.getElementById(firstKey)
+				if (el && typeof el.focus === 'function') el.focus()
+			}
 			return
 		}
 
@@ -213,10 +219,11 @@ export default function Contact() {
 													id="name"
 													placeholder="John Smith"
 													value={formData.name}
-													onChange={(e) => handleChange('name', e.target.value)}
-													required
-													className="h-12 bg-[#0A0612] border-[#7C3AED]/30 text-[#F8FAFC] placeholder:text-[#64748B] focus:border-[#7C3AED] focus:ring-[#7C3AED]/20 rounded-xl transition-all"
+																onChange={(e) => handleChange('name', e.target.value)}
+																required
+																className={`h-12 bg-[#0A0612] text-[#F8FAFC] placeholder:text-[#64748B] rounded-xl transition-all focus:ring-0 px-3 py-2 ${errors.name ? 'border-red-400 ring-1 ring-red-400 focus:border-red-400' : 'border-[#7C3AED]/30 focus:border-[#7C3AED] focus:ring-[#7C3AED]/20'}`}
 												/>
+															{errors.name && <p className="text-sm text-red-400 mt-1">{errors.name}</p>}
 											</div>
 
 											<div className="space-y-3">
@@ -242,8 +249,9 @@ export default function Contact() {
 													value={formData.email}
 													onChange={(e) => handleChange('email', e.target.value)}
 													required
-													className="h-12 bg-[#0A0612] border-[#7C3AED]/30 text-[#F8FAFC] placeholder:text-[#64748B] focus:border-[#7C3AED] focus:ring-[#7C3AED]/20 rounded-xl transition-all"
+													className={`h-12 bg-[#0A0612] text-[#F8FAFC] placeholder:text-[#64748B] rounded-xl transition-all focus:ring-0 px-3 py-2 ${errors.email ? 'border-red-400 ring-1 ring-red-400 focus:border-red-400' : 'border-[#7C3AED]/30 focus:border-[#7C3AED] focus:ring-[#7C3AED]/20'}`}
 												/>
+												{errors.email && <p className="text-sm text-red-400 mt-1">{errors.email}</p>}
 											</div>
 
 											<div className="space-y-3">
@@ -268,8 +276,9 @@ export default function Contact() {
 												onChange={(e) => handleChange('systemNeeds', e.target.value)}
 												rows={5}
 												required
-												className="bg-[#0A0612] border-[#7C3AED]/30 text-[#F8FAFC] placeholder:text-[#64748B] focus:border-[#7C3AED] focus:ring-[#7C3AED]/20 rounded-xl transition-all resize-none"
+												className={`bg-[#0A0612] text-[#F8FAFC] placeholder:text-[#64748B] rounded-xl transition-all resize-none p-3 ${errors.systemNeeds ? 'border-red-400 ring-1 ring-red-400 focus:border-red-400' : 'border-[#7C3AED]/30 focus:border-[#7C3AED] focus:ring-[#7C3AED]/20'}`}
 											/>
+											{errors.systemNeeds && <p className="text-sm text-red-400 mt-1">{errors.systemNeeds}</p>}
 										</div>
 
 										{/* Desired Timeline removed per request */}
