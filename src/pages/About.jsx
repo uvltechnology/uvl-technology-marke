@@ -9,10 +9,15 @@ import {
 	Handshake,
 	ArrowRight,
 	CheckCircle,
-	Rocket
+	Rocket,
+	Flag,
+	Code,
+	Users,
+	TrendUp
 } from '@phosphor-icons/react'
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
+import { ScrollTimeline } from '@/components/ui/scroll-timeline.jsx'
 
 const fadeInUp = {
 	initial: { opacity: 0, y: 20 },
@@ -68,6 +73,51 @@ export default function About() {
 		'Long-term partnership beyond initial delivery'
 	]
 
+	const timelineEvents = [
+		{
+			year: "Step 1",
+			title: "The Idea Is Born",
+			subtitle: "Partnership & Vision",
+			description: "Two people partnered with one goal: to build a platform that helps businesses operate better. One brought a strong sales mindset as an IT graduate and businessman, while the other contributed full-stack development expertise to turn the concept into something buildable and real."
+		},
+		{
+			year: "Step 2",
+			title: "Strengthening the Core Team",
+			subtitle: "Design & Quality",
+			description: "To move from concept to execution, two more skilled and dedicated professionals joined—one focused on UI/UX to create a clean and user-friendly experience, and the other focused on QA to ensure quality, stability, and reliability."
+		},
+		{
+			year: "Step 3",
+			title: "Filling the Gaps to Scale",
+			subtitle: "Team Expansion",
+			description: "As the vision grew, the team expanded to cover what was still missing. Additional specialists were brought in, including a marketing and social media lead to build presence and reach, a data analyst to guide smarter decisions through insights, and another full-stack developer to speed up development and strengthen scalability."
+		},
+		{
+			year: "Step 4",
+			title: "The Vision Takes Shape",
+			subtitle: "Strategic Focus",
+			description: "With the right people in place, the direction became clearer and more focused—building platforms that improve workflows, reduce inefficiencies, and help businesses grow with confidence through practical, real-world solutions."
+		},
+		{
+			year: "Step 5",
+			title: "Building the Foundation",
+			subtitle: "Core Development",
+			description: "The team established core development standards and working systems, refining processes, tools, and practices to ensure every output is structured, scalable, and ready for long-term growth."
+		},
+		{
+			year: "Step 6",
+			title: "First Client Milestone",
+			subtitle: "Proof of Capability",
+			description: "The first client project was successfully delivered, proving the team's capability and turning the vision into real business results through an actual working solution."
+		},
+		{
+			year: "Step 7",
+			title: "Scaling Impact",
+			subtitle: "Current & Beyond",
+			description: "Today, the focus is on expanding impact by improving the platform continuously, supporting more businesses, and growing into bigger opportunities—building stronger solutions now while preparing for what comes next."
+		}
+	]
+
 	return (
 		<div className="min-h-screen">
 			<section className="relative pt-32 pb-24 bg-[#0A0612] text-[#F8FAFC] overflow-hidden">
@@ -95,6 +145,22 @@ export default function About() {
 						We're a team of engineers, designers, and problem-solvers dedicated to one mission: making your business run smoother through custom technology.
 					</p>
 				</motion.div>
+			</section>
+
+			{/* Timeline Section */}
+			<section className="bg-[#0A0612]">
+				<ScrollTimeline
+					events={timelineEvents}
+					title="Our Journey"
+					subtitle="From vision to reality — explore the milestones that define Logica"
+					cardAlignment="alternating"
+					revealAnimation="slide"
+					cardVariant="outlined"
+					cardEffect="glow"
+					progressIndicator={true}
+					progressLineWidth={3}
+					className="bg-[#0A0612] text-[#F8FAFC]"
+				/>
 			</section>
 
 			<section className="py-24 bg-[#0A0612]">
