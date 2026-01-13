@@ -127,8 +127,8 @@ export default function Contact() {
 				<div className="absolute inset-0 pattern-grid opacity-40" />
 				
 				{/* Animated glow orbs */}
-				<div className="absolute top-1/4 left-1/4 w-72 h-72 bg-[#7C3AED]/18 rounded-full blur-[100px] animate-pulse pointer-events-none" />
-				<div className="absolute bottom-1/4 right-1/4 w-56 h-56 bg-[#9333EA]/12 rounded-full blur-[80px] animate-pulse pointer-events-none" style={{ animationDelay: '1s' }} />
+				<div className="absolute top-1/4 left-1/4 w-72 h-72 bg-[#7C3AED]/8 rounded-full blur-[100px] animate-pulse pointer-events-none" />
+				<div className="absolute bottom-1/4 right-1/4 w-56 h-56 bg-[#9333EA]/5 rounded-full blur-[80px] animate-pulse pointer-events-none" style={{ animationDelay: '1s' }} />
         
 				<motion.div
 					initial="initial"

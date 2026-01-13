@@ -25,15 +25,15 @@ export default function Footer() {
   return (
     <footer id="galaxy-footer" className="bg-[#050309] text-[#F8FAFC] border-t border-[#7C3AED]/20 relative overflow-hidden">
       {/* Cosmic glow effects */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#7C3AED]/10 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[#9333EA]/8 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute top-1/2 right-0 w-[300px] h-[300px] bg-[#A855F7]/6 rounded-full blur-[80px] pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#7C3AED]/5 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[#9333EA]/4 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/2 right-0 w-[300px] h-[300px] bg-[#A855F7]/3 rounded-full blur-[80px] pointer-events-none" />
       
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <img src={logo} alt="Logica" className="w-11 h-11 rounded-xl object-cover shadow-[0_0_20px_rgba(124,58,237,0.4)]" />
+              <img src={logo} alt="Logica" className="w-11 h-11 rounded-xl object-cover shadow-[0_0_12px_rgba(124,58,237,0.15)]" />
               <span className="text-[#F8FAFC] font-heading font-bold text-xl tracking-wide">
                 Logica
               </span>

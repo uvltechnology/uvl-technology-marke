@@ -94,8 +94,8 @@ export default function Solutions() {
 				<div className="absolute inset-0 pattern-grid opacity-40" />
 				
 				{/* Animated glow orbs */}
-				<div className="absolute top-1/4 left-1/4 w-72 h-72 bg-[#8B5CF6]/15 rounded-full blur-[100px] animate-pulse pointer-events-none" />
-				<div className="absolute bottom-1/4 right-1/4 w-56 h-56 bg-[#EC4899]/10 rounded-full blur-[80px] animate-pulse pointer-events-none" style={{ animationDelay: '1s' }} />
+				<div className="absolute top-1/4 left-1/4 w-72 h-72 bg-[#8B5CF6]/7 rounded-full blur-[100px] animate-pulse pointer-events-none" />
+				<div className="absolute bottom-1/4 right-1/4 w-56 h-56 bg-[#EC4899]/5 rounded-full blur-[80px] animate-pulse pointer-events-none" style={{ animationDelay: '1s' }} />
 				
 				{/* Star particles effect */}
 				<StarField count={60} />
@@ -177,7 +177,7 @@ export default function Solutions() {
 
 			<section className="py-24 bg-[#030108] relative overflow-hidden">
 				<div className="absolute inset-0 pattern-grid opacity-20" />
-				<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[#8B5CF6]/10 rounded-full blur-[150px] pointer-events-none" />
+				<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[#8B5CF6]/5 rounded-full blur-[150px] pointer-events-none" />
 				<div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 text-center">
 					<motion.div
 						initial="initial"
@@ -201,8 +201,8 @@ export default function Solutions() {
 
 			<section className="py-24 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #7C3AED 0%, #8B5CF6 50%, #EC4899 100%)' }}>
 				<div className="absolute inset-0 pattern-grid opacity-20" />
-				<div className="absolute top-0 left-1/4 w-64 h-64 bg-white/10 rounded-full blur-[100px] pointer-events-none" />
-				<div className="absolute bottom-0 right-1/4 w-48 h-48 bg-[#22D3EE]/20 rounded-full blur-[80px] pointer-events-none" />
+				<div className="absolute top-0 left-1/4 w-64 h-64 bg-white/5 rounded-full blur-[100px] pointer-events-none" />
+				<div className="absolute bottom-0 right-1/4 w-48 h-48 bg-[#22D3EE]/10 rounded-full blur-[80px] pointer-events-none" />
 				<div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
 					<motion.div
 						initial="initial"

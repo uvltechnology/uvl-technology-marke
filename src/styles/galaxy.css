@@ -48,7 +48,7 @@
   --galaxy-primary: #7C3AED;
   --galaxy-primary-light: #9333EA;
   --galaxy-primary-dark: #6D28D9;
-  --galaxy-primary-glow: rgba(124, 58, 237, 0.5);
+  --galaxy-primary-glow: rgba(124, 58, 237, 0.25);
 
   /* Secondary/Accent Colors */
   --galaxy-cyan: #C084FC;

@@ -51,7 +51,7 @@ export default function Navbar() {
 				<div className="max-w-7xl mx-auto px-6 lg:px-8">
 					<div className="flex items-center justify-between h-20">
 						<Link to="/" className="flex items-center gap-3 group shrink-0">
-							<img src={logo} alt="Logica" className="w-11 h-11 rounded-xl object-cover shadow-lg group-hover:shadow-[0_0_20px_rgba(124,58,237,0.6)] transition-all duration-300" />
+							<img src={logo} alt="Logica" className="w-11 h-11 rounded-xl object-cover shadow-md group-hover:shadow-[0_0_12px_rgba(124,58,237,0.25)] transition-all duration-300" />
 							<span className="text-[#F8FAFC] font-heading font-bold text-xl tracking-wide group-hover:text-[#A855F7] transition-colors duration-300">
 								Logica
 							</span>

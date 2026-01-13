@@ -216,7 +216,7 @@ export default function Home() {
 				</motion.div>
 
 				<div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-					<ArrowRight size={28} weight="bold" className="text-[#7C3AED] rotate-90 drop-shadow-[0_0_8px_rgba(124,58,237,0.7)]" />
+					<ArrowRight size={28} weight="bold" className="text-[#7C3AED] rotate-90 drop-shadow-[0_0_4px_rgba(124,58,237,0.35)]" />
 				</div>
 			</section>
 
