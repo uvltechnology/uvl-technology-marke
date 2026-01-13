@@ -70,8 +70,22 @@ export const ScrollTimeline = ({
 
   const progressHeight = useTransform(smoothProgress, [0, 1], ["0%", "100%"]);
 
+  // Track which dots have been passed by the progress line
+  const [passedIndices, setPassedIndices] = useState([]);
+
   useEffect(() => {
-    const unsubscribe = scrollYProgress.on("change", (v) => {
+    const unsubscribe = smoothProgress.on("change", (v) => {
+      // Calculate which milestone dots have been passed based on their position
+      const newPassedIndices = [];
+      events.forEach((_, index) => {
+        // Each event is evenly distributed, calculate the threshold for each dot
+        const dotThreshold = (index + 0.5) / events.length;
+        if (v >= dotThreshold) {
+          newPassedIndices.push(index);
+        }
+      });
+      setPassedIndices(newPassedIndices);
+
       const newIndex = Math.floor(v * events.length);
       if (
         newIndex !== activeIndex &&
@@ -82,7 +96,7 @@ export const ScrollTimeline = ({
       }
     });
     return () => unsubscribe();
-  }, [scrollYProgress, events.length, activeIndex]);
+  }, [smoothProgress, events.length, activeIndex]);
 
   const getCardVariants = (index) => {
     const baseDelay =
@@ -216,7 +230,7 @@ export const ScrollTimeline = ({
                   transform: "translateX(-50%)",
                   borderRadius:
                     progressLineCap === "round" ? "9999px" : "0px",
-                  background: `linear-gradient(to bottom, #22d3ee, #6366f1, #a855f7)`,
+                  background: `linear-gradient(to bottom, #1b0d30, #8139ea, #a855f7)`,
                   boxShadow: `
                     0 0 15px rgba(99,102,241,0.5),
                     0 0 25px rgba(168,85,247,0.3)
@@ -290,19 +304,19 @@ export const ScrollTimeline = ({
                   >
                     <motion.div
                       className={cn(
-                        "w-6 h-6 rounded-full border-4 bg-background flex items-center justify-center",
-                        index <= activeIndex
-                          ? "border-primary"
+                        "w-6 h-6 rounded-full border-4 flex items-center justify-center",
+                        passedIndices.includes(index)
+                          ? "border-[#8B5CF6] bg-[#8B5CF6]"
                           : "border bg-card"
                       )}
                       animate={
-                        index <= activeIndex
+                        passedIndices.includes(index)
                           ? {
                               scale: [1, 1.3, 1],
                               boxShadow: [
-                                "0 0 0px rgba(99,102,241,0)",
-                                "0 0 12px rgba(99,102,241,0.6)",
-                                "0 0 0px rgba(99,102,241,0)",
+                                "0 0 0px rgba(139,92,246,0)",
+                                "0 0 12px rgba(27,13,48,0.8)",
+                                "0 0 0px rgba(139,92,246,0)",
                               ],
                             }
                           : {}

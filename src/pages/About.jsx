@@ -159,6 +159,7 @@ export default function About() {
 					cardEffect="glow"
 					progressIndicator={true}
 					progressLineWidth={3}
+					parallaxIntensity={0}
 					className="bg-[#0A0612] text-[#F8FAFC]"
 				/>
 			</section>
