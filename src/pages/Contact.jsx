@@ -13,13 +13,7 @@ import { Input } from '@/components/ui/input.jsx'
 import { Textarea } from '@/components/ui/textarea.jsx'
 import { Label } from '@/components/ui/label.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
-import {
-	Select,
-	SelectContent,
-	SelectItem,
-	SelectTrigger,
-	SelectValue,
-} from '@/components/ui/select.jsx'
+// Removed Select import (timeline removed)
 import {
 	Accordion,
 	AccordionContent,
@@ -45,45 +39,92 @@ const staggerContainer = {
 export default function Contact() {
 	const [submissions, setSubmissions] = useState([])
 	const [isSubmitting, setIsSubmitting] = useState(false)
+	const [errors, setErrors] = useState({})
 	const [formData, setFormData] = useState({
 		name: '',
 		company: '',
 		email: '',
 		phone: '',
-		systemNeeds: '',
-		timeline: ''
+		systemNeeds: ''
 	})
+
+	const validateForm = () => {
+		const errs = {}
+		if (!formData.name || typeof formData.name !== 'string' || formData.name.trim().length < 2) {
+			errs.name = 'Please enter your full name.'
+		}
+		if (!formData.email || typeof formData.email !== 'string' || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+			errs.email = 'Please enter a valid email address.'
+		}
+		if (!formData.systemNeeds || typeof formData.systemNeeds !== 'string' || formData.systemNeeds.trim().length < 10) {
+			errs.systemNeeds = 'Please provide more details (min 10 characters).'
+		}
+		return errs
+	}
 
 	const handleSubmit = async (e) => {
 		e.preventDefault()
-		setIsSubmitting(true)
 
-		const newSubmission = {
-			id: Date.now().toString(),
-			timestamp: new Date().toISOString(),
-			data: formData
+		// client-side validation
+		const validationErrors = validateForm()
+		if (Object.keys(validationErrors).length) {
+			setErrors(validationErrors)
+			toast.error('Please fix the highlighted fields before submitting.')
+			// focus first invalid field (ids match form keys)
+			const firstKey = Object.keys(validationErrors)[0]
+			if (firstKey) {
+				const el = document.getElementById(firstKey)
+				if (el && typeof el.focus === 'function') el.focus()
+			}
+			return
 		}
 
-		setSubmissions((current) => [...(current || []), newSubmission])
+		setIsSubmitting(true)
 
-		toast.success('Consultation request received!', {
-			description: "We'll get back to you within 24 hours."
-		})
+		try {
+			const apiBase = import.meta.env.VITE_API_URL || ''
+			const res = await fetch(`${apiBase}/api/contact`, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(formData)
+			})
 
-		setFormData({
-			name: '',
-			company: '',
-			email: '',
-			phone: '',
-			systemNeeds: '',
-			timeline: ''
-		})
+			if (!res.ok) {
+				const payload = await res.json().catch(() => null)
+				const message = payload && payload.message ? payload.message : 'Submission failed'
+				throw new Error(message)
+			}
 
-		setIsSubmitting(false)
+			const newSubmission = {
+				id: Date.now().toString(),
+				timestamp: new Date().toISOString(),
+				data: formData
+			}
+
+			setSubmissions((current) => [...(current || []), newSubmission])
+
+			toast.success('Consultation request sent!', {
+				description: "We'll get back to you within 24 hours."
+			})
+
+			setFormData({
+				name: '',
+				company: '',
+				email: '',
+				phone: '',
+				systemNeeds: ''
+			})
+		} catch (err) {
+			console.error(err)
+			toast.error('Submission failed. Please try again later.')
+		} finally {
+			setIsSubmitting(false)
+		}
 	}
 
 	const handleChange = (field, value) => {
 		setFormData(prev => ({ ...prev, [field]: value }))
+		setErrors(prev => ({ ...prev, [field]: undefined }))
 	}
 
 	const faqs = [
@@ -178,10 +219,11 @@ export default function Contact() {
 													id="name"
 													placeholder="John Smith"
 													value={formData.name}
-													onChange={(e) => handleChange('name', e.target.value)}
-													required
-													className="h-12 bg-[#0A0612] border-[#7C3AED]/30 text-[#F8FAFC] placeholder:text-[#64748B] focus:border-[#7C3AED] focus:ring-[#7C3AED]/20 rounded-xl transition-all"
+																onChange={(e) => handleChange('name', e.target.value)}
+																required
+																className={`h-12 bg-[#0A0612] text-[#F8FAFC] placeholder:text-[#64748B] rounded-xl transition-all focus:ring-0 px-3 py-2 ${errors.name ? 'border-red-400 ring-1 ring-red-400 focus:border-red-400' : 'border-[#7C3AED]/30 focus:border-[#7C3AED] focus:ring-[#7C3AED]/20'}`}
 												/>
+															{errors.name && <p className="text-sm text-red-400 mt-1">{errors.name}</p>}
 											</div>
 
 											<div className="space-y-3">
@@ -207,8 +249,9 @@ export default function Contact() {
 													value={formData.email}
 													onChange={(e) => handleChange('email', e.target.value)}
 													required
-													className="h-12 bg-[#0A0612] border-[#7C3AED]/30 text-[#F8FAFC] placeholder:text-[#64748B] focus:border-[#7C3AED] focus:ring-[#7C3AED]/20 rounded-xl transition-all"
+													className={`h-12 bg-[#0A0612] text-[#F8FAFC] placeholder:text-[#64748B] rounded-xl transition-all focus:ring-0 px-3 py-2 ${errors.email ? 'border-red-400 ring-1 ring-red-400 focus:border-red-400' : 'border-[#7C3AED]/30 focus:border-[#7C3AED] focus:ring-[#7C3AED]/20'}`}
 												/>
+												{errors.email && <p className="text-sm text-red-400 mt-1">{errors.email}</p>}
 											</div>
 
 											<div className="space-y-3">
@@ -233,28 +276,12 @@ export default function Contact() {
 												onChange={(e) => handleChange('systemNeeds', e.target.value)}
 												rows={5}
 												required
-												className="bg-[#0A0612] border-[#7C3AED]/30 text-[#F8FAFC] placeholder:text-[#64748B] focus:border-[#7C3AED] focus:ring-[#7C3AED]/20 rounded-xl transition-all resize-none"
+												className={`bg-[#0A0612] text-[#F8FAFC] placeholder:text-[#64748B] rounded-xl transition-all resize-none p-3 ${errors.systemNeeds ? 'border-red-400 ring-1 ring-red-400 focus:border-red-400' : 'border-[#7C3AED]/30 focus:border-[#7C3AED] focus:ring-[#7C3AED]/20'}`}
 											/>
+											{errors.systemNeeds && <p className="text-sm text-red-400 mt-1">{errors.systemNeeds}</p>}
 										</div>
 
-										<div className="space-y-3">
-											<Label htmlFor="timeline" className="text-sm font-semibold text-[#E2E8F0] tracking-wide">Desired Timeline <span className="text-[#A855F7]">*</span></Label>
-											<Select
-												value={formData.timeline}
-												onValueChange={(value) => handleChange('timeline', value)}
-												required
-											>
-												<SelectTrigger id="timeline" className="h-12 bg-[#0A0612] border-[#7C3AED]/30 text-[#F8FAFC] focus:border-[#7C3AED] focus:ring-[#7C3AED]/20 rounded-xl">
-													<SelectValue placeholder="Select a timeline" className="text-[#64748B]" />
-												</SelectTrigger>
-												<SelectContent className="bg-[#160D24] border-[#7C3AED]/30">
-													<SelectItem value="asap" className="text-[#F8FAFC] focus:bg-[#7C3AED]/20">ASAP (1-2 months)</SelectItem>
-													<SelectItem value="3-6-months" className="text-[#F8FAFC] focus:bg-[#7C3AED]/20">3-6 months</SelectItem>
-													<SelectItem value="6-12-months" className="text-[#F8FAFC] focus:bg-[#7C3AED]/20">6-12 months</SelectItem>
-													<SelectItem value="exploring" className="text-[#F8FAFC] focus:bg-[#7C3AED]/20">Just exploring options</SelectItem>
-												</SelectContent>
-											</Select>
-										</div>
+										{/* Desired Timeline removed per request */}
 
 										<Button
 											type="submit"
@@ -375,7 +402,7 @@ export default function Contact() {
 				</div>
 			</section>
 
-			<section className="py-24 bg-[#050309]">
+			{/* <section className="py-24 bg-[#050309]">
 				<div className="max-w-4xl mx-auto px-6 lg:px-8">
 					<motion.div
 						initial="initial"
@@ -419,7 +446,7 @@ export default function Contact() {
 						</Accordion>
 					</motion.div>
 				</div>
-			</section>
+			</section> */}
 		</div>
 	)
 }
