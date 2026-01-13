@@ -42,7 +42,7 @@ const projectsData = {
     technologies: ['React', 'Node.js', 'Express', 'MySQL', 'Socket.io', 'Paymongo'],
     timeline: 'Q4 2025',
     albumImage: smsMockup,
-    projectBgColor: '#0B3D91'
+    projectBgColor: '#051b71'
   },
   // 'katindahan': {
   //   name: 'Katindahan',
