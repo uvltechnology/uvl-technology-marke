@@ -18,6 +18,7 @@ const staggerContainer = {
 
 import theVifMockup from '../assets/Books Template/TheVIF Product Mockup.png'
 import yamconMockup from '../assets/Books Template/Yamcon Product Mockup.png'
+import smsMockup from '../assets/Books Template/SMS Product Mockup.png'
 
 // Project data - 4 in-progress projects with Adobe-style cube colors
 const projects = [
@@ -42,6 +43,17 @@ const projects = [
     image: yamconMockup,
     cubeColor: '#10B981', // Green
     cubeGradient: 'linear-gradient(145deg, #34D399 0%, #10B981 50%, #059669 100%)'
+  },
+  {
+    slug: 'school-management',
+    name: 'School Management System',
+    letter: 'Sm',
+    description: 'Full-stack school management web app for enrollment, payments, grades, schedules, role-based auth, and real-time messaging.',
+    status: 'Template Available',
+    category: 'Education / Template',
+    image: smsMockup,
+    cubeColor: '#0B3D91', // Indigo
+    cubeGradient: 'linear-gradient(145deg, #2563EB 0%, #0B3D91 50%, #072A6B 100%)'
   },
   // {
   //   slug: 'katindahan',
@@ -182,7 +194,7 @@ export default function Projects() {
         </div>
       </section>
 
-      <section className="projects-samples">
+      {/* <section className="projects-samples">
         <div className="content-left">
           <div className="devices-figure">
             {deviceSrc ? (
@@ -208,7 +220,7 @@ export default function Projects() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ===== CTA SECTION ===== */}
       <section className="projects-cta">

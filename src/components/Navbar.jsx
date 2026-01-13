@@ -8,6 +8,7 @@ export default function Navbar() {
 	const [isScrolled, setIsScrolled] = useState(false)
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 	const location = useLocation()
+	const isTransparentPage = location.pathname === '/' || location.pathname === '/about'
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -30,15 +31,22 @@ export default function Navbar() {
 		{ name: 'About', path: '/about' },
 	]
 
+	// Determine navbar background based on scroll position and current page
+	const getNavbarBg = () => {
+		if (isScrolled) {
+			return 'navbar-scrolled bg-[#0A0612]/95 backdrop-blur-xl shadow-[0_4px_30px_rgba(124,58,237,0.2)]'
+		}
+		if (isTransparentPage) {
+			return 'bg-transparent'
+		}
+		return 'navbar-glass bg-[#0A0612]/70 backdrop-blur-md'
+	}
+
 	return (
 		<>
 			<nav
 				id="galaxy-navbar"
-				className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-					isScrolled 
-						? 'navbar-scrolled bg-[#0A0612]/95 backdrop-blur-xl shadow-[0_4px_30px_rgba(124,58,237,0.2)]' 
-						: 'navbar-glass bg-[#0A0612]/70 backdrop-blur-md'
-				}`}
+				className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${getNavbarBg()}`}
 			>
 				<div className="max-w-7xl mx-auto px-6 lg:px-8">
 					<div className="flex items-center justify-between h-20">
@@ -61,9 +69,6 @@ export default function Navbar() {
 									}`}
 								>
 									{link.name}
-									{location.pathname === link.path && (
-										<span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-6 h-0.5 bg-[#7C3AED] rounded-full shadow-[0_0_8px_rgba(124,58,237,0.7)]" />
-									)}
 								</Link>
 							))}
 						</div>
