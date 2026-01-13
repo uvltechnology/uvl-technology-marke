@@ -13,13 +13,7 @@ import { Input } from '@/components/ui/input.jsx'
 import { Textarea } from '@/components/ui/textarea.jsx'
 import { Label } from '@/components/ui/label.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
-import {
-	Select,
-	SelectContent,
-	SelectItem,
-	SelectTrigger,
-	SelectValue,
-} from '@/components/ui/select.jsx'
+// Removed Select import (timeline removed)
 import {
 	Accordion,
 	AccordionContent,
@@ -50,36 +44,52 @@ export default function Contact() {
 		company: '',
 		email: '',
 		phone: '',
-		systemNeeds: '',
-		timeline: ''
+		systemNeeds: ''
 	})
 
 	const handleSubmit = async (e) => {
 		e.preventDefault()
 		setIsSubmitting(true)
 
-		const newSubmission = {
-			id: Date.now().toString(),
-			timestamp: new Date().toISOString(),
-			data: formData
+		try {
+			const apiBase = import.meta.env.VITE_API_URL || ''
+			const res = await fetch(`${apiBase}/api/contact`, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(formData)
+			})
+
+			if (!res.ok) {
+				const payload = await res.json().catch(() => null)
+				const message = payload && payload.message ? payload.message : 'Submission failed'
+				throw new Error(message)
+			}
+
+			const newSubmission = {
+				id: Date.now().toString(),
+				timestamp: new Date().toISOString(),
+				data: formData
+			}
+
+			setSubmissions((current) => [...(current || []), newSubmission])
+
+			toast.success('Consultation request sent!', {
+				description: "We'll get back to you within 24 hours."
+			})
+
+			setFormData({
+				name: '',
+				company: '',
+				email: '',
+				phone: '',
+				systemNeeds: ''
+			})
+		} catch (err) {
+			console.error(err)
+			toast.error('Submission failed. Please try again later.')
+		} finally {
+			setIsSubmitting(false)
 		}
-
-		setSubmissions((current) => [...(current || []), newSubmission])
-
-		toast.success('Consultation request received!', {
-			description: "We'll get back to you within 24 hours."
-		})
-
-		setFormData({
-			name: '',
-			company: '',
-			email: '',
-			phone: '',
-			systemNeeds: '',
-			timeline: ''
-		})
-
-		setIsSubmitting(false)
 	}
 
 	const handleChange = (field, value) => {
@@ -237,24 +247,7 @@ export default function Contact() {
 											/>
 										</div>
 
-										<div className="space-y-3">
-											<Label htmlFor="timeline" className="text-sm font-semibold text-[#E2E8F0] tracking-wide">Desired Timeline <span className="text-[#A855F7]">*</span></Label>
-											<Select
-												value={formData.timeline}
-												onValueChange={(value) => handleChange('timeline', value)}
-												required
-											>
-												<SelectTrigger id="timeline" className="h-12 bg-[#0A0612] border-[#7C3AED]/30 text-[#F8FAFC] focus:border-[#7C3AED] focus:ring-[#7C3AED]/20 rounded-xl">
-													<SelectValue placeholder="Select a timeline" className="text-[#64748B]" />
-												</SelectTrigger>
-												<SelectContent className="bg-[#160D24] border-[#7C3AED]/30">
-													<SelectItem value="asap" className="text-[#F8FAFC] focus:bg-[#7C3AED]/20">ASAP (1-2 months)</SelectItem>
-													<SelectItem value="3-6-months" className="text-[#F8FAFC] focus:bg-[#7C3AED]/20">3-6 months</SelectItem>
-													<SelectItem value="6-12-months" className="text-[#F8FAFC] focus:bg-[#7C3AED]/20">6-12 months</SelectItem>
-													<SelectItem value="exploring" className="text-[#F8FAFC] focus:bg-[#7C3AED]/20">Just exploring options</SelectItem>
-												</SelectContent>
-											</Select>
-										</div>
+										{/* Desired Timeline removed per request */}
 
 										<Button
 											type="submit"
