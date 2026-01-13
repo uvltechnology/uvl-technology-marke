@@ -39,6 +39,7 @@ const staggerContainer = {
 export default function Contact() {
 	const [submissions, setSubmissions] = useState([])
 	const [isSubmitting, setIsSubmitting] = useState(false)
+	const [errors, setErrors] = useState({})
 	const [formData, setFormData] = useState({
 		name: '',
 		company: '',
@@ -47,8 +48,31 @@ export default function Contact() {
 		systemNeeds: ''
 	})
 
+	const validateForm = () => {
+		const errs = {}
+		if (!formData.name || typeof formData.name !== 'string' || formData.name.trim().length < 2) {
+			errs.name = 'Please enter your full name.'
+		}
+		if (!formData.email || typeof formData.email !== 'string' || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+			errs.email = 'Please enter a valid email address.'
+		}
+		if (!formData.systemNeeds || typeof formData.systemNeeds !== 'string' || formData.systemNeeds.trim().length < 10) {
+			errs.systemNeeds = 'Please provide more details (min 10 characters).'
+		}
+		return errs
+	}
+
 	const handleSubmit = async (e) => {
 		e.preventDefault()
+
+		// client-side validation
+		const validationErrors = validateForm()
+		if (Object.keys(validationErrors).length) {
+			setErrors(validationErrors)
+			toast.error('Please fix the highlighted fields before submitting.')
+			return
+		}
+
 		setIsSubmitting(true)
 
 		try {
@@ -94,6 +118,7 @@ export default function Contact() {
 
 	const handleChange = (field, value) => {
 		setFormData(prev => ({ ...prev, [field]: value }))
+		setErrors(prev => ({ ...prev, [field]: undefined }))
 	}
 
 	const faqs = [
@@ -368,7 +393,7 @@ export default function Contact() {
 				</div>
 			</section>
 
-			<section className="py-24 bg-[#050309]">
+			{/* <section className="py-24 bg-[#050309]">
 				<div className="max-w-4xl mx-auto px-6 lg:px-8">
 					<motion.div
 						initial="initial"
@@ -412,7 +437,7 @@ export default function Contact() {
 						</Accordion>
 					</motion.div>
 				</div>
-			</section>
+			</section> */}
 		</div>
 	)
 }
