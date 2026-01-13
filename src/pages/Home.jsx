@@ -18,6 +18,8 @@ import {
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
 import StarField from '@/components/StarField.jsx'
+import StarBorder from '@/components/StarBorder.jsx'
+import Particles from '@/components/Particles.jsx';
 
 const fadeInUp = {
 	initial: { opacity: 0, y: 20 },
@@ -157,12 +159,17 @@ export default function Home() {
 					maskImage: 'radial-gradient(ellipse 80% 60% at 50% 50%, black 0%, transparent 70%)',
 					WebkitMaskImage: 'radial-gradient(ellipse 80% 60% at 50% 50%, black 0%, transparent 70%)'
 				}} />
+				<Particles
+					particleColors={['#ffffff', '#ffffff']}
+					particleCount={200}
+					particleSpread={10}
+					speed={0.1}
+					particleBaseSize={100}
+					moveParticlesOnHover={true}
+					alphaParticles={true}
+					disableRotation={false}
+				/>	
 
-				{/* Animated glow orbs */}
-				<div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-[#7C3AED]/18 rounded-full blur-[100px] animate-pulse pointer-events-none" />
-				<div className="absolute bottom-1/4 right-1/4 w-[350px] h-[350px] bg-[#9333EA]/12 rounded-full blur-[100px] animate-pulse pointer-events-none" style={{ animationDelay: '1s' }} />
-				<div className="absolute top-1/2 right-1/3 w-[250px] h-[250px] bg-[#A855F7]/10 rounded-full blur-[80px] animate-pulse pointer-events-none" style={{ animationDelay: '2s' }} />
-				<StarField count={30} />
 
 				<motion.div
 					initial={{ opacity: 0, y: 30 }}
@@ -170,15 +177,7 @@ export default function Home() {
 					transition={{ duration: 0.8 }}
 					className="hero-content relative z-10 max-w-5xl mx-auto px-6 lg:px-8 text-center py-32"
 				>
-					<motion.div
-						initial={{ opacity: 0, scale: 0.9 }}
-						animate={{ opacity: 1, scale: 1 }}
-						transition={{ duration: 0.6, delay: 0.2 }}
-						className="hero-badge inline-flex items-center gap-2 mb-8 px-5 py-2.5 bg-[#7C3AED]/15 border border-[#7C3AED]/30 rounded-full backdrop-blur-sm"
-					>
-						<span className="w-2 h-2 bg-[#7C3AED] rounded-full animate-pulse" />
-						<span className="text-[#A855F7] font-semibold text-sm tracking-wide">Universal Systems Provider</span>
-					</motion.div>
+
 
 					<h1 className="hero-title text-[#F8FAFC] mb-8 text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] tracking-tight">
 						We Power The System<br />
@@ -190,17 +189,29 @@ export default function Home() {
 					</p>
 
 					<div className="hero-cta flex flex-col sm:flex-row gap-4 justify-center">
-						<Link to="/contact">
-							<Button size="lg" className="bg-galaxy-gradient hover:shadow-[0_0_40px_rgba(124,58,237,0.6)] hover:scale-105 transition-all duration-300 text-lg px-8 py-6 font-semibold">
-								Book a Free Consultation
-								<ArrowRight className="ml-2" size={20} weight="bold" />
-							</Button>
-						</Link>
-						<Link to="/solutions">
-							<Button size="lg" variant="outline" className="border-2 border-[#7C3AED] text-[#A855F7] hover:bg-[#7C3AED]/10 hover:border-[#9333EA] hover:shadow-[0_0_30px_rgba(124,58,237,0.4)] transition-all duration-300 text-lg px-8 py-6 font-semibold">
-								See Our Solutions
-							</Button>
-						</Link>
+						<StarBorder
+							as={Link}
+							to="/contact"
+							color="#7C3AED"
+							speed="5s"
+							variant="solid"
+							fillColor="#FFFFFF"
+							textColor="#000000"
+							className="inline-flex items-center justify-center text-lg px-8 py-6 font-semibold"
+						>
+							Book a Free Consultation
+						</StarBorder>
+						<StarBorder
+							as={Link}
+							to="/solutions"
+							className="custom-class"
+							color="#7C3AED"
+							speed="5s"
+							variant="ghost"
+						>
+							See Our Projects
+							<ArrowRight size={20} weight="bold" />
+						</StarBorder>
 					</div>
 				</motion.div>
 
@@ -286,7 +297,7 @@ export default function Home() {
 						})}
 					</motion.div>
 
-				
+
 				</div>
 			</section>
 
