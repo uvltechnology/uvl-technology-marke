@@ -995,6 +995,16 @@
 /* ========================================
    SHOWCASE ITEM (Phone + Cube Group)
    ======================================== */
+#projects-page .showcase-item-wrapper {
+  display: contents;
+}
+
+@media (max-width: 768px) {
+  #projects-page .showcase-item-wrapper {
+    display: block;
+  }
+}
+
 #projects-page .showcase-item {
   --cube-color: #8B5CF6;
   --cube-gradient: linear-gradient(145deg, #A78BFA 0%, #8B5CF6 50%, #7C3AED 100%);
@@ -1094,7 +1104,22 @@
   object-fit: cover;
   opacity: 0.75;
   filter: brightness(0.85) saturate(0.9);
-  transition: all 0.4s ease;
+  transition: opacity 0.25s ease-out,
+              filter 0.25s ease-out,
+              transform 0.3s ease;
+}
+
+/* Mobile - only highlight the active/in-view project */
+@media (max-width: 768px) {
+  #projects-page .screen-image {
+    transition: opacity 0.2s ease-out,
+                filter 0.2s ease-out;
+  }
+  
+  #projects-page .showcase-item-wrapper.is-active .screen-image {
+    opacity: 1;
+    filter: brightness(1.1) saturate(1.15);
+  }
 }
 
 #projects-page .item-link:hover .screen-image,
@@ -1103,16 +1128,6 @@
   opacity: 0.95;
   filter: brightness(1) saturate(1);
   transform: scale(1.05);
-}
-
-/* Mobile touch states - apply glow effects on focus/active */
-@media (hover: none) and (pointer: coarse) {
-  #projects-page .item-link:focus .screen-image,
-  #projects-page .item-link:active .screen-image {
-    opacity: 1;
-    filter: brightness(1.05) saturate(1.1);
-    transform: scale(1.05);
-  }
 }
 
 #projects-page .screen-glare {
@@ -1319,13 +1334,20 @@
   opacity: 0.25;
   filter: blur(20px);
   z-index: 1;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.2s ease-out;
 }
 
 #projects-page .item-link:hover .cube-floor-glow,
 #projects-page .item-link:focus .cube-floor-glow,
 #projects-page .item-link:active .cube-floor-glow {
   opacity: 0.45;
+}
+
+/* Mobile - only highlight the active/in-view project's glow */
+@media (max-width: 768px) {
+  #projects-page .showcase-item-wrapper.is-active .cube-floor-glow {
+    opacity: 0.55;
+  }
 }
 
 /* Project name label */

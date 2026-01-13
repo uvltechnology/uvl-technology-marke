@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Eye } from '@phosphor-icons/react'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import '../styles/projects.css'
 
 const fadeInUp = {
@@ -82,6 +82,52 @@ const projects = [
 export default function Projects() {
   const [selected, setSelected] = useState(projects[0])
   const [deviceSrc, setDeviceSrc] = useState(null)
+  const [activeIndex, setActiveIndex] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
+  const itemRefs = useRef([])
+
+  // Check if mobile on mount
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768)
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  // Intersection Observer for mobile scroll-based highlighting
+  useEffect(() => {
+    if (!isMobile) return
+
+    const observerCallback = (entries) => {
+      // Find the entry that is most in view (closest to center)
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const index = itemRefs.current.indexOf(entry.target)
+          if (index !== -1 && entry.intersectionRatio >= 0.4) {
+            setActiveIndex(index)
+          }
+        }
+      })
+    }
+
+    const observer = new IntersectionObserver(observerCallback, {
+      root: null,
+      rootMargin: '-25% 0px -25% 0px',
+      threshold: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+    })
+
+    // Small delay to ensure refs are assigned
+    const timer = setTimeout(() => {
+      itemRefs.current.forEach((ref) => {
+        if (ref) observer.observe(ref)
+      })
+    }, 100)
+
+    return () => {
+      clearTimeout(timer)
+      observer.disconnect()
+    }
+  }, [isMobile])
 
   useEffect(() => {
     let mounted = true
@@ -154,16 +200,20 @@ export default function Projects() {
             className="lineup-row"
           >
             {projects.map((project, index) => (
-              <motion.article
+              <div
                 key={project.slug}
-                variants={fadeInUp}
-                className="showcase-item"
-                style={{
-                  '--cube-color': project.cubeColor,
-                  '--cube-gradient': project.cubeGradient,
-                  '--item-index': index
-                }}
+                ref={(el) => (itemRefs.current[index] = el)}
+                className={`showcase-item-wrapper ${isMobile && activeIndex === index ? 'is-active' : ''}`}
               >
+                <motion.article
+                  variants={fadeInUp}
+                  className="showcase-item"
+                  style={{
+                    '--cube-color': project.cubeColor,
+                    '--cube-gradient': project.cubeGradient,
+                    '--item-index': index
+                  }}
+                >
                 <Link
                   to={`/projects/${project.slug}`}
                   className="item-link"
@@ -189,6 +239,7 @@ export default function Projects() {
                   </div>
                 </Link>
               </motion.article>
+              </div>
             ))}
           </motion.div>
         </div>
