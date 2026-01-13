@@ -69,8 +69,8 @@ export default function About() {
 	]
 
 	return (
-		<div className="min-h-screen pt-20">
-			<section className="relative py-24 bg-[#0A0612] text-[#F8FAFC] overflow-hidden">
+		<div className="min-h-screen">
+			<section className="relative pt-32 pb-24 bg-[#0A0612] text-[#F8FAFC] overflow-hidden">
 				{/* Radial gradient overlay */}
 				<div className="absolute inset-0" style={{
 					background: `
@@ -86,11 +86,6 @@ export default function About() {
 					variants={fadeInUp}
 					className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 text-center"
 				>
-					<div className="inline-flex items-center gap-2 mb-8 px-5 py-2.5 bg-[#8B5CF6]/15 border border-[#8B5CF6]/30 rounded-full backdrop-blur-sm">
-						<span className="w-2 h-2 bg-[#8B5CF6] rounded-full animate-pulse" />
-						<span className="text-[#A855F7] font-semibold text-sm tracking-wide">About Logica</span>
-					</div>
-          
 					<h1 className="text-[#F8FAFC] mb-6 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
 						Building the Systems<br />
 						<span className="bg-gradient-to-r from-[#8B5CF6] via-[#EC4899] to-[#22D3EE] bg-clip-text text-transparent">That Power Growth</span>

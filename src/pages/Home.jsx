@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { 
-	Rocket, 
-	Gear, 
-	ChartBar, 
-	Lightning, 
-	Shield, 
+import {
+	Rocket,
+	Gear,
+	ChartBar,
+	Lightning,
+	Shield,
 	Users,
 	CheckCircle,
 	ArrowRight,
@@ -158,7 +158,7 @@ export default function Home() {
 						linear-gradient(135deg, #050309 0%, #0A0612 40%, #1F1335 100%)
 					`
 				}} />
-				
+
 				{/* Grid pattern */}
 				<div className="hero-grid absolute inset-0" style={{
 					backgroundImage: `
@@ -169,13 +169,13 @@ export default function Home() {
 					maskImage: 'radial-gradient(ellipse 80% 60% at 50% 50%, black 0%, transparent 70%)',
 					WebkitMaskImage: 'radial-gradient(ellipse 80% 60% at 50% 50%, black 0%, transparent 70%)'
 				}} />
-				
+
 				{/* Animated glow orbs */}
 				<div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-[#7C3AED]/18 rounded-full blur-[100px] animate-pulse pointer-events-none" />
 				<div className="absolute bottom-1/4 right-1/4 w-[350px] h-[350px] bg-[#9333EA]/12 rounded-full blur-[100px] animate-pulse pointer-events-none" style={{ animationDelay: '1s' }} />
 				<div className="absolute top-1/2 right-1/3 w-[250px] h-[250px] bg-[#A855F7]/10 rounded-full blur-[80px] animate-pulse pointer-events-none" style={{ animationDelay: '2s' }} />
-				<StarField count={100} />
-        
+				<StarField count={30} />
+
 				<motion.div
 					initial={{ opacity: 0, y: 30 }}
 					animate={{ opacity: 1, y: 0 }}
@@ -191,16 +191,16 @@ export default function Home() {
 						<span className="w-2 h-2 bg-[#7C3AED] rounded-full animate-pulse" />
 						<span className="text-[#A855F7] font-semibold text-sm tracking-wide">Universal Systems Provider</span>
 					</motion.div>
-          
+
 					<h1 className="hero-title text-[#F8FAFC] mb-8 text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] tracking-tight">
-						 We Power The System<br />
+						We Power The System<br />
 						<span className="gradient-text bg-gradient-to-r from-[#7C3AED] via-[#9333EA] to-[#C084FC] bg-clip-text text-transparent">Behind Your Ideas.</span>
 					</h1>
-          
+
 					<p className="hero-subtitle text-lg md:text-xl lg:text-2xl text-[#CBD5E1] mb-12 max-w-3xl mx-auto leading-relaxed">
 						Creativity, We Gonna Make Your Own Powerful Secured Modern Technology
 					</p>
-          
+
 					<div className="hero-cta flex flex-col sm:flex-row gap-4 justify-center">
 						<Link to="/contact">
 							<Button size="lg" className="bg-galaxy-gradient hover:shadow-[0_0_40px_rgba(124,58,237,0.6)] hover:scale-105 transition-all duration-300 text-lg px-8 py-6 font-semibold">
@@ -230,7 +230,7 @@ export default function Home() {
 					`
 				}} />
 				<div className="absolute inset-0 pattern-grid opacity-30" />
-				
+
 				<div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
 					<motion.div
 						initial="initial"
@@ -239,9 +239,7 @@ export default function Home() {
 						variants={staggerContainer}
 						className="text-center mb-16"
 					>
-						<motion.div variants={fadeInUp} className="inline-block mb-4 px-4 py-1.5 bg-[#7C3AED]/10 border border-[#7C3AED]/20 rounded-full">
-							<span className="text-[#7C3AED] font-semibold text-sm uppercase tracking-wider">What We Do</span>
-						</motion.div>
+
 						<motion.h2 variants={fadeInUp} className="text-[#F8FAFC] mb-4 text-3xl md:text-4xl font-bold">
 							Solutions Built for Your Needs
 						</motion.h2>
@@ -303,9 +301,7 @@ export default function Home() {
 						variants={staggerContainer}
 						className="text-center mb-16"
 					>
-						<motion.div variants={fadeInUp} className="inline-block mb-4 px-4 py-1.5 bg-[#7C3AED]/10 border border-[#7C3AED]/20 rounded-full">
-							<span className="text-[#7C3AED] font-semibold text-sm uppercase tracking-wider">Industries</span>
-						</motion.div>
+
 						<motion.h2 variants={fadeInUp} className="text-[#F8FAFC] mb-4 text-3xl md:text-4xl font-bold">
 							Industries We Serve
 						</motion.h2>
@@ -354,7 +350,7 @@ export default function Home() {
 					`
 				}} />
 				<div className="absolute inset-0 pattern-grid opacity-30" />
-				
+
 				<div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
 					<motion.div
 						initial="initial"
@@ -363,9 +359,7 @@ export default function Home() {
 						variants={staggerContainer}
 						className="text-center mb-16"
 					>
-						<motion.div variants={fadeInUp} className="inline-block mb-4 px-4 py-1.5 bg-[#7C3AED]/10 border border-[#7C3AED]/20 rounded-full">
-							<span className="text-[#7C3AED] font-semibold text-sm uppercase tracking-wider">Why Us</span>
-						</motion.div>
+
 						<motion.h2 variants={fadeInUp} className="text-[#F8FAFC] mb-4 text-3xl md:text-4xl font-bold">
 							Why Choose Logica?
 						</motion.h2>
@@ -408,7 +402,7 @@ export default function Home() {
 					`
 				}} />
 				<div className="absolute inset-0 pattern-grid opacity-40" />
-				
+
 				<div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
 					<motion.div
 						initial="initial"
@@ -417,9 +411,6 @@ export default function Home() {
 						variants={staggerContainer}
 						className="text-center mb-16"
 					>
-					<motion.div variants={fadeInUp} className="inline-block mb-4 px-4 py-1.5 bg-[#7C3AED]/20 border border-[#7C3AED]/30 rounded-full">
-							<span className="text-[#A855F7] font-semibold text-sm uppercase tracking-wider">Process</span>
-						</motion.div>
 						<motion.h2 variants={fadeInUp} className="text-[#F8FAFC] mb-4 text-3xl md:text-4xl font-bold">
 							How We Work
 						</motion.h2>
@@ -463,7 +454,7 @@ export default function Home() {
 					`,
 					backgroundSize: '40px 40px'
 				}} />
-				
+
 				<motion.div
 					initial="initial"
 					whileInView="animate"

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { ArrowLeft, Clock, Code, Folder } from '@phosphor-icons/react'
 import StarField from '@/components/StarField.jsx'
 import theVifMockup from '../assets/TheVIF mockup 3d devices.png'
-import yamconMockup from '../assets/Books Template/Yamcon Product Mockup.png'
+import yamconMockup from '../assets/Yamcon mockup 3d devices.png'
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -33,6 +33,16 @@ const projectsData = {
     albumImage: yamconMockup,
     projectBgColor: '#3D3A1F'
   },
+  'school-management': {
+    name: 'School Management System',
+    description: 'Full-stack school management web app handling enrollment, payments, grades, schedules, auth, real-time messaging, and role-based workflows for admin/teacher/parent/student.',
+    status: 'Done',
+    category: 'Education / Template',
+    technologies: ['React', 'Node.js', 'Express', 'MySQL', 'Socket.io', 'Paymongo'],
+    timeline: 'Q4 2026',
+    albumImage: yamconMockup,
+    projectBgColor: '#0B3D91'
+  },
   // 'katindahan': {
   //   name: 'Katindahan',
   //   description: 'E-commerce marketplace empowering local businesses and entrepreneurs. Features multi-vendor support, secure payments, inventory management, and delivery tracking integration.',
@@ -61,8 +71,22 @@ export default function ProjectDetails() {
     return <Navigate to="/projects" replace />
   }
 
+  // Page background style: radial gradients + subtle grid overlay
+  const pageBgStyle = {
+    minHeight: '100vh',
+    backgroundImage: `
+      radial-gradient(ellipse at 10% 10%, rgba(99,102,241,0.08) 0%, transparent 25%),
+      radial-gradient(ellipse at 90% 90%, rgba(124,58,237,0.06) 0%, transparent 30%),
+      linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px)
+    `,
+    backgroundSize: '100% 100%, 100% 100%, 20px 20px, 20px 20px',
+    backgroundRepeat: 'no-repeat, no-repeat, repeat, repeat',
+    backgroundColor: '#0f1724'
+  }
+
   return (
-    <div id="project-details-page">
+    <div id="project-details-page" style={pageBgStyle}>
       {/* Background stars */}
       <div className="fixed inset-0 pointer-events-none">
         <StarField count={30} />
@@ -91,7 +115,7 @@ export default function ProjectDetails() {
         >
           {/* Album Image */}
           <div className="details-image-wrapper">
-            <img 
+            <img
               src={project.albumImage}
               alt={project.name}
               className="details-image"
@@ -138,7 +162,7 @@ export default function ProjectDetails() {
                 </span>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '8px' }}>
                   {project.technologies.map((tech) => (
-                    <span 
+                    <span
                       key={tech}
                       style={{
                         padding: '4px 12px',

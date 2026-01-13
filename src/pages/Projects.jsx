@@ -43,6 +43,17 @@ const projects = [
     cubeColor: '#10B981', // Green
     cubeGradient: 'linear-gradient(145deg, #34D399 0%, #10B981 50%, #059669 100%)'
   },
+  {
+    slug: 'school-management',
+    name: 'School Management System',
+    letter: 'Sm',
+    description: 'Full-stack school management web app for enrollment, payments, grades, schedules, role-based auth, and real-time messaging.',
+    status: 'Template Available',
+    category: 'Education / Template',
+    image: theVifMockup,
+    cubeColor: '#0B3D91', // Indigo
+    cubeGradient: 'linear-gradient(145deg, #2563EB 0%, #0B3D91 50%, #072A6B 100%)'
+  },
   // {
   //   slug: 'katindahan',
   //   name: 'Katindahan',
