@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { List, X } from '@phosphor-icons/react'
 import { Button } from '@/components/ui/button.jsx'
 import logo from '@/assets/logica1.jpg'
+import './Navbar.css'
 
 export default function Navbar() {
 	const [isScrolled, setIsScrolled] = useState(false)
@@ -92,36 +93,37 @@ export default function Navbar() {
 				</div>
 			</nav>
 
-			{isMobileMenuOpen && (
-				<div className="fixed inset-0 z-40 lg:hidden">
-					<div 
-						className="fixed inset-0 bg-[#050309]/90 backdrop-blur-xl" 
-						onClick={() => setIsMobileMenuOpen(false)}
-					/>
-					<div className="fixed top-20 right-0 bottom-0 w-full max-w-sm bg-[#0A0612] border-l border-[#7C3AED]/20 shadow-[-10px_0_40px_rgba(124,58,237,0.15)]">
-						<div className="flex flex-col gap-2 p-6">
-							{navLinks.map((link) => (
+			<div className={`mobile-menu-root lg:hidden ${isMobileMenuOpen ? 'open' : ''}`} aria-hidden={!isMobileMenuOpen}>
+				<div
+					className={`mobile-overlay ${isMobileMenuOpen ? 'open' : ''}`}
+					onClick={() => setIsMobileMenuOpen(false)}
+				/>
+				<div className={`mobile-panel ${isMobileMenuOpen ? 'open' : ''}`}>
+					<div className="mobile-panel-inner p-6 pt-20">
+						<div className="flex flex-col gap-4 max-w-full mx-auto">
+							{navLinks.map((link, idx) => (
 								<Link
 									key={link.path}
 									to={link.path}
-									className={`text-lg font-medium transition-all duration-200 px-4 py-3 rounded-xl ${
+									style={{ transitionDelay: `${idx * 70}ms` }}
+									className={`mobile-menu-item text-2xl font-medium transition-all duration-200 px-4 py-4 rounded-xl ${
 										location.pathname === link.path
 											? 'text-[#A855F7] bg-[#7C3AED]/15'
 											: 'text-[#F8FAFC] hover:bg-[#7C3AED]/10'
-									}`}
+										}`}
 								>
 									{link.name}
 								</Link>
 							))}
-							<Link to="/contact" className="mt-4">
-								<Button className="w-full bg-galaxy-gradient hover:shadow-[0_0_30px_rgba(124,58,237,0.6)] font-semibold py-6">
+							<Link to="/contact" className="mt-6 mobile-menu-item" style={{ transitionDelay: `${navLinks.length * 70}ms` }}>
+								<Button className="w-full bg-galaxy-gradient hover:shadow-[0_0_30px_rgba(124,58,237,0.6)] font-semibold py-5 text-lg">
 									Book Consultation
 								</Button>
 							</Link>
 						</div>
 					</div>
 				</div>
-			)}
+			</div>
 		</>
 	)
 }
