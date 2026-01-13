@@ -75,43 +75,43 @@ export default function About() {
 
 	const timelineEvents = [
 		{
-			year: "Step 1",
+			year: "2025 July",
 			title: "The Idea Is Born",
 			subtitle: "Partnership & Vision",
 			description: "Two people partnered with one goal: to build a platform that helps businesses operate better. One brought a strong sales mindset as an IT graduate and businessman, while the other contributed full-stack development expertise to turn the concept into something buildable and real."
 		},
 		{
-			year: "Step 2",
+			year: "2025 September",
 			title: "Strengthening the Core Team",
 			subtitle: "Design & Quality",
 			description: "To move from concept to execution, two more skilled and dedicated professionals joined—one focused on UI/UX to create a clean and user-friendly experience, and the other focused on QA to ensure quality, stability, and reliability."
 		},
 		{
-			year: "Step 3",
+			year: "2025 November",
 			title: "Filling the Gaps to Scale",
 			subtitle: "Team Expansion",
 			description: "As the vision grew, the team expanded to cover what was still missing. Additional specialists were brought in, including a marketing and social media lead to build presence and reach, a data analyst to guide smarter decisions through insights, and another full-stack developer to speed up development and strengthen scalability."
 		},
 		{
-			year: "Step 4",
+			year: "2025 November - December",
 			title: "The Vision Takes Shape",
 			subtitle: "Strategic Focus",
 			description: "With the right people in place, the direction became clearer and more focused—building platforms that improve workflows, reduce inefficiencies, and help businesses grow with confidence through practical, real-world solutions."
 		},
 		{
-			year: "Step 5",
+			year: "2025 December - 2026 January",
 			title: "Building the Foundation",
 			subtitle: "Core Development",
 			description: "The team established core development standards and working systems, refining processes, tools, and practices to ensure every output is structured, scalable, and ready for long-term growth."
 		},
 		{
-			year: "Step 6",
+			year: "2025 December - 2026",
 			title: "First Client Milestone",
 			subtitle: "Proof of Capability",
 			description: "The first client project was successfully delivered, proving the team's capability and turning the vision into real business results through an actual working solution."
 		},
 		{
-			year: "Step 7",
+			year: "2026 - Present",
 			title: "Scaling Impact",
 			subtitle: "Current & Beyond",
 			description: "Today, the focus is on expanding impact by improving the platform continuously, supporting more businesses, and growing into bigger opportunities—building stronger solutions now while preparing for what comes next."
@@ -120,7 +120,7 @@ export default function About() {
 
 	return (
 		<div className="min-h-screen">
-			<section className="relative pt-32 pb-24 bg-[#0A0612] text-[#F8FAFC] overflow-hidden">
+			<section className="relative pt-28 md:pt-24 pb-24 bg-[#0A0612] text-[#F8FAFC] overflow-hidden">
 				{/* Radial gradient overlay */}
 				<div className="absolute inset-0" style={{
 					background: `
@@ -134,21 +134,21 @@ export default function About() {
 					initial="initial"
 					animate="animate"
 					variants={fadeInUp}
-					className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 text-center"
+					className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 text-center mt-8 md:mt-0"
 				>
 					<h1 className="text-[#F8FAFC] mb-6 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
 						Building the Systems<br />
 						<span className="bg-gradient-to-r from-[#8B5CF6] via-[#EC4899] to-[#22D3EE] bg-clip-text text-transparent">That Power Growth</span>
 					</h1>
           
-					<p className="text-lg md:text-xl text-[#CBD5E1] mb-10 max-w-3xl mx-auto leading-relaxed">
+					<p className="text-lg md:text-xl text-[#CBD5E1] mb-0 max-w-3xl mx-auto leading-relaxed">
 						We're a team of engineers, designers, and problem-solvers dedicated to one mission: making your business run smoother through custom technology.
 					</p>
 				</motion.div>
 			</section>
 
 			{/* Timeline Section */}
-			<section className="bg-[#0A0612]">
+			<section className="bg-[#0A0612] -mt-16 md:-mt-8">
 				<ScrollTimeline
 					events={timelineEvents}
 					title="Our Journey"
