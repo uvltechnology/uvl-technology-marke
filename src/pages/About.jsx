@@ -120,7 +120,7 @@ export default function About() {
 
 	return (
 		<div className="min-h-screen">
-			<section className="relative pt-32 pb-24 bg-[#0A0612] text-[#F8FAFC] overflow-hidden">
+			<section className="relative pt-28 md:pt-24 pb-24 bg-[#0A0612] text-[#F8FAFC] overflow-hidden">
 				{/* Radial gradient overlay */}
 				<div className="absolute inset-0" style={{
 					background: `
@@ -134,21 +134,21 @@ export default function About() {
 					initial="initial"
 					animate="animate"
 					variants={fadeInUp}
-					className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 text-center"
+					className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 text-center mt-8 md:mt-0"
 				>
 					<h1 className="text-[#F8FAFC] mb-6 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
 						Building the Systems<br />
 						<span className="bg-gradient-to-r from-[#8B5CF6] via-[#EC4899] to-[#22D3EE] bg-clip-text text-transparent">That Power Growth</span>
 					</h1>
           
-					<p className="text-lg md:text-xl text-[#CBD5E1] mb-10 max-w-3xl mx-auto leading-relaxed">
+					<p className="text-lg md:text-xl text-[#CBD5E1] mb-0 max-w-3xl mx-auto leading-relaxed">
 						We're a team of engineers, designers, and problem-solvers dedicated to one mission: making your business run smoother through custom technology.
 					</p>
 				</motion.div>
 			</section>
 
 			{/* Timeline Section */}
-			<section className="bg-[#0A0612]">
+			<section className="bg-[#0A0612] -mt-16 md:-mt-8">
 				<ScrollTimeline
 					events={timelineEvents}
 					title="Our Journey"
