@@ -2,8 +2,9 @@ import { useParams, Link, Navigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { ArrowLeft, Clock, Code, Folder } from '@phosphor-icons/react'
 import StarField from '@/components/StarField.jsx'
-import theVifMockup from '../assets/TheVIF mockup 3d devices.png'
-import yamconMockup from '../assets/Yamcon mockup 3d devices.png'
+import theVifMockup from '../assets/Devices Mockup/TheVIF mockup 3d devices.png'
+import yamconMockup from '../assets/Devices Mockup/Yamcon mockup 3d devices.png'
+import smsMockup from '../assets/Devices Mockup/SMS mockup 3d devices.png'
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -35,12 +36,12 @@ const projectsData = {
   },
   'school-management': {
     name: 'School Management System',
-    description: 'Full-stack school management web app handling enrollment, payments, grades, schedules, auth, real-time messaging, and role-based workflows for admin/teacher/parent/student.',
+    description: 'A Web Based School Management System handling enrollment, payments, grades, schedules, auth, real-time messaging, and role-based workflows for admin/teacher/parent/student.',
     status: 'Done',
     category: 'Education / Template',
     technologies: ['React', 'Node.js', 'Express', 'MySQL', 'Socket.io', 'Paymongo'],
-    timeline: 'Q4 2026',
-    albumImage: yamconMockup,
+    timeline: 'Q4 2025',
+    albumImage: smsMockup,
     projectBgColor: '#0B3D91'
   },
   // 'katindahan': {

@@ -10,16 +10,15 @@ export default function Footer() {
       { name: 'Contact', path: '/contact' },
     ],
     solutions: [
-      { name: 'Custom Systems', path: '/solutions' },
-      { name: 'Automation', path: '/solutions' },
-      { name: 'Analytics', path: '/solutions' },
-      { name: 'Integrations', path: '/solutions' },
+      { name: 'Customized Systems', path: '/solutions' },
+      { name: 'Templated Systems', path: '/solutions' },
+      { name: 'API & Integration Services', path: '/solutions' },
+      { name: 'Maintenance & Support', path: '/solutions' },
     ],
     industries: [
-      { name: 'SMEs & Startups', path: '/industries' },
-      { name: 'Education', path: '/industries' },
-      { name: 'Healthcare', path: '/industries' },
-      { name: 'Logistics', path: '/industries' },
+      { name: 'Real Estate & Rentals', path: '/industries' },
+      { name: 'Tool Rental & Equipment', path: '/industries' },
+      { name: 'Retail & E-commerce Marketplaces', path: '/industries' },
     ],
   }
 
@@ -43,23 +42,23 @@ export default function Footer() {
               Skip all the stress. Automate the rest. Your universal partner for business systems and digital transformation.
             </p>
             <div className="flex flex-col gap-3 text-sm">
-              <a href="mailto:hello@logica.com" className="flex items-center gap-3 text-[#94A3B8] hover:text-[#A855F7] transition-colors duration-200">
+              <a href="mailto:sales@logicatechnology.com" className="flex items-center gap-3 text-[#94A3B8] hover:text-[#A855F7] transition-colors duration-200">
                 <div className="w-8 h-8 rounded-lg bg-[#7C3AED]/10 flex items-center justify-center">
                   <EnvelopeSimple size={16} weight="bold" className="text-[#7C3AED]" />
                 </div>
-                hello@logica.com
+                sales@logicatechnology.com
               </a>
-              <a href="tel:+1234567890" className="flex items-center gap-3 text-[#94A3B8] hover:text-[#A855F7] transition-colors duration-200">
+              <a href="tel:+63959877321" className="flex items-center gap-3 text-[#94A3B8] hover:text-[#A855F7] transition-colors duration-200">
                 <div className="w-8 h-8 rounded-lg bg-[#7C3AED]/10 flex items-center justify-center">
                   <Phone size={16} weight="bold" className="text-[#7C3AED]" />
                 </div>
-                +1 (234) 567-890
+                (+63) 9959877321
               </a>
               <span className="flex items-center gap-3 text-[#94A3B8]">
                 <div className="w-8 h-8 rounded-lg bg-[#7C3AED]/10 flex items-center justify-center">
                   <MapPin size={16} weight="bold" className="text-[#7C3AED]" />
                 </div>
-                Global Remote Operations
+                442 Silangan East Purok 3 Munting Mapino Naic, Cavite
               </span>
             </div>
           </div>

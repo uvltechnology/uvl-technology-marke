@@ -294,7 +294,7 @@ export default function Contact() {
 									</CardHeader>
 									<CardContent className="space-y-5">
 										<a
-											href="mailto:hello@logica.dev"
+											href="mailto:sales@logicatechnology.com"
 											className="flex items-center gap-4 p-3 rounded-xl hover:bg-[#7C3AED]/10 transition-all duration-300 group"
 										>
 											<div className="w-12 h-12 bg-[#7C3AED]/20 group-hover:bg-[#7C3AED] rounded-xl flex items-center justify-center transition-all duration-300 shadow-lg">
@@ -302,7 +302,7 @@ export default function Contact() {
 											</div>
 											<div>
 												<div className="text-xs font-medium text-[#64748B] uppercase tracking-wider">Email</div>
-												<div className="font-semibold text-[#F8FAFC]">hello@logica.dev</div>
+												<div className="font-semibold text-[#F8FAFC]">sales@logicatechnology.com</div>
 											</div>
 										</a>
 
@@ -324,8 +324,8 @@ export default function Contact() {
 												<MapPin size={22} weight="bold" className="text-[#A855F7]" />
 											</div>
 											<div>
-												<div className="text-xs font-medium text-[#64748B] uppercase tracking-wider">Location</div>
-												<div className="font-semibold text-[#F8FAFC]">Global Remote Operations</div>
+												<div className="text-xs font-medium text-[#64748B] uppercase tracking-wider">Address</div>
+												<div className="font-semibold text-[#F8FAFC]">442 Silangan East Purok 3 Munting Mapino Naic, Cavite</div>
 											</div>
 										</div>
 									</CardContent>

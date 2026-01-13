@@ -35,134 +35,48 @@ const staggerContainer = {
 export default function Solutions() {
 	const solutionCategories = [
 		{
-			icon: Users,
-			title: 'Human Resources (HRIS)',
-			tagline: 'Complete employee lifecycle management',
-			benefits: [
-				'Employee onboarding and offboarding',
-				'Leave and attendance tracking',
-				'Performance management',
-				'Payroll integration',
-				'Benefits administration'
-			],
-			useCases: 'Perfect for companies scaling from 10 to 1,000+ employees'
-		},
-		{
 			icon: Gear,
-			title: 'Enterprise Resource Planning (ERP)',
-			tagline: 'Unified business operations platform',
+			title: 'Customized Systems',
+			tagline: 'Fully tailored software solutions built for your processes',
 			benefits: [
-				'Financial management and accounting',
-				'Procurement and supply chain',
-				'Manufacturing and production',
-				'Project management',
-				'Multi-location support'
+				'School management platforms',
+				'Job portals and marketplaces',
+				'Rental platforms and property systems'
 			],
-			useCases: 'Ideal for manufacturing, distribution, and multi-department organizations'
+			useCases: 'When you need a platform built exactly to your workflow'
 		},
 		{
 			icon: ShoppingCart,
-			title: 'Customer Relationship Management (CRM)',
-			tagline: 'Build stronger customer relationships',
+			title: 'Templated Systems',
+			tagline: 'Pre-built, ready-to-deploy solutions for quick launch',
 			benefits: [
-				'Contact and lead management',
-				'Sales pipeline tracking',
-				'Email campaign automation',
-				'Customer service ticketing',
-				'Analytics and forecasting'
+				'E‑commerce stores and storefronts',
+				'Booking and reservation systems',
+				'Out-of-the-box CRM platforms'
 			],
-			useCases: 'Essential for sales teams, agencies, and customer-focused businesses'
-		},
-		{
-			icon: GraduationCap,
-			title: 'School Management Systems',
-			tagline: 'Streamline academic operations',
-			benefits: [
-				'Student enrollment and records',
-				'Grade and transcript management',
-				'Class scheduling',
-				'Parent-teacher communication',
-				'Fee collection and accounting'
-			],
-			useCases: 'Built for K-12 schools, universities, and training centers'
-		},
-		{
-			icon: Calendar,
-			title: 'Booking & Reservation Systems',
-			tagline: 'Automate appointments and bookings',
-			benefits: [
-				'Online appointment scheduling',
-				'Resource allocation',
-				'Payment processing',
-				'Automated reminders',
-				'Calendar synchronization'
-			],
-			useCases: 'Great for clinics, salons, hotels, and service providers'
-		},
-		{
-			icon: Money,
-			title: 'Point of Sale (POS)',
-			tagline: 'Modern retail and restaurant solutions',
-			benefits: [
-				'Fast transaction processing',
-				'Inventory management',
-				'Customer loyalty programs',
-				'Sales reporting and analytics',
-				'Multi-location support'
-			],
-			useCases: 'Perfect for retail stores, restaurants, and hospitality businesses'
-		},
-		{
-			icon: Package,
-			title: 'Inventory & Warehouse Management',
-			tagline: 'Complete stock visibility and control',
-			benefits: [
-				'Real-time inventory tracking',
-				'Barcode/QR code scanning',
-				'Stock alerts and reordering',
-				'Warehouse location mapping',
-				'Multi-warehouse support'
-			],
-			useCases: 'Essential for warehouses, distributors, and logistics companies'
-		},
-		{
-			icon: ChartBar,
-			title: 'Analytics & Business Intelligence',
-			tagline: 'Transform data into decisions',
-			benefits: [
-				'Custom dashboards',
-				'Real-time KPI monitoring',
-				'Predictive analytics',
-				'Automated reporting',
-				'Data visualization'
-			],
-			useCases: 'Critical for data-driven organizations and executive teams'
+			useCases: 'Fast deployments with light customization'
 		},
 		{
 			icon: Lightning,
-			title: 'Workflow Automation & Integration',
-			tagline: 'Connect your systems seamlessly',
+			title: 'API & Integration Services',
+			tagline: 'Connect systems and extend functionality via APIs',
 			benefits: [
-				'Process automation',
-				'Third-party integrations',
-				'API development',
-				'Document automation',
-				'Notification systems'
+				'Payment gateway integrations',
+				'Identity and verification services',
+				'Data synchronization between systems'
 			],
-			useCases: 'Valuable for any business with repetitive manual tasks'
+			useCases: 'When systems need to share data reliably and securely'
 		},
 		{
-			icon: Database,
-			title: 'Custom Internal Tools',
-			tagline: 'Built exactly for your unique needs',
+			icon: CheckCircle,
+			title: 'Maintenance & Support',
+			tagline: 'Ongoing support, monitoring and performance tuning',
 			benefits: [
-				'Bespoke functionality',
-				'Legacy system modernization',
-				'Department-specific tools',
-				'Data migration',
-				'Custom reporting'
+				'24/7 monitoring and alerting',
+				'Regular bug fixes and updates',
+				'Performance optimization and backups'
 			],
-			useCases: "When off-the-shelf software just won't cut it"
+			useCases: 'Keep mission-critical systems running smoothly'
 		}
 	]
 

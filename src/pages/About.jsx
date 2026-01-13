@@ -53,8 +53,8 @@ export default function About() {
 	]
 
 	const stats = [
-		{ number: '4', label: 'Projects In Progress' },
-		{ number: '6+', label: 'Industries Targeted' },
+		{ number: '3', label: 'Projects In Progress' },
+		{ number: '3+', label: 'Industries Targeted' },
 		{ number: '100%', label: 'Dedication' },
 		{ number: '24/7', label: 'Support Ready' }
 	]

@@ -34,46 +34,34 @@ const staggerContainer = {
 }
 
 export default function Home() {
-	const solutions = [
+	const offerings = [
 		{
 			icon: Gear,
-			title: 'Custom Business Systems',
-			description: 'Tailored platforms built exactly for your workflow',
-			features: [
-				'ERP & Resource Planning',
-				'Internal Tool Development',
-				'Legacy System Modernization'
-			]
+			title: 'Customized Systems',
+			description: 'Fully tailored software solutions built from scratch to match your unique business processes and requirements.',
+			highlight: 'Built for You',
+			examples: ['School Management', 'Job Portals', 'Rental Platforms']
 		},
 		{
-			icon: ChartBar,
-			title: 'Internal Tools & Dashboards',
-			description: 'Real-time insights that drive better decisions',
-			features: [
-				'Executive Dashboards',
-				'KPI Tracking Systems',
-				'Data Visualization Platforms'
-			]
+			icon: Storefront,
+			title: 'Templated Systems',
+			description: 'Pre-built, ready-to-deploy solutions that can be quickly customized to get your business running faster.',
+			highlight: 'Quick Launch',
+			examples: ['E-commerce Stores', 'Booking Systems', 'CRM Platforms']
 		},
 		{
 			icon: Lightning,
-			title: 'Workflow Automations',
-			description: 'Eliminate manual tasks and reduce human error',
-			features: [
-				'Process Automation',
-				'System Integrations',
-				'API Development'
-			]
+			title: 'API & Integration Services',
+			description: 'Powerful APIs and third-party integrations to connect your systems and extend functionality seamlessly.',
+			highlight: 'Connect Everything',
+			examples: ['Payment Gateways', 'Identity Verification', 'Data Sync']
 		},
 		{
-			icon: Users,
-			title: 'Data & Analytics Platforms',
-			description: 'Transform raw data into actionable intelligence',
-			features: [
-				'Business Intelligence',
-				'Predictive Analytics',
-				'Custom Reporting'
-			]
+			icon: Shield,
+			title: 'Maintenance & Support',
+			description: 'Ongoing technical support, updates, and system maintenance to keep your platforms running smoothly.',
+			highlight: 'Always On',
+			examples: ['24/7 Monitoring', 'Bug Fixes', 'Performance Tuning']
 		}
 	]
 
@@ -221,12 +209,13 @@ export default function Home() {
 				</div>
 			</section>
 
-			<section className="py-24 bg-[#0A0612] relative overflow-hidden">
-				{/* Subtle gradient overlay */}
+			{/* ===== WHAT WE OFFER SECTION ===== */}
+			<section className="py-24 bg-[#050309] relative overflow-hidden">
+				{/* Background effects */}
 				<div className="absolute inset-0" style={{
 					background: `
-						radial-gradient(ellipse 60% 40% at 80% 20%, rgba(124, 58, 237, 0.12) 0%, transparent 50%),
-						radial-gradient(ellipse 50% 30% at 20% 80%, rgba(147, 51, 234, 0.08) 0%, transparent 50%)
+						radial-gradient(ellipse 70% 50% at 50% 0%, rgba(124, 58, 237, 0.15) 0%, transparent 60%),
+						radial-gradient(ellipse 50% 40% at 100% 100%, rgba(147, 51, 234, 0.1) 0%, transparent 50%)
 					`
 				}} />
 				<div className="absolute inset-0 pattern-grid opacity-30" />
@@ -239,12 +228,15 @@ export default function Home() {
 						variants={staggerContainer}
 						className="text-center mb-16"
 					>
-
-						<motion.h2 variants={fadeInUp} className="text-[#F8FAFC] mb-4 text-3xl md:text-4xl font-bold">
-							Solutions Built for Your Needs
+						<motion.div variants={fadeInUp} className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-[#7C3AED]/15 border border-[#7C3AED]/30 rounded-full">
+							<Rocket size={18} weight="fill" className="text-[#A855F7]" />
+							<span className="text-[#A855F7] font-semibold text-sm">What We Offer</span>
+						</motion.div>
+						<motion.h2 variants={fadeInUp} className="text-[#F8FAFC] mb-4 text-3xl md:text-4xl lg:text-5xl font-bold">
+							Services That Power Your Business
 						</motion.h2>
-						<motion.p variants={fadeInUp} className="text-xl text-[#CBD5E1] max-w-2xl mx-auto">
-							From HR systems to analytics platforms, we create custom solutions that fit your exact requirements
+						<motion.p variants={fadeInUp} className="text-xl text-[#CBD5E1] max-w-3xl mx-auto">
+							From custom-built platforms to ready-to-deploy templates, we provide everything you need to digitize and scale your operations.
 						</motion.p>
 					</motion.div>
 
@@ -253,35 +245,48 @@ export default function Home() {
 						whileInView="animate"
 						viewport={{ once: true }}
 						variants={staggerContainer}
-						className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+						className="grid grid-cols-1 md:grid-cols-2 gap-6"
 					>
-						{solutions.map((solution, index) => {
-							const Icon = solution.icon
+						{offerings.map((offering, index) => {
+							const Icon = offering.icon
 							return (
 								<motion.div key={index} variants={fadeInUp}>
-									<Card className="h-full card-hover border border-[#8B5CF6]/20 hover:border-[#8B5CF6]/50 bg-[#1A1033]/60 backdrop-blur-sm shadow-sm hover:shadow-[0_20px_40px_rgba(124,58,237,0.2)]">
-										<CardHeader>
-											<div className="w-14 h-14 bg-galaxy-gradient rounded-xl flex items-center justify-center mb-4 shadow-[0_4px_20px_rgba(124,58,237,0.35)]">
-												<Icon size={28} weight="bold" className="text-white" />
+									<Card className="h-full border border-[#8B5CF6]/20 hover:border-[#8B5CF6]/50 bg-gradient-to-br from-[#1A1033]/80 to-[#0A0612]/90 backdrop-blur-sm shadow-sm hover:shadow-[0_20px_50px_rgba(124,58,237,0.25)] transition-all duration-300 group">
+										<CardHeader className="pb-4">
+											<div className="flex items-start justify-between mb-4">
+												<div className="w-14 h-14 bg-galaxy-gradient rounded-xl flex items-center justify-center shadow-[0_4px_20px_rgba(124,58,237,0.35)] group-hover:shadow-[0_8px_30px_rgba(124,58,237,0.5)] group-hover:scale-105 transition-all duration-300">
+													<Icon size={28} weight="bold" className="text-white" />
+												</div>
+												<span className="px-3 py-1 bg-[#7C3AED]/20 border border-[#7C3AED]/30 rounded-full text-[#A855F7] text-xs font-semibold">
+													{offering.highlight}
+												</span>
 											</div>
-											<CardTitle className="text-xl text-[#F8FAFC]">{solution.title}</CardTitle>
-											<CardDescription className="text-base text-[#CBD5E1]">{solution.description}</CardDescription>
+											<CardTitle className="text-2xl text-[#F8FAFC] group-hover:text-[#A855F7] transition-colors">
+												{offering.title}
+											</CardTitle>
+											<CardDescription className="text-base text-[#CBD5E1] leading-relaxed">
+												{offering.description}
+											</CardDescription>
 										</CardHeader>
 										<CardContent>
-											<ul className="space-y-2.5">
-												{solution.features.map((feature, idx) => (
-													<li key={idx} className="flex items-start gap-2.5 text-sm text-[#94A3B8]">
-														<CheckCircle size={18} weight="fill" className="text-[#7C3AED] mt-0.5 shrink-0" />
-														<span>{feature}</span>
-													</li>
+											<div className="flex flex-wrap gap-2">
+												{offering.examples.map((example, idx) => (
+													<span
+														key={idx}
+														className="px-3 py-1.5 bg-[#1A1033] border border-[#8B5CF6]/20 rounded-lg text-sm text-[#94A3B8]"
+													>
+														{example}
+													</span>
 												))}
-											</ul>
+											</div>
 										</CardContent>
 									</Card>
 								</motion.div>
 							)
 						})}
 					</motion.div>
+
+				
 				</div>
 			</section>
 
