@@ -17,7 +17,7 @@ import {
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
 import StarField from '@/components/StarField.jsx'
-
+import Navbar from "@/components/Navbar.jsx"
 const fadeInUp = {
 	initial: { opacity: 0, y: 20 },
 	animate: { opacity: 1, y: 0 },
@@ -81,7 +81,8 @@ export default function Solutions() {
 	]
 
 	return (
-		<div className="min-h-screen pt-20">
+		<div className="min-h-screen">
+			<Navbar />
 			<section className="relative py-24 bg-[#030108] text-[#F8FAFC] overflow-hidden">
 				{/* Enhanced cosmic background */}
 				<div className="absolute inset-0" style={{
@@ -117,7 +118,7 @@ export default function Solutions() {
 					</h1>
           
 					<p className="text-lg md:text-xl text-[#CBD5E1] mb-10 max-w-3xl mx-auto leading-relaxed">
-						From HR to analytics, inventory to CRM—we build custom systems tailored to your exact requirements. No templates, no compromises.
+						From HR to analytics, inventory to CRM—we build custom systems tailored to your exact requirements.
 					</p>
 				</motion.div>
 			</section>

@@ -5,7 +5,7 @@ import StarField from '@/components/StarField.jsx'
 import theVifMockup from '../assets/Devices Mockup/TheVIF mockup 3d devices.png'
 import yamconMockup from '../assets/Devices Mockup/Yamcon mockup 3d devices.png'
 import smsMockup from '../assets/Devices Mockup/SMS mockup 3d devices.png'
-
+import Navbar from "@/components/Navbar.jsx"
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
@@ -88,6 +88,7 @@ export default function ProjectDetails() {
 
   return (
     <div id="project-details-page" style={pageBgStyle}>
+      <Navbar />
       {/* Background stars */}
       <div className="fixed inset-0 pointer-events-none">
         <StarField count={30} />

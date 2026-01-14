@@ -21,6 +21,7 @@ import {
 	AccordionTrigger,
 } from '@/components/ui/accordion.jsx'
 import { toast } from 'sonner'
+import Navbar from "@/components/Navbar.jsx"
 
 const fadeInUp = {
 	initial: { opacity: 0, y: 20 },
@@ -155,9 +156,10 @@ export default function Contact() {
 	]
 
 	return (
-		<div className="min-h-screen pt-20">
-			<section className="py-24 bg-[#0A0612]">
-				<div className="max-w-7xl mx-auto px-6 lg:px-8">
+		<div className="min-h-screen">
+			<Navbar />
+			<section id="contact-hero" className="pt-24 bg-[#0A0612]">
+				<div className="max-w-7xl mx-auto px-6 lg:px-8 ">
 					<div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 						<motion.div
 							initial="initial"

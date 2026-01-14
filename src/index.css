@@ -293,6 +293,21 @@ html::-webkit-scrollbar {
   }
 }
 
+/* Targeted override for the Contact section to reduce top padding on small screens */
+@media (max-width: 768px) {
+  #contact-hero {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #contact-hero {
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+  }
+}
+
 /* ===== CARD GRIDS RESPONSIVE ===== */
 @media (max-width: 640px) {
   .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-4,

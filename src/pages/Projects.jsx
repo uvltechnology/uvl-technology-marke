@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, Eye } from '@phosphor-icons/react'
 import { useState, useEffect, useRef } from 'react'
 import '../styles/projects.css'
-
+import Navbar from "@/components/Navbar.jsx"
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
   animate: { opacity: 1, y: 0 },
@@ -162,6 +162,7 @@ export default function Projects() {
 
   return (
     <div id="projects-page">
+      <Navbar />
       {/* ===== SHOWCASE STAGE SECTION ===== */}
       <section className="showcase-stage">
         {/* Layer 0: Base background */}

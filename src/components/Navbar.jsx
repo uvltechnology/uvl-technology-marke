@@ -29,7 +29,7 @@ export default function Navbar() {
 		// { name: 'Solutions', path: '/solutions' }, // Hidden for now
 		// { name: 'Industries', path: '/industries' },
 		{ name: 'Projects', path: '/projects' },
-		{ name: 'About', path: '/about' },
+		{ name: 'About Us', path: '/about' },
 	]
 
 	// Determine navbar background based on scroll position and current page
@@ -47,7 +47,7 @@ export default function Navbar() {
 		<>
 			<nav
 				id="galaxy-navbar"
-				className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${getNavbarBg()}`}
+				className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ${getNavbarBg()}`}
 			>
 				<div className="max-w-7xl mx-auto px-6 lg:px-8">
 					<div className="flex items-center justify-between h-20">

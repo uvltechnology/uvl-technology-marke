@@ -18,7 +18,7 @@ import {
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
 import { ScrollTimeline } from '@/components/ui/scroll-timeline.jsx'
-
+import Navbar from "@/components/Navbar.jsx"
 const fadeInUp = {
 	initial: { opacity: 0, y: 20 },
 	animate: { opacity: 1, y: 0 },
@@ -120,6 +120,7 @@ export default function About() {
 
 	return (
 		<div className="min-h-screen">
+			<Navbar />
 			<section className="relative pt-28 md:pt-24 pb-24 bg-[#0A0612] text-[#F8FAFC] overflow-hidden">
 				{/* Radial gradient overlay */}
 				<div className="absolute inset-0" style={{
