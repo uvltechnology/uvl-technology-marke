@@ -20,6 +20,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import StarField from '@/components/StarField.jsx'
 import StarBorder from '@/components/StarBorder.jsx'
 import Particles from '@/components/Particles.jsx';
+import Navbar from '@/components/Navbar.jsx'
 
 const fadeInUp = {
 	initial: { opacity: 0, y: 20 },
@@ -139,6 +140,7 @@ export default function Home() {
 
 	return (
 		<div className="min-h-screen">
+			<Navbar />
 			<section id="galaxy-hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#050309]">
 				{/* Enhanced cosmic background */}
 				<div className="hero-bg absolute inset-0" style={{
@@ -169,7 +171,7 @@ export default function Home() {
 					moveParticlesOnHover={true}
 					alphaParticles={true}
 					disableRotation={false}
-				/>	
+				/>
 
 
 				<motion.div
@@ -204,7 +206,7 @@ export default function Home() {
 						</StarBorder>
 						<StarBorder
 							as={Link}
-							to="/solutions"
+							to="/projects"
 							className="custom-class"
 							color="#7C3AED"
 							speed="5s"
@@ -216,7 +218,7 @@ export default function Home() {
 					</div>
 				</motion.div>
 
-			
+
 			</section>
 
 			{/* ===== WHAT WE OFFER SECTION ===== */}

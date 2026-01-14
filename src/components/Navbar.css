@@ -6,7 +6,7 @@
 }
 
 .mobile-overlay {
-  position: fixed;
+  position: sticky;
   inset: 0;
   background: rgba(5, 3, 9, 0.0);
   backdrop-filter: blur(0px);
