@@ -118,7 +118,7 @@ export default function Solutions() {
 					</h1>
           
 					<p className="text-lg md:text-xl text-[#CBD5E1] mb-10 max-w-3xl mx-auto leading-relaxed">
-						From HR to analytics, inventory to CRM—we build custom systems tailored to your exact requirements. No templates, no compromises.
+						From HR to analytics, inventory to CRM—we build custom systems tailored to your exact requirements.
 					</p>
 				</motion.div>
 			</section>
