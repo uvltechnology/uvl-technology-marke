@@ -1,6 +1,6 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/thevifco/api.logicatechnology.com
-    - /bin/cp -R Logica-Server/* $DEPLOYPATH/
-    - cd $DEPLOYPATH && /opt/cpanel/ea-nodejs20/bin/npm install --production
+    - /bin/rm -rf /home/thevifco/api.logicatechnology.com/controllers /home/thevifco/api.logicatechnology.com/helpers /home/thevifco/api.logicatechnology.com/middlewares /home/thevifco/api.logicatechnology.com/routes /home/thevifco/api.logicatechnology.com/services
+    - /bin/cp -R Logica-Server/* /home/thevifco/api.logicatechnology.com/
+    - cd /home/thevifco/api.logicatechnology.com && /opt/cpanel/ea-nodejs20/bin/npm install --production
