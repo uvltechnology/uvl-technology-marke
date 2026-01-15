@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { EnvelopeSimple, Phone, MapPin, LinkedinLogo, TwitterLogo, GithubLogo } from '@phosphor-icons/react'
+import { EnvelopeSimple, Phone, MapPin, TiktokLogo, FacebookLogo, YoutubeLogo } from '@phosphor-icons/react'
 import logo from '@/assets/logica1.jpg'
 
 export default function Footer() {
@@ -58,7 +58,7 @@ export default function Footer() {
                 <div className="w-8 h-8 rounded-lg bg-[#7C3AED]/10 flex items-center justify-center">
                   <MapPin size={16} weight="bold" className="text-[#7C3AED]" />
                 </div>
-                442 Silangan East Purok 3 Munting Mapino Naic, Cavite
+                Garita B Maragondon, Cavite, Philippines  
               </span>
             </div>
           </div>
@@ -118,31 +118,31 @@ export default function Footer() {
           </p>
           <div className="flex items-center gap-3">
             <a
-              href="https://linkedin.com"
+              href="https://www.tiktok.com/@logicatechnology"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-lg bg-[#7C3AED]/10 flex items-center justify-center text-[#64748B] hover:text-[#A855F7] hover:bg-[#7C3AED]/20 transition-all duration-200"
-              aria-label="LinkedIn"
+              aria-label="TikTok"
             >
-              <LinkedinLogo size={20} weight="fill" />
+              <TiktokLogo size={20} weight="fill" />
             </a>
             <a
-              href="https://twitter.com"
+              href="https://www.facebook.com/profile.php?id=61585468153192"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-lg bg-[#7C3AED]/10 flex items-center justify-center text-[#64748B] hover:text-[#A855F7] hover:bg-[#7C3AED]/20 transition-all duration-200"
-              aria-label="Twitter"
+              aria-label="Facebook"
             >
-              <TwitterLogo size={20} weight="fill" />
+              <FacebookLogo size={20} weight="fill" />
             </a>
             <a
-              href="https://github.com"
+              href="https://youtube.com/@logicatechnology?si=YqDcZKEQEsdGzf54"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-lg bg-[#7C3AED]/10 flex items-center justify-center text-[#64748B] hover:text-[#A855F7] hover:bg-[#7C3AED]/20 transition-all duration-200"
-              aria-label="GitHub"
+              aria-label="YouTube"
             >
-              <GithubLogo size={20} weight="fill" />
+              <YoutubeLogo size={20} weight="fill" />
             </a>
           </div>
         </div>
