@@ -1,10 +1,8 @@
 ---
 deployment:
   tasks:
-    # Deploy Backend
     - /bin/rm -rf /home/thevifco/api.logicatechnology.com/controllers /home/thevifco/api.logicatechnology.com/helpers /home/thevifco/api.logicatechnology.com/middlewares /home/thevifco/api.logicatechnology.com/routes /home/thevifco/api.logicatechnology.com/services
     - /bin/cp -R Logica-Server/* /home/thevifco/api.logicatechnology.com/
     - cd /home/thevifco/api.logicatechnology.com && /opt/cpanel/ea-nodejs20/bin/npm install --production
-    # Deploy Frontend
     - /bin/rm -rf /home/thevifco/logicatechnology.com/assets
     - /bin/cp -R dist/* /home/thevifco/logicatechnology.com/
