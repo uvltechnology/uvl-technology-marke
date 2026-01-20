@@ -168,7 +168,7 @@ export const ScrollTimeline = ({
     const variantClasses = {
       default: "bg-card border shadow-sm",
       elevated: "bg-card border border-border/40 shadow-md",
-      outlined: "bg-card/50 backdrop-blur border-2 border-primary/20",
+      outlined: "bg-[#1A1033]/90 backdrop-blur border-2 border-primary/20",
       filled: "bg-primary/10 border border-primary/30",
     };
     const effectClasses = {
@@ -340,7 +340,7 @@ export const ScrollTimeline = ({
                     viewport={{ once: false, margin: "-100px" }}
                     style={parallaxIntensity > 0 ? { y: yOffset } : undefined}
                   >
-                    <Card className="bg-background border">
+                    <Card className="bg-[#1A1033]/80 border border-[#8B5CF6]/30">
                       <CardContent className="p-6">
                         {dateFormat === "badge" ? (
                           <div className="flex items-center mb-2">
@@ -363,15 +363,15 @@ export const ScrollTimeline = ({
                             {event.year}
                           </p>
                         )}
-                        <h3 className="text-xl font-bold mb-1">
+                        <h3 className="text-xl font-bold mb-1 text-[#E2E8F0]">
                           {event.title}
                         </h3>
                         {event.subtitle && (
-                          <p className="text-muted-foreground font-medium mb-2">
+                          <p className="text-[#94A3B8] font-medium mb-2">
                             {event.subtitle}
                           </p>
                         )}
-                        <p className="text-muted-foreground">
+                        <p className="text-[#94A3B8]">
                           {event.description}
                         </p>
                       </CardContent>

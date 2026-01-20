@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
+import { useState, useEffect } from 'react'
 import {
 	Rocket,
 	Gear,
@@ -37,6 +38,16 @@ const staggerContainer = {
 }
 
 export default function Home() {
+	const [currentWordIndex, setCurrentWordIndex] = useState(0)
+	const rotatingWords = ['Business', 'Lifestyle', 'Growth', 'Vision', 'Success']
+
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setCurrentWordIndex((prev) => (prev + 1) % rotatingWords.length)
+		}, 2500)
+		return () => clearInterval(interval)
+	}, [])
+
 	const offerings = [
 		{
 			icon: Gear,
@@ -54,10 +65,10 @@ export default function Home() {
 		},
 		{
 			icon: Lightning,
-			title: 'API & Integration Services',
-			description: 'Powerful APIs and third-party integrations to connect your systems and extend functionality seamlessly.',
+			title: 'Digital Services',
+			description: 'Modern digital solutions including E-Invitations, APIs, and seamless integrations that connect your systems and enhance functionality.',
 			highlight: 'Connect Everything',
-			examples: ['Payment Gateways', 'Identity Verification', 'Data Sync']
+			examples: ['E-Invitations', 'Identity Verification']
 		},
 		{
 			icon: Shield,
@@ -241,14 +252,32 @@ export default function Home() {
 						className="text-center mb-16"
 					>
 						<motion.div variants={fadeInUp} className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-[#7C3AED]/15 border border-[#7C3AED]/30 rounded-full">
-							<Rocket size={18} weight="fill" className="text-[#A855F7]" />
 							<span className="text-[#A855F7] font-semibold text-sm">What We Offer</span>
 						</motion.div>
-						<motion.h2 variants={fadeInUp} className="text-[#F8FAFC] mb-4 text-3xl md:text-4xl lg:text-5xl font-bold">
-							Services That Power Your Business
+						<motion.h2 variants={fadeInUp} className="text-[#F8FAFC] mb-4 text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-center">
+							<span className="inline-flex flex-wrap items-baseline justify-center gap-x-3">
+								<span>Services That Power Your</span>
+								<span className="relative inline-block" style={{ 
+									minWidth: '200px'
+								}}>
+									<AnimatePresence mode="wait">
+										<motion.span
+											key={currentWordIndex}
+											initial={{ y: 30, opacity: 0 }}
+											animate={{ y: 0, opacity: 1 }}
+											exit={{ y: -30, opacity: 0 }}
+											transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+											className="bg-gradient-to-r from-[#7C3AED] via-[#9333EA] to-[#C084FC] bg-clip-text text-transparent"
+											style={{ display: 'inline-block' }}
+										>
+											{rotatingWords[currentWordIndex]}
+										</motion.span>
+									</AnimatePresence>
+								</span>
+							</span>
 						</motion.h2>
 						<motion.p variants={fadeInUp} className="text-xl text-[#CBD5E1] max-w-3xl mx-auto">
-							From custom-built platforms to ready-to-deploy templates, we provide everything you need to digitize and scale your operations.
+							Tailored solutions designed to streamline operations, boost efficiency, and drive measurable results for your organization.
 						</motion.p>
 					</motion.div>
 
@@ -341,7 +370,7 @@ export default function Home() {
 									<Card className="h-full card-hover border border-[#8B5CF6]/20 hover:border-[#8B5CF6]/50 bg-[#1A1033]/60 backdrop-blur-sm shadow-sm hover:shadow-[0_15px_30px_rgba(124,58,237,0.2)]">
 										<CardHeader className="h-full flex items-center">
 											<div className="flex items-center gap-4">
-												<div className="w-12 h-12 bg-galaxy-gradient rounded-xl flex items-center justify-center shrink-0 shadow-[0_4px_15px_rgba(124,58,237,0.3)]">
+												<div className="w-12 h-12 bg-[#7C3AED] rounded-xl flex items-center justify-center shrink-0">
 													<Icon size={24} weight="bold" className="text-white" />
 												</div>
 												<div>
@@ -385,27 +414,87 @@ export default function Home() {
 						</motion.p>
 					</motion.div>
 
+					{/* Bento Grid Layout */}
 					<motion.div
 						initial="initial"
 						whileInView="animate"
 						viewport={{ once: true }}
 						variants={staggerContainer}
-						className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+						className="bento-grid"
 					>
-						{pillars.map((pillar, index) => {
-							const Icon = pillar.icon
-							return (
-								<motion.div key={index} variants={fadeInUp}>
-									<div className="text-center group">
-										<div className="w-16 h-16 bg-galaxy-gradient rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-[0_4px_20px_rgba(124,58,237,0.35)] group-hover:shadow-[0_8px_30px_rgba(124,58,237,0.5)] group-hover:scale-105 transition-all duration-300">
-											<Icon size={32} weight="bold" className="text-white" />
+						{/* Card 1: Secure & Compliant - LARGE (Featured) */}
+						<motion.div variants={fadeInUp} className="bento-card bento-large group">
+							<div className="bento-card-content h-full flex flex-col">
+								<div className="flex-1">
+									<h3 className="text-3xl font-heading font-bold text-[#F8FAFC] mb-4 group-hover:text-[#A855F7] transition-colors">
+										Reliable & Protected
+									</h3>
+									<p className="text-lg text-[#CBD5E1] leading-relaxed mb-6">
+										Enterprise-grade reliability with built-in data protection, encrypted storage, and regular security updates. We implement industry best practices to ensure your systems run smoothly and your data stays safe. From automated backups to secure hosting infrastructure, every layer is designed with reliability and protection in mind.
+									</p>
+								</div>
+								<div className="mt-6 pt-6 border-t border-[#8B5CF6]/20">
+									<div className="flex items-center gap-4 text-sm text-[#94A3B8]">
+										<div className="flex items-center gap-2">
+											<div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+											<span>99.9% Uptime</span>
 										</div>
-										<h3 className="text-xl font-heading font-bold text-[#F8FAFC] mb-3">{pillar.title}</h3>
-										<p className="text-[#94A3B8] leading-relaxed">{pillar.description}</p>
+										<div className="flex items-center gap-2">
+											<CheckCircle size={16} weight="fill" className="text-emerald-500" />
+											<span>Enterprise Grade</span>
+										</div>
 									</div>
-								</motion.div>
-							)
-						})}
+								</div>
+							</div>
+						</motion.div>
+
+						{/* Card 2: End-to-End Delivery - MEDIUM */}
+						<motion.div variants={fadeInUp} className="bento-card bento-medium group">
+							<div className="bento-card-content h-full">
+								<h3 className="text-2xl font-heading font-bold text-[#F8FAFC] mb-3 group-hover:text-[#A855F7] transition-colors">
+									{pillars[0].title}
+								</h3>
+								<p className="text-[#CBD5E1] leading-relaxed">
+									{pillars[0].description}
+								</p>
+								<div className="mt-4 text-4xl font-bold text-[#7C3AED]">100%</div>
+								<div className="text-sm text-[#94A3B8]">Project Completion Rate</div>
+							</div>
+						</motion.div>
+
+						{/* Card 3: Human-Centered Design - MEDIUM */}
+						<motion.div variants={fadeInUp} className="bento-card bento-medium group">
+							<div className="bento-card-content h-full">
+								<h3 className="text-2xl font-heading font-bold text-[#F8FAFC] mb-3 group-hover:text-[#A855F7] transition-colors">
+									{pillars[2].title}
+								</h3>
+								<p className="text-[#CBD5E1] leading-relaxed">
+									{pillars[2].description}
+								</p>
+								<div className="mt-4 flex items-center gap-2">
+									<CheckCircle size={20} weight="fill" className="text-emerald-500" />
+									<span className="text-sm text-[#94A3B8]">Intuitive & Accessible</span>
+								</div>
+							</div>
+						</motion.div>
+
+						{/* Card 4: Affordable - WIDE */}
+						<motion.div variants={fadeInUp} className="bento-card bento-wide group">
+							<div className="bento-card-content h-full flex items-center gap-6">
+								<div className="flex-1">
+									<h3 className="text-2xl font-heading font-bold text-[#F8FAFC] mb-2 group-hover:text-[#A855F7] transition-colors">
+										{pillars[3].title}
+									</h3>
+									<p className="text-[#CBD5E1] leading-relaxed">
+										{pillars[3].description}
+									</p>
+								</div>
+								<div className="text-right shrink-0">
+									<div className="text-2xl font-bold text-[#7C3AED]">Transparent</div>
+									<div className="text-sm text-[#94A3B8]">No Hidden Fees</div>
+								</div>
+							</div>
+						</motion.div>
 					</motion.div>
 				</div>
 			</section>
@@ -486,9 +575,8 @@ export default function Home() {
 						Whether it's HR, CRM, inventory, finance, or something completely custom—we've got you covered.
 					</p>
 					<Link to="/contact">
-						<Button size="lg" className="bg-white text-[#7C3AED] hover:bg-white/95 hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.35)] transition-all duration-300 text-lg px-10 py-6 font-bold shadow-2xl">
+						<Button size="lg" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#7C3AED] hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.5)] active:scale-95 active:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all duration-300 text-lg px-10 py-6 font-bold">
 							Start Your Project Today
-							<ArrowRight className="ml-2" size={20} weight="bold" />
 						</Button>
 					</Link>
 				</motion.div>

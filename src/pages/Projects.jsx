@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Eye } from '@phosphor-icons/react'
+import { ArrowRight, Eye, CaretLeft, CaretRight } from '@phosphor-icons/react'
 import { useState, useEffect, useRef } from 'react'
 import '../styles/projects.css'
 import Navbar from "@/components/Navbar.jsx"
@@ -19,6 +19,20 @@ const staggerContainer = {
 import theVifMockup from '../assets/Books Template/TheVIF Product Mockup.png'
 import yamconMockup from '../assets/Books Template/Yamcon Product Mockup.png'
 import smsMockup from '../assets/Books Template/SMS Product Mockup.png'
+
+// Digital Services data
+const digitalServices = [
+  {
+    id: 'e-invitation',
+    name: 'E-Invitation',
+    icon: '✉️',
+    description: 'Modern digital invitations for weddings, events, and special occasions. Beautifully designed, eco-friendly, and easy to share.',
+    features: ['Custom Designs', 'RSVP Tracking', 'Template Options'],
+    color: '#F59E0B',
+    gradient: 'linear-gradient(135deg, #FCD34D 0%, #F59E0B 100%)'
+  },
+  // More services can be added here
+]
 
 // Project data - 4 in-progress projects with Adobe-style cube colors
 const projects = [
@@ -85,6 +99,8 @@ export default function Projects() {
   const [activeIndex, setActiveIndex] = useState(0)
   const [isMobile, setIsMobile] = useState(false)
   const itemRefs = useRef([])
+  const [currentServiceIndex, setCurrentServiceIndex] = useState(0)
+  const servicesScrollRef = useRef(null)
 
   // Check if mobile on mount
   useEffect(() => {
@@ -159,6 +175,63 @@ export default function Projects() {
     loadMockup()
     return () => { mounted = false }
   }, [])
+
+  // Handle carousel scroll with boundaries
+  const handleServiceScroll = (direction) => {
+    const container = servicesScrollRef.current
+    if (!container) return
+
+    const cardWidth = container.querySelector('.service-card')?.offsetWidth || 0
+    const gap = 32 // 2rem gap
+    const scrollAmount = cardWidth + gap
+    const maxScroll = container.scrollWidth - container.clientWidth
+
+    let targetScroll
+    if (direction === 'next') {
+      targetScroll = Math.min(container.scrollLeft + scrollAmount, maxScroll)
+    } else {
+      targetScroll = Math.max(container.scrollLeft - scrollAmount, 0)
+    }
+
+    container.scrollTo({ left: targetScroll, behavior: 'smooth' })
+  }
+
+  // Update current index on scroll with debouncing
+  useEffect(() => {
+    const container = servicesScrollRef.current
+    if (!container) return
+
+    let scrollTimeout
+    const handleScroll = () => {
+      clearTimeout(scrollTimeout)
+      scrollTimeout = setTimeout(() => {
+        const scrollLeft = container.scrollLeft
+        const cardWidth = container.querySelector('.service-card')?.offsetWidth || 0
+        const gap = 32
+        const index = Math.round(scrollLeft / (cardWidth + gap))
+        setCurrentServiceIndex(Math.min(index, digitalServices.length - 1))
+      }, 50)
+    }
+
+    // Prevent overscroll
+    const preventOverscroll = (e) => {
+      const maxScroll = container.scrollWidth - container.clientWidth
+      if (container.scrollLeft <= 0 && e.deltaX < 0) {
+        e.preventDefault()
+      } else if (container.scrollLeft >= maxScroll && e.deltaX > 0) {
+        e.preventDefault()
+      }
+    }
+
+    container.addEventListener('scroll', handleScroll, { passive: true })
+    container.addEventListener('wheel', preventOverscroll, { passive: false })
+    
+    return () => {
+      clearTimeout(scrollTimeout)
+      container.removeEventListener('scroll', handleScroll)
+      container.removeEventListener('wheel', preventOverscroll)
+    }
+  }, [digitalServices.length])
 
   return (
     <div id="projects-page">
@@ -246,33 +319,117 @@ export default function Projects() {
         </div>
       </section>
 
-      {/* <section className="projects-samples">
-        <div className="content-left">
-          <div className="devices-figure">
-            {deviceSrc ? (
-              <img src={deviceSrc} alt="Device mockups" className="devices-mockup" loading="lazy" />
-            ) : (
-              <div className="devices-placeholder" aria-hidden="true">Loading mockup…</div>
-            )}
+      {/* ===== DIGITAL SERVICES SECTION ===== */}
+      <section className="digital-services">
+        <div className="services-bg" />
+        <div className="services-pattern" />
+        
+        <div className="services-container">
+          <motion.header
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="services-header"
+          >
+            <h2 className="services-title">Digital Services</h2>
+            <p className="services-subtitle">
+              Tailored digital solutions to elevate your brand and streamline your events
+            </p>
+          </motion.header>
+
+          {/* Carousel Navigation */}
+          <div className="carousel-controls">
+            <button
+              onClick={() => handleServiceScroll('prev')}
+              className="carousel-arrow carousel-arrow-prev"
+              aria-label="Previous service"
+              disabled={currentServiceIndex === 0}
+            >
+              <CaretLeft size={24} weight="bold" />
+            </button>
+            <button
+              onClick={() => handleServiceScroll('next')}
+              className="carousel-arrow carousel-arrow-next"
+              aria-label="Next service"
+              disabled={currentServiceIndex >= digitalServices.length - 1}
+            >
+              <CaretRight size={24} weight="bold" />
+            </button>
+          </div>
+
+          {/* Horizontal Scroll Container */}
+          <motion.div
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, margin: '-100px' }}
+            variants={staggerContainer}
+            className="services-carousel"
+            ref={servicesScrollRef}
+          >
+            {digitalServices.map((service, index) => (
+              <motion.article
+                key={service.id}
+                variants={fadeInUp}
+                className="service-card"
+                style={{
+                  '--service-color': service.color,
+                  '--service-gradient': service.gradient
+                }}
+              >
+                <div className="service-card-glow" />
+                
+                <div className="service-icon">
+                  <span className="icon-emoji">{service.icon}</span>
+                </div>
+
+                <h3 className="service-name">{service.name}</h3>
+                <p className="service-description">{service.description}</p>
+
+                <ul className="service-features">
+                  {service.features.map((feature, idx) => (
+                    <li key={idx} className="feature-item">
+                      <span className="feature-dot" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+
+                <Link to="/contact" className="service-link">
+                  <span>Get Started</span>
+                  <ArrowRight size={16} weight="bold" />
+                </Link>
+              </motion.article>
+            ))}
+          </motion.div>
+
+          {/* Progress Indicators */}
+          <div className="carousel-indicators">
+            {digitalServices.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => {
+                  const container = servicesScrollRef.current
+                  if (container) {
+                    const cardWidth = container.querySelector('.service-card')?.offsetWidth || 0
+                    const gap = 32
+                    const targetScroll = index * (cardWidth + gap)
+                    const maxScroll = container.scrollWidth - container.clientWidth
+                    
+                    container.scrollTo({
+                      left: Math.min(targetScroll, maxScroll),
+                      behavior: 'smooth'
+                    })
+                    setCurrentServiceIndex(index)
+                  }
+                }}
+                className={`indicator-dot ${currentServiceIndex === index ? 'active' : ''}`}
+                aria-label={`Go to service ${index + 1}`}
+              />
+            ))}
           </div>
         </div>
-
-        <div className="content-right">
-          <div className="project-detail">
-            <h3 className="project-detail-title">{selected.name}</h3>
-            <p className="project-detail-desc">{selected.description}</p>
-
-            <div className="project-meta">
-              <span className="meta-category">{selected.category}</span>
-              <span className="meta-status">{selected.status}</span>
-            </div>
-
-            <div className="project-actions">
-              <Link to={`/projects/${selected.slug}`} className="detail-link">View Project</Link>
-            </div>
-          </div>
-        </div>
-      </section> */}
+      </section>
 
       {/* ===== CTA SECTION ===== */}
       <section className="projects-cta">

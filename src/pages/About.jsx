@@ -121,7 +121,7 @@ export default function About() {
 	return (
 		<div className="min-h-screen">
 			<Navbar />
-			<section className="relative pt-28 md:pt-24 pb-24 bg-[#0A0612] text-[#F8FAFC] overflow-hidden">
+			<section className="relative pt-24 pb-24 bg-[#0A0612] text-[#F8FAFC] overflow-hidden">
 				{/* Radial gradient overlay */}
 				<div className="absolute inset-0" style={{
 					background: `
@@ -350,7 +350,6 @@ export default function About() {
 					<Link to="/contact">
 						<Button size="lg" className="bg-white text-[#7C3AED] hover:bg-white/90 hover:scale-105 transition-all text-lg px-10 py-6 shadow-2xl font-semibold">
 							Start the Conversation
-							<ArrowRight className="ml-2" size={20} weight="bold" />
 						</Button>
 					</Link>
 				</motion.div>

@@ -134,10 +134,6 @@ export default function Contact() {
 			answer: 'Timeline varies based on complexity, but most projects range from 6-16 weeks. Simple tools can be delivered in 4-6 weeks, while comprehensive enterprise systems may take 3-6 months. We provide a detailed timeline after our initial discovery phase.'
 		},
 		{
-			question: 'What does a custom system cost?',
-			answer: 'Pricing depends on scope, features, and complexity. Projects typically range from $15,000 for simple automation tools to $100,000+ for enterprise-wide systems. We provide transparent, fixed-price quotes after understanding your requirements.'
-		},
-		{
 			question: 'Do you provide ongoing support after launch?',
 			answer: 'Absolutely. We offer flexible support packages including bug fixes, feature updates, hosting management, and technical assistance. Most clients opt for monthly retainer agreements for peace of mind.'
 		},
@@ -156,11 +152,43 @@ export default function Contact() {
 	]
 
 	return (
-		<div className="min-h-screen">
+		<div className="min-h-screen bg-[#050309]">
 			<Navbar />
-			<section id="contact-hero" className="pt-24 bg-[#0A0612]">
-				<div className="max-w-7xl mx-auto px-6 lg:px-8 ">
+			{/* Hero Section with proper spacing */}
+			<section className="relative pt-24 pb-16 bg-[#0A0612] overflow-hidden">
+				{/* Background effects */}
+				<div className="absolute inset-0" style={{
+					background: `
+						radial-gradient(ellipse 70% 50% at 50% 0%, rgba(124, 58, 237, 0.15) 0%, transparent 60%),
+						radial-gradient(ellipse 50% 40% at 100% 100%, rgba(147, 51, 234, 0.1) 0%, transparent 50%)
+					`
+				}} />
+				<div className="absolute inset-0 opacity-30" style={{
+					backgroundImage: `
+						linear-gradient(rgba(124, 58, 237, 0.03) 1px, transparent 1px),
+						linear-gradient(90deg, rgba(124, 58, 237, 0.03) 1px, transparent 1px)
+					`,
+					backgroundSize: '50px 50px'
+				}} />
+
+				<div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+					{/* Page Title */}
+					<motion.div
+						initial="initial"
+						animate="animate"
+						variants={fadeInUp}
+						className="text-center mb-16 mt-16"
+					>
+						<h1 className="text-[#F8FAFC] mb-4 text-4xl md:text-5xl lg:text-6xl font-bold">
+							Let's Build Something Amazing
+						</h1>
+						<p className="text-xl text-[#CBD5E1] max-w-2xl mx-auto">
+							Tell us about your project and we'll schedule a free consultation to discuss how we can help
+						</p>
+					</motion.div>
+					{/* Form and Contact Info Grid */}
 					<div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+						{/* Contact Form */}
 						<motion.div
 							initial="initial"
 							whileInView="animate"
@@ -258,8 +286,7 @@ export default function Contact() {
 												'Sending...'
 											) : (
 												<>
-													Send Consultation Request
-													<PaperPlaneTilt className="ml-2" size={22} weight="bold" />
+													Send Request
 												</>
 											)}
 										</Button>
@@ -272,13 +299,21 @@ export default function Contact() {
 							</Card>
 						</motion.div>
 
-						{/* Right column removed: Contact Information & What Happens Next */}
+						
 					</div>
 				</div>
 			</section>
 
-			{/* <section className="py-24 bg-[#050309]">
-				<div className="max-w-4xl mx-auto px-6 lg:px-8">
+			{/* FAQ Section */}
+			<section className="py-24 bg-[#050309] relative overflow-hidden">
+				{/* Background effects */}
+				<div className="absolute inset-0" style={{
+					background: `
+						radial-gradient(ellipse 60% 40% at 50% 50%, rgba(124, 58, 237, 0.1) 0%, transparent 60%)
+					`
+				}} />
+
+				<div className="max-w-4xl mx-auto px-6 lg:px-8 relative z-10">
 					<motion.div
 						initial="initial"
 						whileInView="animate"
@@ -287,7 +322,7 @@ export default function Contact() {
 						className="text-center mb-12"
 					>
 						<motion.div variants={fadeInUp} className="flex items-center justify-center gap-3 mb-4">
-							<div className="w-10 h-10 bg-gradient-to-br from-[#7C3AED] to-[#9333EA] rounded-xl flex items-center justify-center shadow-lg">
+							<div className="w-10 h-10 bg-[#7C3AED] rounded-xl flex items-center justify-center">
 								<Question size={22} weight="bold" className="text-white" />
 							</div>
 							<h2 className="text-[#F8FAFC] text-3xl md:text-4xl font-bold">Frequently Asked Questions</h2>
@@ -321,7 +356,7 @@ export default function Contact() {
 						</Accordion>
 					</motion.div>
 				</div>
-			</section> */}
+			</section>
 		</div>
 	)
 }

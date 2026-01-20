@@ -198,6 +198,360 @@
 }
 
 /* ========================================
+   DIGITAL SERVICES SECTION
+   ======================================== */
+.digital-services {
+  position: relative;
+  padding: 6rem 2rem;
+  overflow: hidden;
+  background: linear-gradient(180deg, #0d0628 0%, #050114 50%, #020106 100%);
+}
+
+.services-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 30%, rgba(139, 92, 246, 0.05) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.services-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(124, 58, 237, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 58, 237, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.services-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Services Header */
+.services-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.services-eyebrow {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #a78bfa;
+  background: rgba(124, 58, 237, 0.1);
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  margin-bottom: 1rem;
+}
+
+.services-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #f8fafc;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.services-subtitle {
+  font-size: 1.125rem;
+  color: #94a3b8;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Carousel Controls */
+.carousel-controls {
+  position: absolute;
+  top: 3rem;
+  right: 2rem;
+  display: flex;
+  gap: 0.75rem;
+  z-index: 10;
+}
+
+.carousel-arrow {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(15, 10, 31, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  color: #a78bfa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.carousel-arrow:hover:not(:disabled) {
+  background: rgba(124, 58, 237, 0.2);
+  border-color: rgba(124, 58, 237, 0.5);
+  color: #ddd6fe;
+  transform: scale(1.05);
+}
+
+.carousel-arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Horizontal Scroll Container */
+.services-carousel {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 2rem 0 3rem 0;
+  margin: 3rem 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  overscroll-behavior-x: contain; /* Prevent bounce effect */
+  scroll-padding: 0;
+  scroll-snap-stop: always; /* Force stop at each snap point */
+}
+
+.services-carousel::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Smooth deceleration for touch */
+.services-carousel {
+  scroll-snap-align: start;
+}
+
+/* Prevent horizontal scrolling of parent */
+.digital-services {
+  overflow-x: hidden;
+}
+
+.services-container {
+  overflow: hidden;
+}
+
+/* Progress Indicators */
+.carousel-indicators {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.indicator-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(124, 58, 237, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.indicator-dot:hover {
+  background: rgba(124, 58, 237, 0.5);
+  transform: scale(1.2);
+}
+
+.indicator-dot.active {
+  width: 24px;
+  border-radius: 4px;
+  background: rgba(124, 58, 237, 0.8);
+}
+
+/* Service Card */
+.service-card {
+  position: relative;
+  min-width: 380px;
+  max-width: 380px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  background: rgba(15, 10, 31, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(124, 58, 237, 0.15);
+  border-radius: 24px;
+  padding: 2.5rem;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--service-gradient);
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(124, 58, 237, 0.3);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 60px rgba(var(--service-color), 0.15);
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.service-card-glow {
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, var(--service-color) 0%, transparent 40%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.service-card:hover .service-card-glow {
+  opacity: 0.08;
+}
+
+/* Service Icon */
+.service-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  background: var(--service-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.icon-emoji {
+  font-size: 2rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Service Content */
+.service-name {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #f8fafc;
+  margin-bottom: 1rem;
+}
+
+.service-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #94a3b8;
+  margin-bottom: 1.5rem;
+}
+
+/* Service Features */
+.service-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9375rem;
+  color: #cbd5e1;
+}
+
+.feature-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--service-gradient);
+  flex-shrink: 0;
+  box-shadow: 0 0 8px var(--service-color);
+}
+
+/* Service Link */
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  background: rgba(124, 58, 237, 0.1);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  border-radius: 12px;
+  color: #e9d5ff;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--service-gradient);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.service-link:hover {
+  border-color: var(--service-color);
+  transform: translateX(4px);
+  box-shadow: 0 4px 16px rgba(var(--service-color), 0.2);
+}
+
+.service-link:hover::before {
+  opacity: 0.15;
+}
+
+.service-link span {
+  position: relative;
+  z-index: 1;
+}
+
+.service-link svg {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.service-link:hover svg {
+  transform: translateX(4px);
+}
+
+/* ========================================
    RESPONSIVE
    ======================================== */
 @media (max-width: 1100px) {
@@ -239,5 +593,75 @@
 
   .project-meta {
     justify-content: center;
+  }
+
+  /* Digital Services responsive */
+  .digital-services {
+    padding: 4rem 1.5rem;
+  }
+
+  .services-title {
+    font-size: 2.25rem;
+  }
+
+  .services-subtitle {
+    font-size: 1rem;
+  }
+
+  .carousel-controls {
+    top: 2rem;
+    right: 1rem;
+  }
+
+  .carousel-arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .services-carousel {
+    gap: 1.5rem;
+    padding: 1.5rem 0 2.5rem 0;
+  }
+
+  .service-card {
+    min-width: 320px;
+    max-width: 320px;
+    padding: 2rem 1.5rem;
+  }
+
+  .service-name {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .services-header {
+    margin-bottom: 3rem;
+  }
+
+  .services-title {
+    font-size: 2rem;
+  }
+
+  .service-icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .icon-emoji {
+    font-size: 1.75rem;
+  }
+
+  .carousel-controls {
+    display: none; /* Hide arrows on mobile, rely on touch scrolling */
+  }
+
+  .service-card {
+    min-width: 280px;
+    max-width: 280px;
+  }
+
+  .carousel-indicators {
+    gap: 0.5rem;
   }
 }

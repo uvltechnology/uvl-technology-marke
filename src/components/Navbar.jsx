@@ -9,7 +9,7 @@ export default function Navbar() {
 	const [isScrolled, setIsScrolled] = useState(false)
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 	const location = useLocation()
-	const isTransparentPage = location.pathname === '/' || location.pathname === '/about'
+	const isTransparentPage = location.pathname === '/' || location.pathname === '/about' || location.pathname === '/contact'
 
 	useEffect(() => {
 		const handleScroll = () => {
