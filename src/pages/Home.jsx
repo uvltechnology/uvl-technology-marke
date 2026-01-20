@@ -66,7 +66,7 @@ export default function Home() {
 		{
 			icon: Lightning,
 			title: 'Digital Services',
-			description: 'Modern digital solutions including E-Invitations, APIs, and seamless integrations that connect your systems and enhance functionality.',
+			description: 'Digital solutions that power your business, lifestyle, and daily operations—seamless integrations, smart automations, and modern tools that connect everything.',
 			highlight: 'Connect Everything',
 			examples: ['E-Invitations', 'Identity Verification']
 		},

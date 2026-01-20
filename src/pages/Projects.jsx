@@ -28,10 +28,22 @@ const digitalServices = [
     icon: '✉️',
     description: 'Modern digital invitations for weddings, events, and special occasions. Beautifully designed, eco-friendly, and easy to share.',
     features: ['Custom Designs', 'RSVP Tracking', 'Template Options'],
-    color: '#F59E0B',
-    gradient: 'linear-gradient(135deg, #FCD34D 0%, #F59E0B 100%)'
-  },
-  // More services can be added here
+    image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&h=600&fit=crop&q=80',
+    link: 'https://e-invitation.online',
+    color: '#e21d48',
+    gradient: '#e21d48'
+  },  {
+    id: 'identity-verification',
+    name: 'Identity Verification',
+    icon: '🆔',
+    description: 'AI-powered identity verification using ID documents and selfie recognition. Secure, fast, and accurate user authentication.',
+    features: ['AI Recognition', 'Document Verification', 'Liveness Detection'],
+    image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop&q=80',
+    link: 'https://verify.logica.ph',
+    color: '#0B3D91',
+    gradient: '#0B3D91',
+    disabled: true
+  },  // More services can be added here
 ]
 
 // Project data - 4 in-progress projects with Adobe-style cube colors
@@ -379,26 +391,41 @@ export default function Projects() {
               >
                 <div className="service-card-glow" />
                 
-                <div className="service-icon">
-                  <span className="icon-emoji">{service.icon}</span>
+                {/* Service Image */}
+                <div className="service-image-wrapper">
+                  <img 
+                    src={service.image} 
+                    alt={service.name}
+                    className="service-image"
+                    loading="lazy"
+                  />
+                  <div className="service-overlay" />
                 </div>
 
-                <h3 className="service-name">{service.name}</h3>
-                <p className="service-description">{service.description}</p>
+                {/* Content Overlay */}
+                <div className="service-content-overlay">
+                  <h3 className="service-name">{service.name}</h3>
+                  <p className="service-description">{service.description}</p>
 
-                <ul className="service-features">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx} className="feature-item">
-                      <span className="feature-dot" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-
-                <Link to="/contact" className="service-link">
-                  <span>Get Started</span>
-                  <ArrowRight size={16} weight="bold" />
-                </Link>
+                  {service.disabled ? (
+                    <button 
+                      className="service-link service-link-disabled"
+                      disabled
+                    >
+                      <span>Coming Soon</span>
+                    </button>
+                  ) : (
+                    <a 
+                      href={service.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="service-link"
+                    >
+                      <span>Visit Now</span>
+                      <ArrowRight size={16} weight="bold" />
+                    </a>
+                  )}
+                </div>
               </motion.article>
             ))}
           </motion.div>
