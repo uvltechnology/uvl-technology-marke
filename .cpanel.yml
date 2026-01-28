@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - /bin/cp -Rf Logica-Server/* /home/thevifco/api.logicatechnology.com/
+    - /bin/cp -Rf dist/* /home/thevifco/logicatechnology.com/
