@@ -921,29 +921,29 @@
    ======================================== */
 #projects-page .phone-wrapper {
   position: relative;
-  width: 140px;
-  height: 280px;
+  width: 150px;
+  height: 300px;
   z-index: 1;
-  margin-top: -30px;
+  margin-top: -20px;
   transition: all 0.4s ease;
 }
 
 #projects-page .tile-link:hover .phone-wrapper {
-  transform: scale(1.02) translateY(-10px);
+  transform: scale(1.03) translateY(-8px);
 }
 
 #projects-page .phone-device {
   position: relative;
   width: 100%;
   height: 100%;
-  background: linear-gradient(160deg, #2a2a3e 0%, #18181f 50%, #0d0d12 100%);
-  border-radius: 24px;
-  padding: 6px;
+  background: linear-gradient(160deg, #1a1a24 0%, #0d0d12 100%);
+  border-radius: 28px;
+  padding: 4px;
   box-shadow: 
-    0 30px 60px rgba(0, 0, 0, 0.5),
-    0 15px 35px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+    0 25px 50px rgba(0, 0, 0, 0.4),
+    0 10px 25px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 #projects-page .phone-bezel {
@@ -955,13 +955,13 @@
 
 #projects-page .phone-notch {
   position: absolute;
-  top: 10px;
+  top: 8px;
   left: 50%;
   transform: translateX(-50%);
-  width: 55px;
-  height: 18px;
-  background: #0a0a10;
-  border-radius: 12px;
+  width: 70px;
+  height: 22px;
+  background: #000;
+  border-radius: 14px;
 }
 
 /* Phone screen (Ref C: clean screenshot + overlay) */
@@ -970,7 +970,7 @@
   width: 100%;
   height: 100%;
   background: #0a0a10;
-  border-radius: 18px;
+  border-radius: 24px;
   overflow: hidden;
 }
 
@@ -978,14 +978,14 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.9;
-  filter: brightness(0.95);
+  opacity: 1;
+  filter: brightness(1);
   transition: all 0.4s ease;
 }
 
 #projects-page .tile-link:hover .screen-img {
   opacity: 1;
-  filter: brightness(1.05);
+  filter: brightness(1.1);
 }
 
 /* Dark gradient overlay for text (Ref C style) */
@@ -994,8 +994,8 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 50%;
-  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+  height: 40%;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.6) 100%);
   pointer-events: none;
 }
 
@@ -1042,35 +1042,34 @@
    ======================================== */
 #projects-page .book-3d {
   position: relative;
-  width: 140px;
-  height: 170px;
+  width: 130px;
+  height: 160px;
   margin-top: -85px;
   z-index: 5;
   transform-style: preserve-3d;
-  transform: perspective(1000px) rotateX(5deg) rotateY(-12deg);
+  transform: perspective(800px) rotateX(2deg) rotateY(-5deg);
   transition: all 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 #projects-page .tile-link:hover .book-3d {
-  transform: perspective(1000px) rotateX(3deg) rotateY(-8deg) translateY(-8px) scale(1.06);
+  transform: perspective(800px) rotateX(1deg) rotateY(-3deg) translateY(-8px) scale(1.04);
 }
 
 /* ===== BOOK BINDING (Left spine) ===== */
 #projects-page .book-binding {
   position: absolute;
   top: 0;
-  left: -14px;
-  width: 18px;
+  left: -8px;
+  width: 10px;
   height: 100%;
   background: linear-gradient(90deg,
-    color-mix(in srgb, var(--book-dark) 100%, #000 50%) 0%,
-    var(--book-dark) 40%,
-    color-mix(in srgb, var(--book-dark) 100%, #000 30%) 100%
+    var(--book-dark) 0%,
+    var(--book-main) 100%
   );
-  border-radius: 4px 0 0 4px;
-  transform: rotateY(-70deg);
+  border-radius: 3px 0 0 3px;
+  transform: rotateY(-25deg);
   transform-origin: right center;
-  box-shadow: inset -3px 0 8px rgba(0, 0, 0, 0.4);
+  box-shadow: inset -2px 0 4px rgba(0, 0, 0, 0.3);
 }
 
 #projects-page .binding-lines {
@@ -1087,23 +1086,21 @@
 /* ===== BOOK PAGES (Right edge - paper stack) ===== */
 #projects-page .book-pages {
   position: absolute;
-  top: 3px;
-  right: -20px;
-  width: 24px;
-  height: calc(100% - 6px);
+  top: 4px;
+  right: -10px;
+  width: 12px;
+  height: calc(100% - 8px);
   background: linear-gradient(90deg,
-    #e8e4df 0%,
-    #f5f2ed 20%,
+    #f0ede8 0%,
     #faf8f5 50%,
-    #f0ede8 80%,
-    #e5e1dc 100%
+    #e8e4df 100%
   );
-  border-radius: 0 3px 3px 0;
-  transform: rotateY(70deg);
+  border-radius: 0 2px 2px 0;
+  transform: rotateY(20deg);
   transform-origin: left center;
   box-shadow: 
-    inset 2px 0 3px rgba(0, 0, 0, 0.08),
-    inset -1px 0 2px rgba(255, 255, 255, 0.5);
+    inset 1px 0 2px rgba(0, 0, 0, 0.05),
+    -1px 0 3px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
 
@@ -1123,19 +1120,17 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background: linear-gradient(165deg,
+  background: linear-gradient(160deg,
     var(--book-light) 0%,
-    var(--book-main) 30%,
-    var(--book-main) 60%,
+    var(--book-main) 40%,
     var(--book-dark) 100%
   );
-  border-radius: 3px 10px 10px 3px;
-  transform: translateZ(12px);
+  border-radius: 4px 8px 8px 4px;
+  transform: translateZ(6px);
   box-shadow:
-    0 25px 50px rgba(0, 0, 0, 0.35),
-    0 10px 20px rgba(0, 0, 0, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.25),
-    inset 3px 0 6px rgba(0, 0, 0, 0.15);
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 8px 16px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
   overflow: hidden;
 }
 
@@ -1171,18 +1166,17 @@
   z-index: 2;
 }
 
-/* Main code - large stylized text like "Pyrl" */
+/* Main code - large stylized text like "Dt" */
 #projects-page .book-code {
   color: #fff;
-  font-size: 3.2rem;
+  font-size: 3.5rem;
   font-weight: 900;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   line-height: 1;
   text-shadow:
-    0 2px 0 rgba(0, 0, 0, 0.15),
-    0 4px 12px rgba(0, 0, 0, 0.25),
-    0 0 60px rgba(255, 255, 255, 0.1);
+    0 2px 0 rgba(0, 0, 0, 0.2),
+    0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Bottom hexagon icon */
@@ -1253,19 +1247,18 @@
 /* ===== BOOK TOP EDGE (Paper) ===== */
 #projects-page .book-top-edge {
   position: absolute;
-  top: -12px;
-  left: 3px;
-  width: calc(100% - 6px);
-  height: 16px;
+  top: -6px;
+  left: 4px;
+  width: calc(100% - 8px);
+  height: 8px;
   background: linear-gradient(180deg,
-    #f8f6f3 0%,
-    #f0ede8 40%,
+    #faf8f5 0%,
     #e8e4df 100%
   );
-  border-radius: 2px 6px 0 0;
-  transform: rotateX(70deg);
+  border-radius: 2px 4px 0 0;
+  transform: rotateX(45deg);
   transform-origin: bottom center;
-  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.2);
 }
 
 /* ===== BOOK SHADOW ===== */

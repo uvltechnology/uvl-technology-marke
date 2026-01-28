@@ -17,16 +17,16 @@ const staggerContainer = {
 // Project data - 4 projects with book colors matching Ref A
 const projects = [
   {
-    slug: 'aladain-jobs',
-    name: 'Aladain Jobs',
-    code: 'Aj',
-    description: 'A modern job portal platform connecting employers with talented professionals.',
+    slug: 'school-management-system',
+    name: 'School Management System',
+    code: 'Dt',
+    description: 'A comprehensive school management platform for students, teachers, and administrators.',
     status: 'In Progress',
-    image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=900&fit=crop&q=80',
-    // Warm orange like Ref A
-    bookColor: '#F97316',
-    bookColorLight: '#FB923C',
-    bookColorDark: '#C2410C'
+    image: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&h=900&fit=crop&q=80',
+    // Green/teal like the reference image
+    bookColor: '#059669',
+    bookColorLight: '#10B981',
+    bookColorDark: '#047857'
   },
   {
     slug: 'yamcon',
