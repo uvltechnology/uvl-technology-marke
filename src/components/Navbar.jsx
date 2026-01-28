@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 // toggle icon is implemented with CSS/HTML for smooth morph animations
 import { Button } from '@/components/ui/button.jsx'
-import logo from '@/assets/logica1.jpg'
+import logo from '@/assets/logica1.webp'
 import './Navbar.css'
 
 export default function Navbar() {

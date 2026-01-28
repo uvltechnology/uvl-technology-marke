@@ -2,9 +2,9 @@ import { useParams, Link, Navigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { ArrowLeft, Clock, Code, Folder } from '@phosphor-icons/react'
 import StarField from '@/components/StarField.jsx'
-import theVifMockup from '../assets/Devices Mockup/TheVIF mockup 3d devices.png'
-import yamconMockup from '../assets/Devices Mockup/Yamcon mockup 3d devices.png'
-import smsMockup from '../assets/Devices Mockup/SMS mockup 3d devices.png'
+import theVifMockup from '../assets/Devices Mockup/TheVIF mockup 3d devices.webp'
+import yamconMockup from '../assets/Devices Mockup/Yamcon mockup 3d devices.webp'
+import smsMockup from '../assets/Devices Mockup/SMS mockup 3d devices.webp'
 import Navbar from "@/components/Navbar.jsx"
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { EnvelopeSimple, Phone, MapPin, TiktokLogo, FacebookLogo, YoutubeLogo } from '@phosphor-icons/react'
-import logo from '@/assets/logica1.jpg'
+import logo from '@/assets/logica1.webp'
 
 export default function Footer() {
   const footerLinks = {

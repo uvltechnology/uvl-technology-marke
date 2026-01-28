@@ -16,9 +16,9 @@ const staggerContainer = {
   }
 }
 
-import theVifMockup from '../assets/Books Template/TheVIF Product Mockup.png'
-import yamconMockup from '../assets/Books Template/Yamcon Product Mockup.png'
-import smsMockup from '../assets/Books Template/SMS Product Mockup.png'
+import theVifMockup from '../assets/Books Template/TheVIF Product Mockup.webp'
+import yamconMockup from '../assets/Books Template/Yamcon Product Mockup.webp'
+import smsMockup from '../assets/Books Template/SMS Product Mockup.webp'
 
 // Digital Services data
 const digitalServices = [
@@ -162,8 +162,8 @@ export default function Projects() {
     async function loadMockup() {
       // Try the exact filename user provided, then a common fallback name.
       const candidates = [
-        '../assets/TheVIF mockup 3d devices.png',
-        '../assets/devices-mockup.png'
+        '../assets/TheVIF mockup 3d devices.webp',
+        '../assets/devices-mockup.webp'
       ]
 
       for (const path of candidates) {
